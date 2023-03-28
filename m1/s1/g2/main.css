@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    background-color: #303030;
+    color: white;
+}
+
+.logo {
+    width: 200px;
+}
+
+.title {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.list-item a {
+    font-size: large;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.list-item {
+    list-style-type: square;
+}
+
+.my-header {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 1px;
+    background-color: aquamarine;
+    color: black;
+}
+
+.content-title {
+    margin-bottom: 0;
+}
+
+.content-subtitle {
+    margin-top: 2px;
+    margin-bottom: 20px;
+}
