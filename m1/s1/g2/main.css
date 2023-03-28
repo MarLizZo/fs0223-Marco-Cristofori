@@ -29,7 +29,7 @@ body {
     padding-right: 8px;
     padding-top: 4px;
     padding-bottom: 1px;
-    background-color: aquamarine;
+    background: linear-gradient(150deg, #87f6ca, #27c787);
     color: black;
 }
 
@@ -45,6 +45,13 @@ main p {
 
 .list-title {
     margin-bottom: 0;
+    padding: 2px;
+    background-color: rgb(40, 194, 143);
+    color: black;
+}
+
+.section-lists ul {
+    margin-top: 9px;
 }
 
 main hr {
@@ -88,4 +95,35 @@ main hr {
     margin-bottom: 30px;
     margin-left: 8px;
     margin-right: 8px;
+}
+
+form input {
+    width: 30%;
+    height: 25px;
+}
+
+form button {
+    width: 100px;
+    height: 30px;
+}
+
+.sidebar h3 {
+    background-color: rgb(40, 194, 143);
+    color: black;
+    padding: 4px;
+}
+
+.sidebar h4 {
+    margin-bottom: 6px;
+}
+
+.sidebar p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.my-footer {
+    background: linear-gradient(150deg, #87f6ca, #27c787);
+    padding: 1px;
+    color: black;
 }
