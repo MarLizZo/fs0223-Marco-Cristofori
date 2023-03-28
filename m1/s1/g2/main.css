@@ -33,11 +33,52 @@ body {
     color: black;
 }
 
+main {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+main p {
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+
+.list-title {
+    margin-bottom: 0;
+}
+
+main hr {
+    margin-top: 20px;
+}
+
 .content-title {
+    margin-top: 2px;
     margin-bottom: 0;
 }
 
 .content-subtitle {
     margin-top: 2px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
+}
+
+.table-title {
+    margin-top: 35px;
+    margin-bottom: 0;
+    text-align: center;
+    background-color: rgb(40, 194, 143);
+    padding: 8px;
+    color: black;
+    font-weight: 700;
+}
+
+.my-table {
+    width: 100%;
+    text-align: center;
+}
+
+.my-table th, td {
+    border: solid 1px;
+}
+.link-val {
+    color: white;
 }
