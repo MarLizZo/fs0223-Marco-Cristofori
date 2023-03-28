@@ -1,0 +1,20 @@
+&nbsp; andata a capo preferenziale
+ol>li*4{elemento lista}
+<address> dice ai bot il contenuto di questo tag
+<b> <strong> b non dice al search engine che la parola è importante
+<i> <em> idem per b e strong
+<del> dice anche a se che il testo è stato eliminato/aggiornato. aggiunge sbarra di default
+<ins> dice che il testo è stato aggiornato da del. aggiunge sottolineatura di default
+<abbr title="Hyper text markup language">HTML</abbr>
+<code> può mostrare il testo dei tag
+
+<figure>
+	<img>
+	<figcaption>Didascalia</>
+</figure>
+
+a href tel: mailto: https://wa.me/*num*?queryParam -- download -- 
+#*nome id fa scorrere fino al id -- # torna all'inizio
+
+webP da usare per immagini, molto leggero
+svg contiene info in html per disegnare l'img assolutamente leggero
