@@ -6,6 +6,10 @@ body a {
     color: #3fa588;
 }
 
+body a:hover {
+    color: #51dcb4;
+}
+
 body hr {
     height: 2px;
     background-color: #57e0b9;
