@@ -6,6 +6,12 @@ body a {
     color: #3fa588;
 }
 
+body hr {
+    height: 2px;
+    background-color: #57e0b9;
+    border: 0;
+}
+
 header {
     text-align: center;
 }
@@ -23,8 +29,8 @@ header p {
 }
 
 main {
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 400px;
+    margin-right: 400px;
 }
 
 main h1 {
@@ -33,27 +39,47 @@ main h1 {
     text-align: center;
 }
 
-.vid-container p {
+.vid-block p {
     color: gray;
     text-align: center;
+}
+
+.vid-container {
+    width: 100%;
+}
+
+.vid-container video {
+    width: 100%;
 }
 
 article {
     padding-left: 15px;
     border-left: solid 1px rgb(215, 215, 0);
     margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 article h4 {
     margin-bottom: 0;
+    color: rgb(220, 73, 73);
 }
 
 article h5 {
     margin-top: 3px;
 }
 
-body hr {
-    height: 2px;
-    background-color: #57e0b9;
+section h4 {
+    margin-bottom: 0;
+}
+
+section ul {
+    margin-top: 18px;
+}
+
+section li {
+    margin-bottom: 15px;
+}
+
+.top-spacing {
+    margin-top: 35px;
 }
