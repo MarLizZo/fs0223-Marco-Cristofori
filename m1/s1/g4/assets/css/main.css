@@ -101,7 +101,7 @@ main ul, main ol {
 }
 
 .my-table tr td {
-    padding: 5px 0;
+    padding: 10px 0;
 }
 
 .my-table tr:nth-of-type(odd) {
