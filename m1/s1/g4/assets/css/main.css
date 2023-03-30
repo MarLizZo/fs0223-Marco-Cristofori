@@ -14,7 +14,7 @@ body {
     color: white;
     text-align: center;
     padding: 20px 25px;
-    margin-bottom: 45px;
+    margin-bottom: 25px;
 }
 
 .nav-container img {
@@ -47,7 +47,7 @@ body {
 
 main {
     background-color: white;
-    padding: 30px 15px;
+    padding: 15px 10px;
 }
 
 main h1 {
@@ -56,6 +56,144 @@ main h1 {
     margin-bottom: 20px;
 }
 
-.post-info {
+main p {
+    margin-top: 20px;
     margin-bottom: 20px;
+}
+
+main ul, main ol {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.box-highl {
+    display: inline-block;
+    background-color: rgb(202, 202, 202);
+    border: 1px solid black;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.no-margin-btm {
+    margin-bottom: 0;
+}
+
+.no-margin-top {
+    margin-top: 0;
+}
+
+.highl-txt {
+    color: rgb(163, 25, 108);
+    font-weight: bold;
+}
+
+.table-title {
+    font-weight: bold;
+    text-align: center;
+    font-style: italic;
+}
+
+.my-table {
+    text-align: center;
+    border-bottom: 2px solid rgb(65, 96, 247);
+}
+
+.my-table tr td {
+    padding: 5px 0;
+}
+
+.my-table tr:nth-of-type(odd) {
+    background-color: rgb(232, 232, 232);
+}
+
+.my-table tr:first-child {
+    background-color: rgb(65, 96, 247);
+}
+
+.my-link {
+    color: rgb(62, 166, 252);
+}
+
+section iframe {
+    width: 100%;
+    border-radius: 15%;
+}
+
+.newsletter {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: rgb(215, 215, 215);
+    padding: 10px 10px;
+}
+
+.newsletter h3 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.newsletter h4 {
+    margin-bottom: 15px;
+}
+
+.input-container input {
+    width: 60%;
+}
+
+.input-container button {
+    width: 30%;
+    font-weight: bold;
+    background-color: rgb(62, 84, 252);
+    color: white;
+    border: none;
+}
+
+.input-container form input {
+    border: none;
+    border-bottom: 1px dashed rgb(116, 116, 116);
+}
+
+.art-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.my-box {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: rgb(215, 215, 215);
+    padding: 15px 10px;
+}
+
+.my-box h5 {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.my-box h6 {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 17px;
+    display: inline-block;
+}
+
+.my-box p {
+    text-align: end;
+}
+
+footer {
+    background: rgb(25,117,140);
+    background: linear-gradient(186deg, rgba(25,117,140,1) 0%, rgba(40,3,3,1) 100%, rgba(0,0,0,1) 100%);
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+footer a {
+    color: blueviolet;
+    font-weight: bold;
 }

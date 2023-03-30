@@ -23,19 +23,18 @@
     </header>
     <main>
         <h1>Come creare un template per i post</h1>
-        <p class="post-info"><i class="fas fa-pen-square" style="color: #999999;"></i>
+        <p><i class="fas fa-pen-square" style="color: #999999;"></i>
         di Mario Rossi - <i class="fas fa-clock" style="color: #999999;"></i> pubblicato il 25-10-2020</p>
-        <p>La prima cosa da fare è suddividere in blocchi logici la pagina, identificando le parti comuni
-            da applicare a tutte le pagine.</p>
-        <section class="section-lists">
-            <h4 class="list-title">Le varie aree saranno quindi suddivise in:</h4>
+        <p>La prima cosa da fare è suddividere in blocchi logici la pagina, identificando le <span class="highl-txt">parti comuni</span> da applicare a tutte le pagine.</p>
+        <section>
+            <p>Le varie aree saranno quindi suddivise in:</p>
             <ul>
-                <li>Contenuti di intestazione del tag &lt;header&gt;</li>
-                <li>Contenuti centrali variabili del tag &lt;main&gt; (corpo principale)</li>
-                <li>Contenuti di fine pagina comuni, da inserire nel tag &lt;footer&gt;</li>
+                <li>Contenuti di intestazione del tag <span class="box-highl">&lt;header&gt;</span></li>
+                <li>Contenuti centrali variabili del tag <span class="box-highl">&lt;main&gt;</span> (corpo principale)</li>
+                <li>Contenuti di fine pagina comuni, da inserire nel tag <span class="box-highl">&lt;footer&gt;</span></li>
             </ul>
-            <p>Formattazione del codice</p>
-            <p>Il testo dell'articolo dovrà essere formattato per identificare tutte le parti da selezionare con i CSS.
+            <p class="no-margin-btm">Formattazione del codice</p>
+            <p class="no-margin-top">Il testo dell'articolo dovrà essere formattato per identificare tutte le parti da <span class="highl-txt">selezionare con i CSS</span>.
                 Perciò i passi saranno:</p>
                 <ol>
                     <li>Progettare il markup assegnando ad ogni specifico testo il tag appropriato</li>
@@ -81,40 +80,47 @@
         </section>
         <section>
             <p>Un test di validazione potrà essere fatto tramite il tool online 
-                <a href="#" class="link-val">- VALIDATOR TOOL -</a> dedicato allo scopo. Una volta ottimizzato il tutto, 
+                <a href="#" class="my-link">tool online</a> dedicato allo scopo. Una volta ottimizzato il tutto, 
                 avremo raggiunto il nostro obiettivo ed essere stati dei veri developers come loro:</p>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/6itlEYdx57g" 
                 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
                 encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </section>
-        <aside class="sidebar">
-            <form onclick="alert('Iscritto alla Newsletter!')">
-                <input type="email" placeholder="Scrivi la tua mail">
-                <button type="submit">Iscriviti!</button>
-            </form>
+        <aside class="newsletter">
+            <h3>NOVITA'</h3>
+            <h4>Vuoi rimanere aggiornato su altre novità del blog? Iscriviti alla nostra Newsletter:</h4>
+            <div class="input-container">
+                <form onclick="alert('Iscritto alla Newsletter!')">
+                    <input type="email" placeholder="Scrivi la tua mail">
+                    <button type="submit">Iscriviti!</button>
+                </form>
+            </div>
         </aside>
         <aside class="sidebar">
-            <h3>Articoli correlati</h3>
-            <article>
-                <h4>Validare il codice HTML</h4>
-                <p>Categoria: develop</p>
+            <h3 class="art-title">Articoli correlati</h3>
+            <article class="my-box">
+                <h5 class="my-link">Validare il codice HTML</h5>
+                <i class="fas fa-tag" style="color: #000000;"></i>
+                <h6>Categoria: develop</h6>
                 <p>Data: 18-09-2020</p>
             </article>
-            <article>
-                <h4>Correggere la sintassi</h4>
-                <p>Categoria: develop</p>
+            <article class="my-box">
+                <h5 class="my-link">Correggere la sintassi</h5>
+                <i class="fas fa-tag" style="color: #000000;"></i>
+                <h6>Categoria: develop</h6>
                 <p>Data: 16-09-2020</p>
             </article>
-            <article>
-                <h4>Kb nella pagina</h4>
-                <p>Categoria: ottimizzazione</p>
+            <article class="my-box">
+                <h5 class="my-link">Kb nella pagina</h5>
+                <i class="fas fa-tag" style="color: #000000;"></i>
+                <h6>Categoria: ottimizzazione</h6>
                 <p>Data: 30-09-2020</p>
             </article>
         </aside>
         <footer>
             <h4>Blog Epicode 2021</h4>
             <p>Testata online di Mario Rossi, registrata con prot. n.213/2018 - via Luigi Einaudi 2 - Milano. 
-                P.IVA 00112233. info@epicode.school <a href="mailto:info@epicode.school">- LINK EMAIL -</a>
+                P.IVA 00112233. <a href="mailto:info@epicode.school" class="f-link">info@epicode.school</a>
             </p>
         </footer>
     </main>
