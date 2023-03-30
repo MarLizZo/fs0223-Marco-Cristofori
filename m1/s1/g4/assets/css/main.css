@@ -94,6 +94,8 @@ main ul, main ol {
 }
 
 .my-table {
+    margin: 0 auto;
+    margin-top: 5px;
     text-align: center;
     border-bottom: 2px solid rgb(65, 96, 247);
 }
@@ -108,6 +110,11 @@ main ul, main ol {
 
 .my-table tr:first-child {
     background-color: rgb(65, 96, 247);
+}
+
+.my-table tr th {
+    padding: 10px 5px;
+    color: white;
 }
 
 .my-link {
