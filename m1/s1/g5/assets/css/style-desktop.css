@@ -14,6 +14,10 @@ header {
     background-color: black;
 }
 
+header img {
+    cursor: pointer;
+}
+
 button {
     background-color: #f04c2f;
     font-family: 'Montserrat', sans-serif;
@@ -23,6 +27,7 @@ button {
     border: none;
     border-radius: 5px;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -168,15 +173,14 @@ h6 {
 }
 
 .tert-section {
-    margin-top: 40px;
+    margin-top: 60px;
     margin-bottom: 100px;
 }
 
 .bordered-boxes {
     width: 28%;
-    height: 100%;
+    vertical-align: top;
     border: 1px solid #dee1e3;
-    margin-top: 25px;
     margin-left: 20px;
     margin-right: 20px;
 }
