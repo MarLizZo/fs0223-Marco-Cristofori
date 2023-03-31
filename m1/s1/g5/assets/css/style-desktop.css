@@ -57,6 +57,7 @@ footer p:last-child {
 
 .hr-container {
     width: auto;
+    margin-top: 25px;
 }
 
 header {
@@ -109,8 +110,7 @@ h6 {
 }
 
 .sec-section {
-    width: fit-content;
-    margin: 60px auto;
+    margin: 100px auto;
 }
 
 .inline-divs {
@@ -118,7 +118,6 @@ h6 {
 }
 
 .inline-divs-sec {
-    display: inline-block;
     text-align: left;
     margin-left: 50px;
 }
@@ -143,7 +142,7 @@ h6 {
 
 .comment h2, .comment p {
     color: white;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .comment p  {
@@ -183,11 +182,11 @@ h6 {
 }
 
 .boxes-padding {
-    padding: 0 60px;
+    padding: 0 50px;
 }
 
 .tert-section img {
-    width: 100%;
+    max-width: 100%;
 }
 
 .contact-info {
