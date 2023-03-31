@@ -7,6 +7,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.65;
     box-sizing: border-box;
+    text-align: center;
 }
 
 header {
@@ -38,6 +39,69 @@ footer h3 {
     color: white;
 }
 
-.boxes {
+header {
+    padding: 60px 0;
+}
+
+header img {
+    max-width: 50%;
+}
+
+p {
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 1.9rem;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 1.7rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+button {
+    padding: 10px 30px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.main-section {
+    background-image: url('../images/banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 35px;
+    padding-bottom: 25px;
+    padding-left: 55px;
+    padding-right: 55px;
+}
+
+.title-sizing {
+    padding: 0 50px;
+}
+
+.sec-section {
+    margin-top: 40px;
+    padding: 0 60px;
+}
+
+.sec-section img {
+    border-radius: 100%;
+    margin-bottom: 30px;
+    max-width: 80%;
+}
+
+.bordered-boxes {
     border: 1px solid #dee1e3;
 }
