@@ -31,7 +31,7 @@ header button {
 
 header button:hover {
     background-color: #909090;
-    color: white;
+    color: #303030;
 }
 
 .pre-main {
@@ -45,12 +45,82 @@ header button:hover {
 
 .pre-main p {
     padding-bottom: 25px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     border-bottom: 2px solid #cab021;
 }
 
 .calcolatrice h2 {
     background-color: #303030;
+    margin-bottom: 30px;
     padding: 20px 20px;
     color: #cab021;
+    display: flex;
+}
+
+.calcolatrice h3 {
+    margin: auto 0;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#user-input, #user-input-2 {
+    width: 25%;
+    padding: 10px 0;
+}
+
+.output-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.selection {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.selection label {
+    margin: auto 0;
+    margin-right: 10px;
+
+}
+
+.selection select {
+    padding: 8px 5px;
+    width: 20%;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-container button {
+    margin-top: 25px;
+    padding: 10px 25px;
+    background-color: #606060;
+    color: white;
+    border: 2px solid #cab021;
+    border-radius: 5px;
+}
+
+.btn-container button:hover {
+    background-color: #909090;
+    color: #303030;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: #303030;
+    color: #cab021;
+}
+
+footer h4 {
+    margin: 15px 0;
 }
