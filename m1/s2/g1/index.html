@@ -23,13 +23,13 @@
         <div class="calcolatrice">
             <h2>Calcolatrice in Javascript</h2>
             <div class="input-container">
-                <input id="user-input" type="number" placeholder="Scrivi un numero">
+                <input id="user-input" class="border-color-sec" type="number" placeholder="Scrivi un numero">
                 <h3 id="js-op">+</h3>
-                <input id="user-input-2" type="number" placeholder="Scrivi un numero">
+                <input id="user-input-2" class="border-color-sec" type="number" placeholder="Scrivi un numero">
             </div>
             <div class="selection">
                 <label for="operations">Seleziona un'operazione</label>
-                <select id="operations" name="operations" onchange="operationChanged()">
+                <select id="operations" class="border-color-sec" name="operations" onchange="operationChanged()">
                     <option value="addizione">Addizione</option>
                     <option value="sottrazione">Sottrazione</option>
                     <option value="moltiplicazione">Moltiplicazione</option>
@@ -40,7 +40,7 @@
                 <button onclick="jsDoOperation()">Calcola risultato!</button>
             </div>
             <div class="output-container">
-                <textarea id="js-result" placeholder="Il risultato verrà mostrato qui!" rows="5" cols="50"></textarea>
+                <textarea id="js-result" class="border-color-sec" placeholder="Il risultato verrà mostrato qui!" rows="5" cols="50" readonly></textarea>
             </div>
         </div>
     </main>
