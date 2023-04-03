@@ -9,7 +9,8 @@ body {
 #header {
     width: 100%;
     height: 8vh;
-    background-color: #303030;
+    background: rgb(48,48,48);
+    background: linear-gradient(90deg, rgba(48,48,48,1) 42%, rgba(116,102,22,1) 86%, rgba(202,176,33,1) 100%);
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -50,7 +51,8 @@ header button:hover {
 }
 
 .calcolatrice h2 {
-    background-color: #303030;
+    background: rgb(48,48,48);
+    background: linear-gradient(90deg, rgba(48,48,48,1) 42%, rgba(116,102,22,1) 86%, rgba(202,176,33,1) 100%);
     margin-bottom: 30px;
     padding: 20px 20px;
     color: #cab021;
@@ -117,8 +119,8 @@ header button:hover {
 footer {
     display: flex;
     justify-content: center;
-    background-color: #303030;
-    color: #cab021;
+    background: rgb(202,176,33);
+    background: radial-gradient(circle, rgba(202,176,33,1) 0%, rgba(48,48,48,1) 75%, rgba(202,176,33,1) 100%);
 }
 
 footer h4 {
