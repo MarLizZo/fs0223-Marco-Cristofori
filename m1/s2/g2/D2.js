@@ -26,6 +26,7 @@ REGOLE
 
 let name = "Marco";
 console.log(name);
+document.getElementById('test-1').innerHTML = name;
 
 
 
@@ -63,6 +64,7 @@ console.log(x);
 
 name = "Cristofori";
 console.log(name);
+document.getElementById('test-2').innerHTML = name;
 
 const random = "test-const";
 //random = "prova cambiamento"; -- errore
@@ -94,8 +96,9 @@ let name2 = "John";
 
 let result = name1 == name2;
 console.log(result);
-document.getElementById('test').innerHTML = 'Il risultato è ' + result;
+document.getElementById('test-3').innerHTML = 'Il risultato è ' + result;
 
 
 let result_2 = name1.toLowerCase() == name2.toLowerCase();
 console.log(result_2);
+document.getElementById('test-4').innerHTML = 'Il risultato con toLowerCase è ' + result_2;
