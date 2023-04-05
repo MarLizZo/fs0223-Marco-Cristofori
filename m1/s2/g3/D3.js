@@ -7,9 +7,9 @@
   let num_2 = 23;
 
   if (num_1 > num_2) {
-    console.log(`${num_1} è maggiore di ${num_2}`);
+    console.log(`ES.1 - ${num_1} è maggiore di ${num_2}`);
   } else {
-    console.log(`${num_1} non è maggiore di ${num_2}`);
+    console.log(`ES.1 - ${num_2} è maggiore di ${num_1}`);
   }
 }
 
@@ -23,7 +23,7 @@
   let numero = 10;
 
   if (numero != 5) {
-    console.log("not equal");
+    console.log("ES.2 - not equal");
   }
 }
 
@@ -40,7 +40,7 @@
   let numero = 10;
 
   if (!(numero % 5)) {
-    console.log('Divisibile per 5');
+    console.log('ES.3 - Divisibile per 5');
   }
 }
 
@@ -57,23 +57,23 @@
   let num_2 = 10;
 
   if (num_1 == 8) {
-    console.log(`${num_1} è uguale a 8`);
+    console.log(`ES.4 - ${num_1} è uguale a 8`);
   } else {
-    console.log(`${num_1} non è uguale a 8`);
+    console.log(`ES.4 - ${num_1} non è uguale a 8`);
   }
 
   if (num_2 == 8) {
-    console.log(`${num_2} è uguale a 8`);
+    console.log(`ES.4 - ${num_2} è uguale a 8`);
   } else {
-    console.log(`${num_2} non è uguale a 8`);
+    console.log(`ES.4 - ${num_2} non è uguale a 8`);
   }
 
 
 
   if (num_1 + num_2 == 8 || num_1 - num_2 == 8) {
-    console.log("Una delle due operazioni ha dato risultato 8");
+    console.log("ES.4 - Una delle due operazioni ha dato risultato 8");
   } else {
-    console.log("Nessuna delle due operazioni ha dato risultato 8");
+    console.log("ES.4 - Nessuna delle due operazioni ha dato risultato 8");
   }
 }
 
@@ -98,10 +98,10 @@
   }
 
   if (spedizioneGratuita) {
-    console.log(`L'ammontare totale da addebitare è solo ${totalShoppingCart}, spedizione gratuita!`);
+    console.log(`ES.5 - L'ammontare totale da addebitare è ${totalShoppingCart}, spedizione gratuita!`);
   } else {
     let totale = totalShoppingCart + 10;
-    console.log(`L'ammontare totale da addebitare è ${totalShoppingCart}, + 10 euro di spedizione, per un totale di ${totale}`);
+    console.log(`ES.5 - L'ammontare da addebitare è ${totalShoppingCart} + 10 euro di spedizione, per un totale di ${totale}`);
   }
 }
 
@@ -126,12 +126,12 @@
   if (spedizioneGratuita) {
     let sconto = (totalShoppingCart * 20) / 100;
     let totale = totalShoppingCart - sconto;
-    console.log(`ES.6 - L'ammontare totale da addebitare è solo ${totalShoppingCart}, spedizione gratuita e sconto applicato!`);
+    console.log(`ES.6 - L'ammontare totale da addebitare è solo ${totale}, spedizione gratuita e sconto 20% applicato!`);
   } else {
     let totale = totalShoppingCart + 10;
     let sconto = (totale * 20) / 100;
     let totaleUltimo = totale - sconto;
-    console.log(`ES.6 - L'ammontare totale da addebitare è ${totaleUltimo}, includendo sconto e spedizione.`);
+    console.log(`ES.6 - L'ammontare totale da addebitare è ${totaleUltimo}, includendo spese di spedizione e sconto 20% applicato.`);
   }
 }
 
@@ -184,7 +184,7 @@
   arr.push(medio);
   arr.push(piccolo);
 
-  console.log(arr);
+  console.log("ES.7 - " + arr);
 
 
   /* oppure metodo migliore
@@ -198,7 +198,7 @@
   });
 
   console.log(arr);
-  
+
   */
 }
 
@@ -214,9 +214,9 @@
   console.log(typeof valore);
 
   if (typeof valore == "number") {
-    console.log("La variabile è un numero!");
+    console.log("ES.8 - La variabile è un numero!");
   } else {
-    console.log("La variabile non è un numero!");
+    console.log("ES.8 - La variabile non è un numero!");
   }
 }
 
@@ -233,9 +233,9 @@
   console.log(numero % 2);
 
   if (numero % 2 == 0) {
-    console.log("Il numero è paro!");
+    console.log(`ES.9 - Il numero ${numero} è paro!`);
   } else {
-    console.log("Il numero è disparo!");
+    console.log(`ES.9 - Il numero ${numero} è disparo!`);
   }
 }
 
@@ -259,13 +259,13 @@
 {
   let val = 5;
   if (val < 10 && val > 5) {
-      console.log("Meno di 10, ma maggiore di 5");
+      console.log("ES.10 - Meno di 10, ma maggiore di 5");
     } else if (val == 5) {
-      console.log("Uguale a 5");
+      console.log("ES.10 - Uguale a 5");
     } else if (val < 5) {
-      console.log("Minore di 5");
+      console.log("ES.10 - Minore di 5");
     } else {
-      console.log("Uguale a 10 o maggiore");
+      console.log("ES.10 - Uguale a 10 o maggiore");
     }
 }
 
@@ -284,8 +284,10 @@ const me = {
   skills: ['javascript', 'html', 'css'],
 }
 
-  me.prop = 'Toronto';
-  console.log(me.prop);
+  me.city = 'Toronto';
+  console.log("ES.11 - " + me.city);
+
+
 
 
 
@@ -298,7 +300,7 @@ const me = {
 */
 
 delete me.lastName;
-console.log(me.lastName);
+console.log("ES.12 - " + me.lastName);
 
 
 
@@ -309,7 +311,7 @@ console.log(me.lastName);
 */
 
 me.skills.pop();
-console.log(me.skills);
+console.log("ES.13 - " + me.skills);
 
 
 
@@ -331,7 +333,7 @@ arr.push(8);
 arr.push(9);
 arr.push(10);
 
-console.log(arr);
+console.log("ES.14 - " + arr);
 
 
 
@@ -342,7 +344,6 @@ console.log(arr);
   Scrivi del codice per sostituire l'ultimo elemento dell'array, ovvero il valore 10, con il valore 100.
 */
 
-console.log(arr[9]);
 arr[9] = 100;
-console.log(arr);
+console.log("ES.15 - " + arr);
 
