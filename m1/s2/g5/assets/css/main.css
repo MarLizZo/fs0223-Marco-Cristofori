@@ -35,12 +35,16 @@ body {
     text-decoration: none;
 }
 
+main {
+    margin: 20px 25px;
+}
+
 .banner-top {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 5vh;
-    margin: 35px 15px;
+    margin: 35px 0;
     background-color: #fd7526;
 }
 
@@ -75,7 +79,6 @@ h3 {
 
 .categories-main-container {
     padding: 10px 10px;
-    margin: 20px 20px;
     background-color: #fff;
 }
 
@@ -150,4 +153,53 @@ h3 {
     background-image: url('../img/img_4.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.sub-img-container {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 350px;
+    margin-bottom: 5px;
+}
+
+.sub-img-1 {
+    background-image: url('../img/img_9.png');
+    background-size: cover;
+}
+
+.sub-img-2 {
+    background-image: url('../img/img_10.png');
+    background-size: cover;
+}
+
+.mb {
+    margin-bottom: 30px;
+}
+
+.center {
+    justify-content: center;
+}
+
+.top-footer {
+    background-color: #314055;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.top-footer a {
+    color: rgb(234, 234, 234);
+    font-weight: bold;
+}
+
+.main-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c2530;
+    height: 18vh;
+}
+
+.main-footer img {
+    height: 40%;
+    cursor: pointer;
 }
