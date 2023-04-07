@@ -1,6 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    color: rgb(237, 237, 237);
     background-color: #e5e5e5;
 }
 
@@ -15,7 +15,7 @@ body {
 
 .img-container img {
     height: 80%;
-    margin-left: 20px;
+    margin-left: 30px;
     cursor: pointer;
 }
 
@@ -28,6 +28,10 @@ body {
 
 .bh-links {
     margin-left: 20px;
+}
+
+.bh-links:first-child {
+    margin-left: 30px;
 }
 
 .bh-links a {
@@ -114,6 +118,8 @@ h3 {
     height: 350px;
     border-radius: 15px;
     cursor: pointer;
+    background-size: cover;
+    background-repeat: no-repeat;
     box-shadow: 0 4px 8px 0 #00000033, 0 3px 20px 0 #00000030;
 }
 
@@ -133,32 +139,24 @@ h3 {
 
 .cat-1 {
     background-image: url('../img/img_1.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .cat-2 {
     background-image: url('../img/img_2.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .cat-3 {
     background-image: url('../img/img_3.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .cat-4 {
     background-image: url('../img/img_4.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .sub-img-container {
     background-size: cover;
     background-repeat: no-repeat;
-    height: 350px;
+    height: 480px;
     margin-bottom: 5px;
 }
 
