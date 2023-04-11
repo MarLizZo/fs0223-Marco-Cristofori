@@ -162,6 +162,9 @@ function upperFirst(str) {
     }
     finalArr = newStr.join(' ');
     console.log(finalArr);
+
+    // newStr.map(x => x[0].toUpperCase());
+    // console.log(newStr);
 }
 
 
