@@ -157,11 +157,13 @@ console.log("================= END EX.7 =================");
 
 function upperFirst(str) {
     let newStr = str.split(' ');
+    let finalArr = [];
     for (let stringa of newStr) {
-        stringa[0] = stringa[0].toUpperCase();
+        let upLetter = stringa[0].toUpperCase();
+        stringa = upLetter + stringa.slice(1);
+        finalArr.push(stringa);
     }
-    finalArr = newStr.join(' ');
-    console.log(finalArr);
+    console.log(finalArr.join(' '));
 
     // newStr.map(x => x[0].toUpperCase());
     // console.log(newStr);

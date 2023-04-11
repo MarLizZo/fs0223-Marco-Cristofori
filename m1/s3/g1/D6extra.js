@@ -223,7 +223,7 @@ console.log("================= BEGIN EX.8 EXTRA =================");
 
 console.log(`La parola più lunga nell'array è ${longest(StrArr)}`);
 
-console.log("================= END EX.8 EXTRA =================");
+console.log("================= END EX.8 EXTRA ================="); 
 
 
 /* EXTRA 9
@@ -252,7 +252,19 @@ console.log("================= END EX.9 EXTRA =================");
  Scrivi una funzione che riceve una data come parametro, e calcola il numero di giorni passati da quella data.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+function checkDate(date) {
+    
+}
+
+let pastDate = new Date();
+pastDate.setMonth(pastDate.getMonth + 2);
+
+console.log("================= BEGIN EX.10 EXTRA =================");
+
+console.log(`I giorni passati dalla data specificata sono ${checkDate(pastDate)}`);
+
+console.log("================= END EX.10 EXTRA =================");
+
 
 /* EXTRA 11
  Scrivi una funzione chiamata "matrixGenerator" che riceve come paremetri due numeri interi, "x" e "y".
