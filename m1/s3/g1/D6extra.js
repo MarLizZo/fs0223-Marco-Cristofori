@@ -253,11 +253,18 @@ console.log("================= END EX.9 EXTRA =================");
 */
 
 function checkDate(date) {
-    
+    let days = 0;
+    let now = new Date();
+    if (now.getTime() > date.getTime()) {
+        days = (now.getTime() - date.getTime()) / 86400000;
+    } else {
+        days = (date.getTime() - now.getTime()) / 86400000;
+    }
+    return days;
 }
 
 let pastDate = new Date();
-pastDate.setMonth(pastDate.getMonth + 2);
+pastDate.setMonth(pastDate.getMonth() + 2);
 
 console.log("================= BEGIN EX.10 EXTRA =================");
 
@@ -274,4 +281,19 @@ console.log("================= END EX.10 EXTRA =================");
  "10","11","12"]
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+function matrixGenerator(x, y) {
+    let arr = [];
+    for (let i = 0; i < y; i++) {
+        for (let i2 = 0; i2 < x; i2++) {
+            arr.push(String(i) + String(i2));
+        }
+    }
+    return arr;
+}
+
+console.log("================= BEGIN EX.11 EXTRA =================");
+
+console.log("Matrix generator!");
+console.log(matrixGenerator(3, 9));
+
+console.log("================= END EX.11 EXTRA =================");
