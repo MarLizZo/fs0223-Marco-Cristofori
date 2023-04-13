@@ -232,7 +232,7 @@ myH2.addEventListener('click', changeColorWithRandom);
 */
 
 const deleteVowels = function () {
-    let vowels = ['a', 'e', 'i', 'o', 'u'];
+    let vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
     let myArr = document.querySelectorAll('h1, h2, h3, p, a, li');
 
     myArr.forEach(val => {
@@ -243,8 +243,11 @@ const deleteVowels = function () {
                     subsArr.splice(i, 1);
                 }
             }
-        })
-        //console.log(subsArr);
+        });
+        subsArr.join('');
+        val.textContent = subsArr.join('');
+        //console.log(subsArr.join(''));
+        
     })
 }
 
