@@ -202,14 +202,10 @@ addRow();
 
 let table = document.getElementById('tableArea');
 
-const hideAllImages = function () {
-    let imgs = table.querySelectorAll('tbody td:first-child');
+function hideAllImages() {
+    let imgs = table.querySelectorAll('tbody tr td:first-child');
     console.log(imgs);
-    imgs.forEach(val => val.style.textContent = "Test");
-
-    // for (let el of imgs) {
-    //     el.style.textContent = "";
-    // }
+    imgs.forEach(val => val.style.textContent = "Parkour!!");
 }
 
 table.addEventListener('click', hideAllImages);
@@ -223,10 +219,9 @@ function getRandomColor() {
     return Math.floor(Math.random() * 256);
 }
 
-let myH2 = document.querySelector('h2');
+let myH2 = document.querySelector('#changeMyColor');
 
 const changeColorWithRandom = function () {
-    myH2.id = "changeMyColor";
     myH2.style.color = `rgb(${getRandomColor()}, ${getRandomColor()}, ${getRandomColor()})`;
 }
 
@@ -237,6 +232,20 @@ myH2.addEventListener('click', changeColorWithRandom);
 */
 
 const deleteVowels = function () {
+    let vowels = ['a', 'e', 'i', 'o', 'u'];
+    let myArr = document.querySelectorAll('h1, h2, h3, p, a, li');
 
-
+    myArr.forEach(val => {
+        let subsArr = val.textContent.split("");
+        subsArr.forEach((char, i) => {
+            for (let x = 0; x < vowels.length; x++) {
+                if (char == vowels[x]) {
+                    subsArr.splice(i, 1);
+                }
+            }
+        })
+        //console.log(subsArr);
+    })
 }
+
+deleteVowels();
