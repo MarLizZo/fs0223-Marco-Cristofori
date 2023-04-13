@@ -6,8 +6,6 @@ const changeTitle = function () {
     document.querySelector('h1').textContent = "Javascript DOM Manipulation!";
 }
 
-changeTitle();
-
 
 
 /* ESERCIZIO 2
@@ -17,8 +15,6 @@ changeTitle();
 const addClassToTitle = function () {
     document.querySelector('h1').classList.add('myHeading');
 }
-
-addClassToTitle();
 
 
 
@@ -33,8 +29,6 @@ const changePcontent = function () {
     }
 }
 
-changePcontent();
-
 
 
 /* ESERCIZIO 4
@@ -47,8 +41,6 @@ const changeUrls = function () {
     a.href = "https://www.google.com";
     }
 }
-
-changeUrls();
 
 
 
@@ -63,8 +55,6 @@ const addToTheSecond = function () {
     uArr[1].append(newL);
 }
 
-addToTheSecond();
-
 
 
 /* ESERCIZIO 6
@@ -78,8 +68,6 @@ const addParagraph = function () {
     fDiv.append(newP);
 }
 
-addParagraph();
-
 
 
 /* ESERCIZIO 7
@@ -89,8 +77,6 @@ addParagraph();
 const hideFirstUl = function () {
     document.querySelector('ul').style.display = 'none';
 }
-
-hideFirstUl();
 
 
 
@@ -102,8 +88,6 @@ const paintItGreen = function () {
     let uArr = document.querySelectorAll('ul');
     uArr.forEach((v) => v.style.backgroundColor = "green");
 }
-
-paintItGreen();
 
 
 
@@ -194,8 +178,6 @@ const generateTable = function () {
     tDiv.append(table);
 }
 
-generateTable();
-
 
 
 /* ESERCIZIO 12
@@ -214,8 +196,6 @@ const addRow = function () {
     }
 }
 
-addRow();
-
 
 
 /* ESERCIZIO 14
@@ -227,7 +207,17 @@ let table = document.getElementById('tableArea');
 function hideAllImages() {
     let imgs = table.querySelectorAll('tbody tr td:first-child');
     console.log(imgs);
+
+    //not working
     imgs.forEach(val => val.style.textContent = "Parkour!!");
+
+    //new test
+    imgs.forEach(val => {
+        let newEl = document.createElement('td');
+        //newEl.textContent = "New text.. Parkour!!"
+        //newEl.style.borderBottom = "1px solid #FF00D6";
+        val.replaceWith(newEl);
+    })
 }
 
 table.addEventListener('click', hideAllImages);
@@ -276,4 +266,24 @@ const deleteVowels = function () {
     })
 }
 
-deleteVowels();
+let tricksDone = false;
+let btn = document.getElementById('myBtn');
+btn.addEventListener('click', doJSTricks);
+
+function doJSTricks() {
+    if (!tricksDone) {
+        deleteVowels();
+        generateTable();
+        paintItGreen();
+        hideFirstUl();
+        addParagraph();
+        addToTheSecond();
+        changeUrls();
+        changePcontent();
+        changeTitle();
+        addClassToTitle();
+        addRow();
+        tricksDone = true;
+        btn.textContent = "Magic happened!";
+    }
+}

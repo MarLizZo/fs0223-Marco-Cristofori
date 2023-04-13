@@ -22,3 +22,11 @@ footer {
 .myHeading {
     color: #FF00D6;
 }
+
+#myBtn {
+    border: 2px solid #FF00D6;
+    background-color: #333;
+    color: #dedede;
+    padding: 10px 20px;
+    cursor: pointer;
+}
