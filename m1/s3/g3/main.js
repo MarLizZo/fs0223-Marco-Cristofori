@@ -207,17 +207,7 @@ let table = document.getElementById('tableArea');
 function hideAllImages() {
     let imgs = table.querySelectorAll('tbody tr td:first-child');
     console.log(imgs);
-
-    //not working
-    imgs.forEach(val => val.style.textContent = "Parkour!!");
-
-    //new test
-    imgs.forEach(val => {
-        let newEl = document.createElement('td');
-        //newEl.textContent = "New text.. Parkour!!"
-        //newEl.style.borderBottom = "1px solid #FF00D6";
-        val.replaceWith(newEl);
-    })
+    imgs.forEach(val => val.textContent = "Parkour!!");
 }
 
 table.addEventListener('click', hideAllImages);
@@ -248,7 +238,7 @@ myH2.addEventListener('click', changeColorWithRandom);
 
 const deleteVowels = function () {
     let vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
-    let myArr = document.querySelectorAll('h1, h2, h3, p, a, li');
+    let myArr = document.querySelectorAll('h1, h2, h3, p, a, li, td');
 
     myArr.forEach(val => {
         let subsArr = val.textContent.split("");
@@ -272,7 +262,6 @@ btn.addEventListener('click', doJSTricks);
 
 function doJSTricks() {
     if (!tricksDone) {
-        deleteVowels();
         generateTable();
         paintItGreen();
         hideFirstUl();
@@ -283,6 +272,7 @@ function doJSTricks() {
         changeTitle();
         addClassToTitle();
         addRow();
+        deleteVowels();
         tricksDone = true;
         btn.textContent = "Magic happened!";
     }
