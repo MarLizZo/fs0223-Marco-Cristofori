@@ -1,4 +1,3 @@
-
 /* ESERCIZIO 1
     Scrivi una funzione per cambiare il titolo della pagina in qualcos'altro
 */
@@ -9,6 +8,8 @@ const changeTitle = function () {
 
 changeTitle();
 
+
+
 /* ESERCIZIO 2
     Scrivi una funzione per aggiungere al titolo della pagina una classe "myHeading"
 */
@@ -18,6 +19,8 @@ const addClassToTitle = function () {
 }
 
 addClassToTitle();
+
+
 
 /* ESERCIZIO 3
     Scrivi una funzione per che cambi il testo dei p figli di un div
@@ -32,6 +35,8 @@ const changePcontent = function () {
 
 changePcontent();
 
+
+
 /* ESERCIZIO 4
     Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
     */
@@ -44,6 +49,8 @@ const changeUrls = function () {
 }
 
 changeUrls();
+
+
 
 /* ESERCIZIO 5
     Scrivi una funzione che aggiunga un nuovo elemento lista alla seconda lista non ordinata
@@ -58,6 +65,8 @@ const addToTheSecond = function () {
 
 addToTheSecond();
 
+
+
 /* ESERCIZIO 6
     Scrivi una funzione che aggiunga un secondo paragrafo al primo div
 */
@@ -71,6 +80,8 @@ const addParagraph = function () {
 
 addParagraph();
 
+
+
 /* ESERCIZIO 7
     Scrivi una funzione che faccia scomparire la prima lista non ordinata
 */
@@ -80,6 +91,8 @@ const hideFirstUl = function () {
 }
 
 hideFirstUl();
+
+
 
 /* ESERCIZIO 8 
     Scrivi una funzione che renda verde il background di ogni lista non ordinata
@@ -91,6 +104,8 @@ const paintItGreen = function () {
 }
 
 paintItGreen();
+
+
 
 /* ESERCIZIO 9
     Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
@@ -105,6 +120,7 @@ const makeItClickable = function () {
 myH1.addEventListener('click', makeItClickable);
 
 
+
 /* ESERCIZIO 10
     Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
 */
@@ -117,6 +133,8 @@ const revealFooterLink = function () {
 }
 
 myFooter.addEventListener('click', revealFooterLink);
+
+
 
 /* ESERCIZIO 11
     Crea una funzione che crei una tabella nell'elemento con id "tableArea". 
@@ -178,6 +196,8 @@ const generateTable = function () {
 
 generateTable();
 
+
+
 /* ESERCIZIO 12
     Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
 */
@@ -196,6 +216,8 @@ const addRow = function () {
 
 addRow();
 
+
+
 /* ESERCIZIO 14
     Crea una funzione che nasconda le immagini della tabella quando eseguita
 */
@@ -209,6 +231,7 @@ function hideAllImages() {
 }
 
 table.addEventListener('click', hideAllImages);
+
 
 
 /* EXTRA ESERCIZIO 15
@@ -226,6 +249,8 @@ const changeColorWithRandom = function () {
 }
 
 myH2.addEventListener('click', changeColorWithRandom);
+
+
 
 /* EXTRA ESERCIZIO 16
     Crea una funzione che elimini le vocali da ogni elemento testuale della pagina (puoi aiutarti con i nuovi metodi degli array di ES6)
