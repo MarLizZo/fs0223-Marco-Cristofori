@@ -107,7 +107,7 @@ console.log("======================== ========================");
 */
 
 function dice() {
-  return Math.floor(Math.random() * 7);
+  return Math.floor(Math.random() * 7); //return necessario per dopo
 }
 
 console.log(dice());
@@ -119,7 +119,10 @@ console.log("======================== ========================");
 */
 
 function whoIsBigger(x, y) {
-  return x > y ? x : y;
+  if (x == y) {
+    return "Numeri identici!"
+  }
+  return x > y ? x : y; //se uguali, torna comunque y
 }
 
 console.log(whoIsBigger(931, 498));
@@ -505,7 +508,7 @@ console.log("======================== ========================");
 
 function removeIndex(n) {
   return movies.filter((x, i) => i != n);
-  //otherwise splice(n, 1)
+  //otherwise splice(n, 1) to delete the item completely
 }
 
 console.log(removeIndex(4));
@@ -545,8 +548,8 @@ function printTdTextAll() {
 */
 
 function setBgAllA() {
-  let tdArr = document.querySelectorAll('a');
-  tdArr.forEach(x => x.style.backgroundColor = 'red');
+  let aArr = document.querySelectorAll('a');
+  aArr.forEach(x => x.style.backgroundColor = 'red');
 }
 
 /* ESERCIZIO 24
@@ -646,13 +649,13 @@ console.log("======================== ========================");
 */
 
 function isItPrime(n) {
-  if (n <= 1) { return false } //0 or 1 as parameter
-  if (n % 2 == 0) {return false } //parameter dividible by two / even number
+  if (n <= 1) { return false } 
+  if (n % 2 == 0) {return false } 
   let sqr = Math.sqrt(n); 
   for (let i = 3; i <= sqr; i+=2) {
-    if (n % i == 0) { return false } //square root doing the trick by returning false if parameter not prime
+    if (n % i == 0) { return false } 
   }
-  return true; //return true only if previous return statements not being executed
+  return true;
 }
 
 console.log(isItPrime(85))
