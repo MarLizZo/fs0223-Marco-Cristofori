@@ -14,7 +14,9 @@ REGOLE
 */
 
 let sum = 10 + 20;
+
 console.log(sum);
+console.log("======================== ========================");
 
 
 /* ESERCIZIO B
@@ -22,7 +24,9 @@ console.log(sum);
 */
 
 let random = Math.floor(Math.random() * 21);
+
 console.log(random);
+console.log("======================== ========================");
 
 
 /* ESERCIZIO C
@@ -36,6 +40,7 @@ let me = {
 }
 
 console.log(me);
+console.log("======================== ========================");
 
 
 /* ESERCIZIO D
@@ -48,6 +53,7 @@ function removeAge() {
 
 removeAge();
 console.log(me);
+console.log("======================== ========================");
 
 
 /* ESERCIZIO E
@@ -65,6 +71,7 @@ function addSkillProperty() {
 
 addSkillProperty();
 console.log(me);
+console.log("======================== ========================");
 
 
 /* ESERCIZIO F
@@ -77,6 +84,7 @@ function addNewSkill() {
 
 addNewSkill();
 console.log(me);
+console.log("======================== ========================");
 
 
 /* ESERCIZIO G
@@ -89,6 +97,7 @@ function removeLastSkill() {
 
 removeLastSkill();
 console.log(me);
+console.log("======================== ========================");
 
 
 // Funzioni
@@ -102,6 +111,7 @@ function dice() {
 }
 
 console.log(dice());
+console.log("======================== ========================");
 
 
 /* ESERCIZIO 2
@@ -113,6 +123,7 @@ function whoIsBigger(x, y) {
 }
 
 console.log(whoIsBigger(931, 498));
+console.log("======================== ========================");
 
 
 /* ESERCIZIO 3
@@ -126,6 +137,7 @@ function splitMe(str) {
 }
 
 console.log(splitMe("Javascript is so good!"));
+console.log("======================== ========================");
 
 
 /* ESERCIZIO 4
@@ -138,6 +150,7 @@ function deleteOne(str, flag) {
 }
 
 console.log(deleteOne("Full Stack Developer", false));
+console.log("======================== ========================");
 
 
 /* ESERCIZIO 5
@@ -151,6 +164,7 @@ function onlyLetters(str) {
 }
 
 console.log(onlyLetters("6 M0n7hs t0 b3c0m3 Full S74ck D3v3l0p3r"));
+console.log("======================== ========================");
 
 
 /* ESERCIZIO 6
@@ -163,6 +177,7 @@ function isThisAnEmail(str) {
 }
 
 console.log(isThisAnEmail("unamail@tre.org"));
+console.log("======================== ========================");
 
 
 /* ESERCIZIO 7
@@ -177,6 +192,7 @@ function whatDayIsIt() {
 }
 
 console.log(`Oggi è > ${whatDayIsIt()} <`);
+console.log("======================== ========================");
 
 
 /* ESERCIZIO 8
@@ -206,6 +222,7 @@ function rollTheDices(n) {
 }
 
 console.log(rollTheDices(9));
+console.log("======================== ========================");
 
 
 /* ESERCIZIO 9
@@ -223,7 +240,9 @@ function howManyDays(date) {
 
 const date = new Date();
 date.setMonth(date.getMonth() + 4);
+
 console.log(howManyDays(date));
+console.log("======================== ========================");
 
 
 /* ESERCIZIO 10
@@ -236,6 +255,7 @@ function isTodayMyBirthday(day, month) {
 }
 
 console.log(isTodayMyBirthday(6, 4));
+console.log("======================== ========================");
 
 
 // Arrays & Oggetti
@@ -376,7 +396,9 @@ let myOb = {
 }
 
 deleteProp(myOb, 'name');
+
 console.log(myOb);
+console.log("======================== ========================");
 
 
 /* ESERCIZIO 12
@@ -388,6 +410,7 @@ function newestMovie() {
 }
 
 console.log(newestMovie());
+console.log("======================== ========================");
 
 
 /* ESERCIZIO 13
@@ -399,6 +422,7 @@ function countMovies() {
 }
 
 console.log(countMovies());
+console.log("======================== ========================");
 
 
 /* ESERCIZIO 14
@@ -410,6 +434,7 @@ function onlyTheYears() {
 }
 
 console.log(onlyTheYears());
+console.log("======================== ========================");
 
 
 /* ESERCIZIO 15
@@ -421,6 +446,7 @@ function onlyInLastMillennium() {
 }
 
 console.log(onlyInLastMillennium());
+console.log("======================== ========================");
 
 
 /* ESERCIZIO 16
@@ -434,6 +460,7 @@ function sumAllTheYears() {
 }
 
 console.log(sumAllTheYears());
+console.log("======================== ========================");
 
 
 /* ESERCIZIO 17
@@ -449,6 +476,7 @@ function searchByTitle(str) {
 }
 
 console.log(searchByTitle('avengers'));
+console.log("======================== ========================");
 
 
 /* ESERCIZIO 18
@@ -468,6 +496,7 @@ function searchAndDivide(str) {
 }
 
 console.log(searchAndDivide('Rings'));
+console.log("======================== ========================");
 
 
 /* ESERCIZIO 19
@@ -480,6 +509,7 @@ function removeIndex(n) {
 }
 
 console.log(removeIndex(4));
+console.log("======================== ========================");
 
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
@@ -572,8 +602,8 @@ function halfTree(n) {
 }
 
 halfTree(5);
+console.log("======================== ========================");
 
-console.log("===================================");
 
 
 /* ESERCIZIO 28
@@ -601,7 +631,7 @@ function tree(n) {
     for (let z = 0; z <= i; z++) {
       supportStr += '* ';
     }
-    
+
     myArr.push(supportStr);
     console.log(myArr[i]);
     supportStr = "";
@@ -609,6 +639,7 @@ function tree(n) {
 }
 
 tree(6);
+console.log("======================== ========================");
 
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
@@ -625,3 +656,4 @@ function isItPrime(n) {
 }
 
 console.log(isItPrime(85))
+console.log("======================== ========================");
