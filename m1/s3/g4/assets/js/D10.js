@@ -150,7 +150,7 @@ function onlyLetters(str) {
   return str.replace(/[0-9]/g, "");
 }
 
-console.log(onlyLetters("6 M0n7hs t0 b3c0m3 4 Full S74ck D3v3lop3r"));
+console.log(onlyLetters("6 M0n7hs t0 b3c0m3 Full S74ck D3v3l0p3r"));
 
 
 /* ESERCIZIO 6
@@ -571,7 +571,9 @@ function halfTree(n) {
   }
 }
 
-halfTree(4);
+halfTree(5);
+
+console.log("===================================");
 
 
 /* ESERCIZIO 28
@@ -587,8 +589,26 @@ halfTree(4);
 */
 
 function tree(n) {
-  
+  let myArr = [];
+  let supportStr = "";
+
+  for (let i = 0; i < n; i++) {
+
+    for (let x = 0; x < n - i; x++) {
+      supportStr += ' ';
+    }
+
+    for (let z = 0; z <= i; z++) {
+      supportStr += '* ';
+    }
+    
+    myArr.push(supportStr);
+    console.log(myArr[i]);
+    supportStr = "";
+  }
 }
+
+tree(6);
 
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
