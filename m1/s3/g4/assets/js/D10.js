@@ -563,6 +563,17 @@ function addTestClasstoTr() {
 
 */
 
+function halfTree(n) {
+  let myArr = [];
+  for (let i = 0; i < n; i++) {
+    myArr.push('*');
+    console.log(myArr.join(''));
+  }
+}
+
+halfTree(4);
+
+
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
 
@@ -575,7 +586,22 @@ function addTestClasstoTr() {
 
 */
 
+function tree(n) {
+  
+}
+
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
 
+function isItPrime(n) {
+  if (n <= 1) { return false } //0 or 1 as parameter
+  if (n % 2 == 0) {return false } //parameter dividible by two / even number
+  let sqr = Math.sqrt(n); 
+  for (let i = 3; i <= sqr; i+=2) {
+    if (n % i == 0) { return false } //square root doing the trick by returning false if parameter not prime
+  }
+  return true; //return true only if previous return statements not being executed
+}
+
+console.log(isItPrime(85))
