@@ -15,7 +15,7 @@ REGOLE
 
 let sum = 10 + 20;
 
-console.log(sum);
+console.log(`La variabile contenete la somma tra 10 e 20: ${sum}`);
 console.log("======================== ========================");
 
 
@@ -25,7 +25,7 @@ console.log("======================== ========================");
 
 let random = Math.floor(Math.random() * 21);
 
-console.log(random);
+console.log(`Numero random tra 0 e 20: ${random}`);
 console.log("======================== ========================");
 
 
@@ -39,6 +39,7 @@ let me = {
   age : 28
 }
 
+console.log(`Nuovo oggetto appena creato:`);
 console.log(me);
 console.log("======================== ========================");
 
@@ -52,6 +53,7 @@ function removeAge() {
 }
 
 removeAge();
+console.log(`Rimozione di una proprietà dall'oggetto:`);
 console.log(me);
 console.log("======================== ========================");
 
@@ -70,6 +72,7 @@ function addSkillProperty() {
 }
 
 addSkillProperty();
+console.log(`Aggiunta di un Array all'oggetto:`);
 console.log(me);
 console.log("======================== ========================");
 
@@ -83,6 +86,7 @@ function addNewSkill() {
 }
 
 addNewSkill();
+console.log(`Aggiunta di un elemento all'Array contenuto nell'oggetto:`);
 console.log(me);
 console.log("======================== ========================");
 
@@ -96,6 +100,7 @@ function removeLastSkill() {
 }
 
 removeLastSkill();
+console.log(`Rimozione dell'ultimo elemento dell'Array contenuto nell'oggetto:`);
 console.log(me);
 console.log("======================== ========================");
 
@@ -107,9 +112,10 @@ console.log("======================== ========================");
 */
 
 function dice() {
-  return Math.floor(Math.random() * 7); //return necessario per dopo
+  return Math.ceil(Math.random() * 6); //return necessario per dopo
 }
 
+console.log(`Numero random da 1 a 6:`);
 console.log(dice());
 console.log("======================== ========================");
 
@@ -125,7 +131,7 @@ function whoIsBigger(x, y) {
   return x > y ? x : y; //se uguali, torna comunque y
 }
 
-console.log(whoIsBigger(931, 498));
+console.log(`Il numero maggiore è: ${whoIsBigger(931, 498)}`);
 console.log("======================== ========================");
 
 
@@ -139,6 +145,7 @@ function splitMe(str) {
   return str.split(" ");
 }
 
+console.log(`La stringa splittata in un Array:`);
 console.log(splitMe("Javascript is so good!"));
 console.log("======================== ========================");
 
@@ -152,7 +159,7 @@ function deleteOne(str, flag) {
   return flag ? str.substring(1, str.length) : str.substring(0, str.length - 1);
 }
 
-console.log(deleteOne("Full Stack Developer", false));
+console.log(`La stringa tagliata è: ${deleteOne("Full Stack Developer", false)}`);
 console.log("======================== ========================");
 
 
@@ -166,7 +173,7 @@ function onlyLetters(str) {
   return str.replace(/[0-9]/g, "");
 }
 
-console.log(onlyLetters("6 M0n7hs t0 b3c0m3 Full S74ck D3v3l0p3r"));
+console.log(`I hate numbers: ${onlyLetters("6 M0n7hs t0 b3c0m3 Full S74ck D3v3l0p3r")}`);
 console.log("======================== ========================");
 
 
@@ -179,7 +186,7 @@ function isThisAnEmail(str) {
   return reg.test(str);
 }
 
-console.log(isThisAnEmail("unamail@tre.org"));
+console.log(`Is it an e-mail? ${isThisAnEmail("unamail@tre.org")}`);
 console.log("======================== ========================");
 
 
@@ -244,7 +251,7 @@ function howManyDays(date) {
 const date = new Date();
 date.setMonth(date.getMonth() + 4);
 
-console.log(howManyDays(date));
+console.log(`Giorni trascorsi: ${howManyDays(date)}`);
 console.log("======================== ========================");
 
 
@@ -257,7 +264,7 @@ function isTodayMyBirthday(day, month) {
   return now.getDate() == day && now.getMonth() + 1 == month ? true : false;
 }
 
-console.log(isTodayMyBirthday(6, 4));
+console.log(`Is today myBirthday? ${isTodayMyBirthday(6, 4)}`);
 console.log("======================== ========================");
 
 
@@ -390,7 +397,8 @@ const movies = [
 */
 
 function deleteProp(obj, str) {
-  return delete obj[str];
+  delete obj[str];
+  return obj;
 }
 
 let myOb = {
@@ -398,9 +406,10 @@ let myOb = {
   surname : "LizZo"
 }
 
-deleteProp(myOb, 'name');
-
 console.log(myOb);
+console.log('Oggetto dopo eliminazione di una proprietà:');
+console.log(deleteProp(myOb, 'name'));
+
 console.log("======================== ========================");
 
 
@@ -412,6 +421,7 @@ function newestMovie() {
   return movies.reduce((p, c) => p.Year > c.Year ? p : c);
 }
 
+console.log("Il film più recente dell'array:");
 console.log(newestMovie());
 console.log("======================== ========================");
 
@@ -424,7 +434,7 @@ function countMovies() {
   return movies.length;
 }
 
-console.log(countMovies());
+console.log(`La quantità di Film nell'array: ${countMovies()}`);
 console.log("======================== ========================");
 
 
@@ -436,6 +446,7 @@ function onlyTheYears() {
   return movies.map(x => x.Year);
 }
 
+console.log("Un'array contenete solo le date di uscite dei Film:");
 console.log(onlyTheYears());
 console.log("======================== ========================");
 
@@ -448,6 +459,7 @@ function onlyInLastMillennium() {
   return movies.filter(x => x.Year >= 2000);
 }
 
+console.log("Un'array contenete solo i Film usciti dal 2000 in poi:");
 console.log(onlyInLastMillennium());
 console.log("======================== ========================");
 
@@ -462,7 +474,7 @@ function sumAllTheYears() {
   return yCount;
 }
 
-console.log(sumAllTheYears());
+console.log(`La somma degli anni di uscita di tutti i Film è: ${sumAllTheYears()}`);
 console.log("======================== ========================");
 
 
@@ -478,6 +490,7 @@ function searchByTitle(str) {
   return movies.filter(x => x.Title.toLowerCase().includes(str.toLowerCase()));
 }
 
+console.log("Un'array contenete solo i Film che contengono la parola avengers:");
 console.log(searchByTitle('avengers'));
 console.log("======================== ========================");
 
@@ -498,6 +511,7 @@ function searchAndDivide(str) {
   return outObj;
 }
 
+console.log("Due Array per distinguere i Film che contengono o meno la parola Rings:");
 console.log(searchAndDivide('Rings'));
 console.log("======================== ========================");
 
@@ -511,6 +525,7 @@ function removeIndex(n) {
   //otherwise splice(n, 1) to delete the item completely
 }
 
+console.log("Un'array contenete tutti i Film tranne quello indicato:");
 console.log(removeIndex(4));
 console.log("======================== ========================");
 
@@ -568,8 +583,9 @@ function addLitoUl() {
 
 function emptyUl() {
   let myUl = document.getElementById('myList');
+  console.log(myUl);
   while (myUl.hasChildNodes) {
-    myUl.removeChild(myUl.lastElementChild);
+    myUl.remove(myUl.lastElementChild);
   }
 }
 
@@ -658,5 +674,5 @@ function isItPrime(n) {
   return true;
 }
 
-console.log(isItPrime(85))
+console.log(`Il numero indicato è un numero primo? ${isItPrime(85)}`)
 console.log("======================== ========================");
