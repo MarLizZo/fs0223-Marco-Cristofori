@@ -94,9 +94,26 @@ main {
     padding: 10px 20px;
     display: flex;
     flex-direction: column;
+    border-radius: 20px;
 }
 
 .news img {
     width: 500px;
     margin: 10px auto;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width:1280px) {
+    .news {
+        flex-direction: row;
+    }
+
+    .news .article {
+        order: 2;
+        margin-left: 20px;
+    }
 }
