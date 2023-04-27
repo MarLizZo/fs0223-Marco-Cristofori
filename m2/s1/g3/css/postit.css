@@ -4,7 +4,7 @@ html, body {
 
 body {
     background-color: rgb(108, 108, 108);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Indie Flower';
 }
 
 .container {
@@ -29,9 +29,13 @@ body {
 
 h4 {
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.8em;
     margin-bottom: 12px;
     letter-spacing: 1px;
+}
+
+p {
+    font-size: 1.2em;
 }
 
 .yellow {
