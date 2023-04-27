@@ -17,7 +17,7 @@ body {
 
 .box {
     width: 20%;
-    height: 200px;
+    height: 170px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,17 +25,6 @@ body {
     font-style: italic;
     box-shadow: 2px 5px 9px 0px rgba(0,0,0,0.43), inset 0px -33px 31px -13px rgba(0,0,0,0.45);
     margin: 5px 20px;
-}
-
-h4 {
-    font-weight: bold;
-    font-size: 1.8em;
-    margin-bottom: 12px;
-    letter-spacing: 1px;
-}
-
-p {
-    font-size: 1.2em;
 }
 
 .yellow {
@@ -54,6 +43,63 @@ p {
     background-color: rgb(197, 158, 255);
     transform: rotate(-7deg);
     transition: all 0.4s linear;
+}
+
+#b-1 {
+    animation: animMe 2s ease-in-out 0s backwards;
+}
+
+#b-2 {
+    animation: animMe 2s ease-in-out 2s backwards;
+}
+
+#b-3 {
+    animation: animMe 2s ease-in-out 4s backwards;
+}
+
+#b-4 {
+    animation: animMe 2s ease-in-out 6s backwards;
+}
+
+#b-5 {
+    animation: animMe 2s ease-in-out 8s backwards;
+}
+
+#b-6 {
+    animation: animMe 2s ease-in-out 10s backwards;
+}
+
+#b-7 {
+    animation: animMe 2s ease-in-out 12s backwards;
+}
+
+#b-8 {
+    animation: animMe 2s ease-in-out 14s backwards;
+}
+
+@keyframes animMe {
+    0% {
+        transform: scale(200%);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+h4 {
+    font-weight: bold;
+    font-size: 1.8em;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 1.2em;
 }
 
 .yellow:hover {
