@@ -1,0 +1,71 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: rgb(108, 108, 108);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.box {
+    width: 20%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    box-shadow: 2px 5px 9px 0px rgba(0,0,0,0.43), inset 0px -33px 31px -13px rgba(0,0,0,0.45);
+    margin: 5px 20px;
+}
+
+h4 {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.yellow {
+    background-color: rgb(250, 250, 193);
+    transform: rotate(-4deg);
+    transition: all 0.4s linear;
+}
+
+.green {
+    background-color: rgb(171, 233, 166);
+    transform: rotate(6deg);
+    transition: all 0.4s linear;
+}
+
+.violet {
+    background-color: rgb(197, 158, 255);
+    transform: rotate(-7deg);
+    transition: all 0.4s linear;
+}
+
+.yellow:hover {
+    transform: rotate(0deg) scale(1.3);
+    box-shadow: 5px 5px 9px 0px rgba(0,0,0,0.83), inset 0px -33px 31px -13px rgba(0,0,0,0.45);
+    z-index: 1;
+}
+
+.green:hover {
+    transform: rotate(0deg) scale(1.3);
+    box-shadow: 5px 5px 9px 0px rgba(0,0,0,0.83), inset 0px -33px 31px -13px rgba(0,0,0,0.45);
+    z-index: 1;
+}
+
+.violet:hover {
+    transform: rotate(0deg) scale(1.3);
+    box-shadow: 5px 5px 9px 0px rgba(0,0,0,0.83), inset 0px -33px 31px -13px rgba(0,0,0,0.45);
+    z-index: 1;
+}
