@@ -28,7 +28,6 @@ body {
 
 .parole {
     color: rgb(130, 175, 175);
-    overflow: hidden;
 }
 
 .parole i:first-child {
@@ -57,13 +56,8 @@ body {
         transform: translateY(0px);
         opacity: 1;
     }
-    60% {
+    60%, 100% {
         transform: translateY(15px);
         opacity: 0;
-    }
-    100% {
-        transform: translateY(15px);
-        opacity: 0;
-        /* animation-delay: 12s; not-working */
     }
 }
