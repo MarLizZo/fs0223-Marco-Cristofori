@@ -18,12 +18,8 @@ body {
 }
 
 .pad-indent {
-    padding-left: 120px;
-    padding-right: 120px;
-}
-
-header {
-    
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 nav {
@@ -72,7 +68,7 @@ h1 {
 
 .heading-container {
     display: flex;
-    padding-left: 120px;
+    padding-left: 100px;
     align-items: center;
     justify-content: space-between;
     background-color: var(--primary);
@@ -95,4 +91,73 @@ h1 {
     border: none;
     border-radius: 25px;
     color: white;
+}
+
+.trending-section {
+    padding-top: 40px;
+    border-bottom: 1px solid black;
+}
+
+.trend-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+.trend-title object {
+    width: 20px;
+    margin-right: 5px;
+}
+
+.trend-news {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 0.6em;
+    font-weight: bold;
+}
+
+.trend-article-container {
+    display: flex;
+    width: 30%;
+    margin-bottom: 35px;
+}
+
+.trend-article-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.trend-article-container h3 {
+    font-size: 1.6em;
+    color: lightgrey;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.trend-article-content img {
+    width: 25px;
+    border-radius: 100%;
+    margin-right: 6px;
+}
+
+.article-writer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.article-writer span {
+    font-weight: normal;
+}
+
+.article-title {
+    margin-bottom: 12px;
+}
+
+.article-date {
+    font-weight: normal;
 }
