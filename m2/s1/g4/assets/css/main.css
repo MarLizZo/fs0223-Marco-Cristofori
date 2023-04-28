@@ -72,10 +72,11 @@ h1 {
 
 .heading-container {
     display: flex;
+    padding-left: 120px;
     align-items: center;
+    justify-content: space-between;
     background-color: var(--primary);
     border-bottom: 1px solid black;
-    padding-left: 120px;
 }
 
 .heading {
@@ -94,9 +95,4 @@ h1 {
     border: none;
     border-radius: 25px;
     color: white;
-}
-
-.svg-container {
-    position: relative;
-    right: -60px;
 }
