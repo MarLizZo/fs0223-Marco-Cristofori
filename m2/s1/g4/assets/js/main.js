@@ -1,6 +1,6 @@
 let scrolledDown = false;
 let scrolledUp = false;
-let userScreen = window.screen.width;
+let userScreen = window.screen.width; // determine the screen size
 
 function setScroll(flag) {
     let btn = document.getElementById("myBtn");
@@ -33,8 +33,7 @@ document.addEventListener("scroll", (e) => {
                 setScroll(false);
             }
         }
-    }
-    else if (userScreen < 904) {
+    } else if (userScreen < 904) {
         if (window.scrollY > 180) {
             if (!scrolledUp) {
                 setScroll(true);
@@ -45,12 +44,13 @@ document.addEventListener("scroll", (e) => {
             }
         }
     }
-})
+});
 
 let paths = document.querySelectorAll("g[opacity='1'] path");
 
 setInterval(() => {
     let randInt = Math.floor(Math.random() * (paths.length - 1));
-    let randBool = Math.floor(Math.random() * 2);
-    paths[randInt].parentElement.style.opacity = randBool;
-}, 200)
+    paths[randInt].parentElement.style.opacity == 0
+        ? (paths[randInt].parentElement.style.opacity = 1)
+        : (paths[randInt].parentElement.style.opacity = 0);
+}, 200);
