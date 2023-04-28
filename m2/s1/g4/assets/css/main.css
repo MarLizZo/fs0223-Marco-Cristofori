@@ -340,6 +340,7 @@ h1 {
 
 .img-container {
     width: 30%;
+    text-align: center;
 }
 
 .img-container img {
