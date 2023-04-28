@@ -28,3 +28,15 @@ document.addEventListener("scroll", (e) => {
         }
     }
 })
+
+let paths = document.querySelectorAll("g[opacity='1'] path");
+
+setInterval(() => {
+    let randInt = Math.floor(Math.random() * (paths.length - 1));
+    let randBool = Math.floor(Math.random() * 2);
+    if (randBool) {
+        paths[randInt].parentElement.style.opacity = 1;
+    } else {
+        paths[randInt].parentElement.style.opacity = 0;
+    }
+}, 200)
