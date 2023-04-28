@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@400;700&display=swap');
+
+:root {
+    --primary: #ffc017;
+    --myBlack: #191919;
+    --myGreen: #1a8917;
+}
+
+html, body {
+    height: 100%;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.pad-indent {
+    padding-left: 120px;
+    padding-right: 120px;
+}
+
+header {
+    
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary);
+    font-size: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+nav object {
+    width: 65%;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+ul li {
+    margin: 0 8px;
+    cursor: pointer;
+}
+
+ul li button {
+    border: none;
+    color: white;
+    background-color: var(--myBlack);
+    border-radius: 20px;
+    padding: 5px 8px;
+}
+
+main {
+    
+}
+
+h1 {
+    font-size: 3.5em;
+    font-weight: bold;
+    font-family: 'Spectral', sans-serif;
+}
+
+.heading-container {
+    display: flex;
+    align-items: center;
+    background-color: var(--primary);
+    border-bottom: 1px solid black;
+    padding-left: 120px;
+}
+
+.heading {
+    padding: 30px 0;
+    flex-grow: 1;
+}
+
+.heading p {
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.heading button {
+    padding: 7px 30px;
+    background-color: var(--myBlack);
+    border: none;
+    border-radius: 25px;
+    color: white;
+}
+
+.svg-container {
+    position: relative;
+    right: -60px;
+}
