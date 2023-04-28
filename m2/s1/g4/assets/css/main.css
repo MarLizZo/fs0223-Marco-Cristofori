@@ -25,12 +25,16 @@ body {
 nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: var(--primary);
     font-size: 12px;
     padding-top: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid black;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
 }
 
 nav object {
@@ -54,6 +58,7 @@ ul li button {
     background-color: var(--myBlack);
     border-radius: 20px;
     padding: 5px 8px;
+    cursor: pointer;
 }
 
 h1 {
@@ -63,6 +68,7 @@ h1 {
 }
 
 .heading-container {
+    margin-top: 46px;
     display: flex;
     padding-left: 100px;
     align-items: center;
