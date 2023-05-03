@@ -36,16 +36,16 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Saldi</a>
+                        <a class="nav-link" href="#saldi">Saldi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Welcome Summer</a>
+                        <a class="nav-link" href="#summer">Welcome Summer</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Last minute</a>
+                        <a class="nav-link" href="#last-minute">Last minute</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Recensioni</a>
+                        <a class="nav-link" href="#recensioni">Recensioni</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -75,18 +75,19 @@
         </div>
     </div>
 
-    <div class="container mt-4">
-        <div class="row">
+    <div class="container mt-4" id="saldi">
+        <div class="row align-items-center">
             <div class="col-6">
                 <h6>Saldi</h6>
             </div>
             <div class="col-6 d-flex justify-content-end">
-                <p class="text-info">Nascondi sezione</p>
+                <button type="button" data-bs-toggle="collapse"
+                data-bs-target="#saldiCollapse" aria-controls="saldiCollapse" class="btn btn-sm text-info">Collassa/Apri sezione</button>
             </div>
         </div>
     </div>
 
-    <div class="container mt-1 mb-3">
+    <div class="container mt-1 mb-3 collapse" id="saldiCollapse">
         <div class="row">
             <div class="mb-2 col-6 col-md-4 col-lg-3">
                 <div class="card border border-info border-2">
@@ -139,18 +140,19 @@
         </div>
     </div>
 
-    <div class="container mt-4">
-        <div class="row">
+    <div class="container mt-4" id="summer">
+        <div class="row align-items-center">
             <div class="col-6">
                 <h6>Welcome summer</h6>
             </div>
             <div class="col-6 d-flex justify-content-end">
-                <p class="text-info">Nascondi sezione</p>
+                <button type="button" data-bs-toggle="collapse"
+                data-bs-target="#summerCollapse" aria-controls="summerCollapse" class="btn btn-sm text-info">Collassa/Apri sezione</button>
             </div>
         </div>
     </div>
 
-    <div class="container mt-1 mb-3">
+    <div class="container mt-1 mb-3 collapse" id="summerCollapse">
         <div class="row">
             <div class="mb-3 col-6 col-lg-4 col-xl-2">
                 <div class="card shadow-lg">
@@ -242,9 +244,17 @@
         </div>
     </div>
 
-    <div class="container mt-5">
-        <h6>Last minute</h6>
-        <div class="row mt-3">
+    <div class="container mt-5" id="last-minute">
+        <div class="row align-items-center">
+            <div class="col-6">
+                <h6>Last minute</h6>
+            </div>
+            <div class="col-6 d-flex justify-content-end">
+                <button type="button" data-bs-toggle="collapse"
+                data-bs-target="#last-minute-collapse" aria-controls="last-minute-collapse" class="btn btn-sm text-info">Collassa/Apri sezione</button>
+            </div>
+        </div>
+        <div class="row mt-3 collapse" id="last-minute-collapse">
             <div class="mb-3 col-6">
                 <img src="img/spiaggia.jpg" class="w-100 rounded-2 shadow-sm">
             </div>
@@ -266,7 +276,7 @@
         </div>
     </div>
 
-    <div class="container mt-4 mb-5">
+    <div class="container mt-4 mb-5" id="recensioni">
         <h6 class="text-center mb-2">Dicono di noi</h6>
         <div class="row">
             <div class="col-2 col-md-1">
@@ -300,7 +310,7 @@
     <footer>
         <div class="container-fluid py-5 bg-dark text-light text-center">
             <button class="btn btn-outline-secondary text-secondary mb-3">Contattaci</button>
-            <p>C 2021 Kalina Travel LTD. All Rights Reserved</p>
+            <p class="m-0">C 2021 Kalina Travel LTD. All Rights Reserved</p>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
