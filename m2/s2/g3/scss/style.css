@@ -247,6 +247,11 @@ body {
   align-items: center;
   background-color: #404040;
 }
+@media screen and (max-width: 700px) {
+  .main-content {
+    flex-wrap: wrap;
+  }
+}
 .main-content .section-container {
   display: flex;
   flex-direction: column;
@@ -254,9 +259,22 @@ body {
   align-items: center;
   text-align: center;
   font-size: 0.8em;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+@media screen and (max-width: 700px) {
+  .main-content .section-container {
+    width: 75%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }
 .main-content .section-container img {
   width: 50%;
+}
+@media screen and (max-width: 700px) {
+  .main-content .section-container img {
+    width: 25%;
+  }
 }
 
 footer {

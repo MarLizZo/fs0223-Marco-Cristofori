@@ -4,6 +4,8 @@ $size-20em: 2.0em;
 $size-18em: 1.8em;
 $size-15em: 1.5em;
 $size-12em: 1.2em;
+$main-font: Arial, Helvetica, sans-serif;
+$sections-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 @mixin title-big {
     font-size: $size-23em;
