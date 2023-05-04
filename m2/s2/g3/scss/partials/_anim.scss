@@ -1,0 +1,17 @@
+@mixin setAnim {
+    animation: fadeIn 2s ease 0s 1;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

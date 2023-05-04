@@ -132,12 +132,26 @@ ul {
   margin-bottom: 12px;
 }
 
+@keyframes fadeIn {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .btn-primary {
   background-color: #0e6cff;
   transition: all 0.4s;
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  animation: fadeIn 2s ease 0s 1;
 }
 .btn-primary:hover {
   transform: scale(1.1);
@@ -149,6 +163,7 @@ ul {
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  animation: fadeIn 2s ease 0s 1;
 }
 .btn-secondary:hover {
   transform: scale(1.1);
@@ -160,6 +175,7 @@ ul {
   border-radius: 10px;
   transition: all 0.4s;
   cursor: pointer;
+  animation: fadeIn 2s ease 0s 1;
 }
 .btn-tertiary:hover {
   transform: scale(1.1);
