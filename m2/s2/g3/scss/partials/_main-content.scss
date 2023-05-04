@@ -22,3 +22,21 @@ body {
         }
     }
 }
+
+.main-content {
+    @include grid;
+    background-color: $bg-sections-alt;
+
+    .section-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 0.8em;
+
+        img {
+            width: 50%;
+        }
+    }
+}

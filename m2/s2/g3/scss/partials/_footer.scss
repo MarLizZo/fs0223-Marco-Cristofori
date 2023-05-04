@@ -1,0 +1,10 @@
+footer {
+    background-color: $bg-sections;
+    @include grid;
+
+    p {
+        font-size: 0.9em;
+        font-style: italic;
+        margin: 0;
+    }
+}

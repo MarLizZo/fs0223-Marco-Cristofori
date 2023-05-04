@@ -194,7 +194,6 @@ nav ul li {
   font-size: 2.3em;
   font-weight: bold;
   font-style: italic;
-  margin-bottom: 20px;
 }
 .headline .btns-container {
   display: flex;
@@ -224,4 +223,34 @@ body {
 }
 .hero-section img:hover {
   transform: scale(1.05);
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #404040;
+}
+.main-content .section-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0.8em;
+}
+.main-content .section-container img {
+  width: 50%;
+}
+
+footer {
+  background-color: #303030;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+footer p {
+  font-size: 0.9em;
+  font-style: italic;
+  margin: 0;
 }/*# sourceMappingURL=style.css.map */
