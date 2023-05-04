@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: $bg-body;
+    color: $text-color;
+}
+
+.hero-section {
+    @include grid;
+    background-color: $bg-hero;
+
+    .txt-container {
+        text-align: center;
+    }
+
+    img {
+        width: 40%;
+        @include floating;
+        transition: all 0.4s;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}

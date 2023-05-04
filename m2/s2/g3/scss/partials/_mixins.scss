@@ -1,0 +1,10 @@
+@mixin floating {
+    border-radius: 10px;
+    box-shadow: 0px 6px 28px 1px rgba(0,0,0,0.64);
+}
+
+@mixin grid {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}

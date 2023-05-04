@@ -1,0 +1,35 @@
+nav {
+    display: flex;
+    align-items: center;
+    background-color: $bg-sections;
+    height: 40px;
+    img {
+        width: 35px;
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+
+        li {
+            font-size: 0.9em;
+            cursor: pointer;
+        }
+    }
+}
+
+.headline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $bg-sections-alt;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    @include title-big;
+
+    .btns-container {
+        display: flex;
+        align-items: center;
+    }
+}
