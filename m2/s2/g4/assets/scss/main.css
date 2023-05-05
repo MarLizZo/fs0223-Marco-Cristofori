@@ -13,16 +13,27 @@ nav li button:focus {
   border: none;
 }
 nav li .profile-img {
-  width: 45px;
+  width: 40px;
 }
 
 body {
   color: white;
   background-color: #151515;
 }
+body::-webkit-scrollbar {
+  width: 6px;
+}
+body::-webkit-scrollbar-thumb {
+  background: rgba(255, 0, 0, 0.7);
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: #303030;
+  border-radius: 10px;
+}
 
 select option:hover {
-  background-color: #303030 !important;
+  background-color: #303030;
 }
 
 main #heading .svg-container {

@@ -1,12 +1,26 @@
 body {
     color: $txt-color;
     background-color: $bg-color;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgb(255, 0, 0, 0.7);
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $bg-secondary;
+        border-radius: 10px;
+    }
 }
 
 select {
     option {
         &:hover {
-            background-color: $bg-secondary !important;
+            background-color: $bg-secondary;
         }
     }
 }
