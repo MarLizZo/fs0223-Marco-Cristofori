@@ -51,4 +51,10 @@ footer .links-container {
 footer p {
   font-size: 0.7em;
   color: #a9a9a9;
+}
+footer svg {
+  cursor: pointer;
+}
+footer button.custom-btn:hover {
+  background-color: #303030;
 }/*# sourceMappingURL=main.css.map */

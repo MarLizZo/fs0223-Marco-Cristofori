@@ -17,4 +17,14 @@ footer {
         font-size: 0.7em;
         color: $txt-secondary;
     }
+
+    svg {
+        cursor: pointer;
+    }
+
+    button.custom-btn {
+        &:hover {
+            background-color: $bg-secondary;
+        }
+    }
 }
