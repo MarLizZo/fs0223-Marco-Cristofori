@@ -1,0 +1,21 @@
+nav {
+    font-size: 0.7em;
+    // height: 50px;
+    background-color: $bg-color;
+
+    img {
+        width: 100px;
+    }
+
+    li {
+        cursor: pointer;
+
+        button:focus {
+            border: none;
+        }
+
+        .profile-img {
+            width: 45px;
+        }
+    }
+}

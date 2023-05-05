@@ -1,0 +1,30 @@
+nav {
+  font-size: 0.7em;
+  background-color: #151515;
+}
+nav img {
+  width: 100px;
+}
+nav li {
+  cursor: pointer;
+}
+nav li button:focus {
+  border: none;
+}
+nav li .profile-img {
+  width: 45px;
+}
+
+body {
+  color: white;
+  background-color: #151515;
+}
+
+select option:hover {
+  background-color: #303030;
+}
+
+main #heading .svg-container {
+  padding: 5px 10px;
+  border: 1px solid white;
+}/*# sourceMappingURL=main.css.map */

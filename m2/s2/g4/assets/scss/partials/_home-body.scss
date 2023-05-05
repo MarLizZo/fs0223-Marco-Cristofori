@@ -1,0 +1,17 @@
+body {
+    color: $txt-color;
+    background-color: $bg-color;
+}
+
+select {
+    option {
+        &:hover {
+            background-color: $bg-secondary;
+        }
+    }
+}
+
+main #heading .svg-container {
+    padding: 5px 10px;
+    border: 1px solid white;
+}
