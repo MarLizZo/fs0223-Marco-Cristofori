@@ -1,6 +1,7 @@
 nav {
   font-size: 0.7em;
   background-color: #151515;
+  border-bottom: 2px solid black;
 }
 nav img {
   width: 100px;
@@ -21,10 +22,33 @@ body {
 }
 
 select option:hover {
-  background-color: #303030;
+  background-color: #303030 !important;
 }
 
 main #heading .svg-container {
   padding: 5px 10px;
   border: 1px solid white;
+  cursor: pointer;
+}
+main section img {
+  width: 100%;
+}
+
+footer {
+  border-top: 2px solid black;
+}
+footer a {
+  font-size: 0.8em;
+  color: #a9a9a9;
+}
+footer a:hover {
+  color: white;
+}
+footer .links-container {
+  width: -moz-max-content;
+  width: max-content;
+}
+footer p {
+  font-size: 0.7em;
+  color: #a9a9a9;
 }/*# sourceMappingURL=main.css.map */

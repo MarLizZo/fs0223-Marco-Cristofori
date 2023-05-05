@@ -6,12 +6,20 @@ body {
 select {
     option {
         &:hover {
-            background-color: $bg-secondary;
+            background-color: $bg-secondary !important;
         }
     }
 }
 
-main #heading .svg-container {
-    padding: 5px 10px;
-    border: 1px solid white;
+main {
+    #heading .svg-container {
+        padding: 5px 10px;
+        border: 1px solid white;
+        cursor: pointer;
+    }
+    section {
+        img {
+            width: 100%;
+        }
+    }
 }

@@ -1,0 +1,20 @@
+footer {
+    border-top: 2px solid black;
+    a {
+        font-size: 0.8em;
+        color: $txt-secondary;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    .links-container {
+        width: max-content;
+    }
+
+    p {
+        font-size: 0.7em;
+        color: $txt-secondary;
+    }
+}
