@@ -1,0 +1,87 @@
+body {
+    color: $txt-color;
+    background-color: $bg-color;
+}
+
+header {
+    height: 45px;
+
+    .logo-container {
+        height: 100%;
+    }
+
+    img {
+        height: 100%;
+    }
+}
+
+main {
+    img {
+        width: 100%;
+    }
+
+    .custom-txt {
+        color: $txt-secondary;
+        margin: 0;
+        font-size: 0.9em;
+    }
+
+    .alt-txt {
+        color: white;
+        margin: 0;
+        font-size: 0.8em;
+    }
+
+    button.custom-bg {
+        background-color: $bg-color;
+    }
+
+    button.custom-btn {
+        &:hover {
+            background-color: $bg-secondary;
+        }
+    }
+
+    .checkbox-container {
+        background-color: $bg-color;
+
+        input {
+            cursor: pointer;
+            -webkit-appearance: none;
+            appearance: none;
+            margin: 0;
+            background-color: $bg-color;
+            font: inherit;
+            color: $bg-secondary;
+            width: 1.15em;
+            height: 1.15em;
+            border: 2px solid $bg-secondary;
+            border-radius: 0.15em;
+            transform: translateY(-0.075em);
+            display: grid;
+            place-content: center;
+
+            &::before {
+                content: "";
+                width: 0.65em;
+                height: 0.65em;
+                clip-path: polygon(
+                    14% 44%,
+                    0 65%,
+                    50% 100%,
+                    100% 16%,
+                    80% 0%,
+                    43% 62%
+                );
+                transform: scale(0);
+                transform-origin: bottom left;
+                transition: 120ms transform ease-in-out;
+                box-shadow: inset 1em 1em $bg-tert;
+            }
+
+            &:checked::before {
+                transform: scale(1);
+            }
+        }
+    }
+}
