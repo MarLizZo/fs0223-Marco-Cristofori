@@ -3,3 +3,19 @@ $bg-secondary: #303030;
 $bg-tert: #606060;
 $txt-color: white;
 $txt-secondary: #a9a9a9;
+
+body {
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgb(255, 0, 0, 0.7);
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $bg-secondary;
+        border-radius: 10px;
+    }
+}

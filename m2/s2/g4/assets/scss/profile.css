@@ -1,16 +1,36 @@
+body::-webkit-scrollbar {
+  width: 6px;
+}
+body::-webkit-scrollbar-thumb {
+  background: rgba(255, 0, 0, 0.7);
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: #303030;
+  border-radius: 10px;
+}
+
+nav {
+  font-size: 0.9em;
+  background-color: #151515;
+  border-bottom: 2px solid black;
+}
+nav .navbar-brand img {
+  width: 100px;
+}
+nav li {
+  cursor: pointer;
+}
+nav li button:focus {
+  border: none;
+}
+nav li .profile-img {
+  width: 40px;
+}
+
 body {
   color: white;
   background-color: #151515;
-}
-
-header {
-  height: 45px;
-}
-header .logo-container {
-  height: 100%;
-}
-header img {
-  height: 100%;
 }
 
 main img {
