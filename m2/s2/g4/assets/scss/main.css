@@ -1,5 +1,6 @@
 body::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
 }
 body::-webkit-scrollbar-thumb {
   background: rgba(255, 0, 0, 0.7);
@@ -11,7 +12,6 @@ body::-webkit-scrollbar-track {
 }
 
 nav {
-  font-size: 0.9em;
   background-color: #151515;
   border-bottom: 2px solid black;
 }
@@ -33,7 +33,11 @@ body {
   background-color: #151515;
 }
 
-select option:hover {
+select.form-select {
+  width: -moz-max-content;
+  width: max-content;
+}
+select.form-select option:hover {
   background-color: #303030;
 }
 
@@ -49,6 +53,7 @@ main section img {
   width: 100%;
   position: relative;
   transition: all 0.8s;
+  cursor: pointer;
 }
 main section img:hover {
   z-index: 2;

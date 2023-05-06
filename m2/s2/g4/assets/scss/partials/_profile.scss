@@ -25,6 +25,7 @@ main {
     }
 
     button.custom-btn {
+        width: max-content;
         &:hover {
             background-color: $bg-secondary;
         }
