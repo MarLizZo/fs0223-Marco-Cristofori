@@ -26,4 +26,9 @@ nav li button:focus {
 }
 nav li .profile-img {
   width: 40px;
+}
+
+.custom-width {
+  width: -moz-max-content;
+  width: max-content;
 }/*# sourceMappingURL=settings.css.map */
