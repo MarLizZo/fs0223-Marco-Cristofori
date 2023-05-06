@@ -1,7 +1,6 @@
 footer {
     border-top: 2px solid black;
     a {
-        font-size: 0.8em;
         color: $txt-secondary;
 
         &:hover {
@@ -14,17 +13,11 @@ footer {
     }
 
     p {
-        font-size: 0.7em;
+        font-size: 0.9em;
         color: $txt-secondary;
     }
 
     svg {
         cursor: pointer;
-    }
-
-    button.custom-btn {
-        &:hover {
-            background-color: $bg-secondary;
-        }
     }
 }

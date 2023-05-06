@@ -36,6 +36,13 @@ body {
   background-color: #151515;
 }
 
+button.custom-btn {
+  background-color: #151515;
+}
+button.custom-btn:hover {
+  background-color: #303030;
+}
+
 main #heading .svg-container {
   padding: 5px 10px;
   border: 1px solid white;
@@ -50,12 +57,6 @@ main select.form-select option:hover {
 }
 main select.form-select option:checked {
   background: rgba(255, 0, 0, 0.6) !important;
-}
-main button.custom-btn {
-  background-color: #151515;
-}
-main button.custom-btn:hover, main button.custom-btn:focus {
-  background-color: #303030;
 }
 main ul.dropdown-menu {
   background-color: #151515;
@@ -104,11 +105,28 @@ main section img:hover {
   box-shadow: 0px 0px 20px 9px rgba(0, 0, 0, 0.85);
 }
 
+.btnAnim {
+  animation: btnAnim 2s ease-in-out 0.5s infinite;
+}
+
+@keyframes btnAnim {
+  0% {
+    transform: rotate(0deg);
+  }
+  33% {
+    transform: rotate(-5deg);
+  }
+  66% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 footer {
   border-top: 2px solid black;
 }
 footer a {
-  font-size: 0.8em;
   color: #a9a9a9;
 }
 footer a:hover {
@@ -119,12 +137,9 @@ footer .links-container {
   width: max-content;
 }
 footer p {
-  font-size: 0.7em;
+  font-size: 0.9em;
   color: #a9a9a9;
 }
 footer svg {
   cursor: pointer;
-}
-footer button.custom-btn:hover {
-  background-color: #303030;
 }/*# sourceMappingURL=main.css.map */

@@ -45,12 +45,11 @@ main #lang-select option:checked {
 main .custom-txt {
   color: #a9a9a9;
   margin: 0;
-  font-size: 0.9em;
 }
 main .alt-txt {
   color: white;
   margin: 0;
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 main button.custom-bg {
   background-color: #151515;
