@@ -3,20 +3,36 @@ body {
     background-color: $bg-color;
 }
 
-select.form-select {
-    width: max-content;
-    option {
-        &:hover {
-            background-color: $bg-secondary;
-        }
-    }
-}
-
 main {
     #heading .svg-container {
         padding: 5px 10px;
         border: 1px solid white;
         cursor: pointer;
+    }
+    select.form-select {
+        width: max-content;
+        option {
+            &:hover {
+                background-color: $bg-secondary;
+            }
+        }
+    }
+    button.custom-btn {
+        background-color: $bg-color;
+        &:hover,
+        &:focus {
+            background-color: $bg-secondary;
+        }
+    }
+    ul.dropdown-menu {
+        background-color: $bg-color;
+        li a {
+            color: $txt-color;
+            &:hover {
+                background-color: $bg-secondary;
+                color: $txt-color;
+            }
+        }
     }
     section {
         .carousel-inner {

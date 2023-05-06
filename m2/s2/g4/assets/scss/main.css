@@ -33,18 +33,33 @@ body {
   background-color: #151515;
 }
 
-select.form-select {
-  width: -moz-max-content;
-  width: max-content;
-}
-select.form-select option:hover {
-  background-color: #303030;
-}
-
 main #heading .svg-container {
   padding: 5px 10px;
   border: 1px solid white;
   cursor: pointer;
+}
+main select.form-select {
+  width: -moz-max-content;
+  width: max-content;
+}
+main select.form-select option:hover {
+  background-color: #303030;
+}
+main button.custom-btn {
+  background-color: #151515;
+}
+main button.custom-btn:hover, main button.custom-btn:focus {
+  background-color: #303030;
+}
+main ul.dropdown-menu {
+  background-color: #151515;
+}
+main ul.dropdown-menu li a {
+  color: white;
+}
+main ul.dropdown-menu li a:hover {
+  background-color: #303030;
+  color: white;
 }
 main section .carousel-inner {
   overflow: inherit;
