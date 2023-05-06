@@ -6,6 +6,12 @@ nav {
         width: 100px;
     }
 
+    .nav-item .dropdown-menu li a {
+        &:focus {
+            background-color: rgb(255, 0, 0, 0.6);
+        }
+    }
+
     li {
         cursor: pointer;
 

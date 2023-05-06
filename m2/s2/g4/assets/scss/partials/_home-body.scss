@@ -13,7 +13,10 @@ main {
         width: max-content;
         option {
             &:hover {
-                background-color: $bg-secondary;
+                background: rgb(255, 0, 0, 0.6) !important;
+            }
+            &:checked {
+                background: rgb(255, 0, 0, 0.6) !important;
             }
         }
     }

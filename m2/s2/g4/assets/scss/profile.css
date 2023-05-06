@@ -18,6 +18,9 @@ nav {
 nav .navbar-brand img {
   width: 100px;
 }
+nav .nav-item .dropdown-menu li a:focus {
+  background-color: rgba(255, 0, 0, 0.6);
+}
 nav li {
   cursor: pointer;
 }
@@ -35,6 +38,9 @@ body {
 
 main img {
   width: 100%;
+}
+main #lang-select option:checked {
+  background-color: rgba(255, 0, 0, 0.6) !important;
 }
 main .custom-txt {
   color: #a9a9a9;

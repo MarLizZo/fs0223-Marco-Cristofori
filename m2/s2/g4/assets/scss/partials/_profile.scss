@@ -8,6 +8,14 @@ main {
         width: 100%;
     }
 
+    #lang-select {
+        option {
+            &:checked {
+                background-color: rgb(255, 0, 0, 0.6) !important;
+            }
+        }
+    }
+
     .custom-txt {
         color: $txt-secondary;
         margin: 0;
