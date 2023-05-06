@@ -38,11 +38,28 @@ main {
         .carousel-inner {
             overflow: inherit;
         }
+        @media screen and (min-width: 992px) {
+            #carouselTrending .row {
+                @include customRows;
+            }
+
+            #carouselWatchAgain #first-wa-row {
+                @include customRows;
+            }
+
+            #carouselNewRel #first-nr-row {
+                @include customRows;
+            }
+        }
         img {
             width: 100%;
             position: relative;
             transition: all 0.8s;
             cursor: pointer;
+
+            @media screen and (max-width: 768px) {
+                width: 80%;
+            }
 
             &:hover {
                 z-index: 2;
