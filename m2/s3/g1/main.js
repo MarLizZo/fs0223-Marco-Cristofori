@@ -41,32 +41,34 @@ let form_users = document.getElementById("form-users");
 
 form_users.addEventListener("submit", (el) => {
     const inputs = form_users.querySelectorAll("input");
-    let p_info = document.getElementById("p-info");
-    if (user_1 == null && user_2 == null) {
-        user_1 = new User(
-            inputs[0].value,
-            inputs[1].value,
-            inputs[2].value,
-            inputs[3].value
-        );
-        p_info.classList.remove("d-none");
-        setTimeout(() => p_info.classList.add("d-none"), 3000);
-    } else {
-        user_2 = new User(
-            inputs[0].value,
-            inputs[1].value,
-            inputs[2].value,
-            inputs[3].value
-        );
-        let my_p = document.getElementById("result-compare-ages");
-        my_p.innerText = User.compareAges(user_1, user_2);
-        p_info.innerText = "Operazione conclusa con successo!";
-        p_info.classList.remove("d-none");
+    if (inputs[0].value != "") {
+        let p_info = document.getElementById("p-info");
+        if (user_1 == null && user_2 == null) {
+            user_1 = new User(
+                inputs[0].value,
+                inputs[1].value,
+                inputs[2].value,
+                inputs[3].value
+            );
+            p_info.classList.remove("d-none");
+            setTimeout(() => p_info.classList.add("d-none"), 3000);
+        } else {
+            user_2 = new User(
+                inputs[0].value,
+                inputs[1].value,
+                inputs[2].value,
+                inputs[3].value
+            );
+            let my_p = document.getElementById("result-compare-ages");
+            my_p.innerText = User.compareAges(user_1, user_2);
+            p_info.innerText = "Operazione conclusa con successo!";
+            p_info.classList.remove("d-none");
+        }
+        inputs[0].value = "";
+        inputs[1].value = "";
+        inputs[2].value = "";
+        inputs[3].value = "";
     }
-    inputs[0].value = "";
-    inputs[1].value = "";
-    inputs[2].value = "";
-    inputs[3].value = "";
 });
 
 let pets = [];
