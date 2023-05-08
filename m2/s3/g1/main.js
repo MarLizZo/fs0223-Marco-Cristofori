@@ -134,7 +134,9 @@ form_pets.addEventListener("submit", () => {
                 res.innerText = Pet.compareOwner(
                     pet_one_to_compare,
                     pet_two_to_compare
-                );
+                )
+                    ? "Yes, they have the same owner!"
+                    : "No, they have different owners!";
             }
         });
         newPetCompare_2.addEventListener("click", function () {
@@ -145,7 +147,9 @@ form_pets.addEventListener("submit", () => {
                 res.innerText = Pet.compareOwner(
                     pet_one_to_compare,
                     pet_two_to_compare
-                );
+                )
+                    ? "Yes, they have the same owner!"
+                    : "No, they have different owners!";
             }
         });
 
