@@ -75,18 +75,40 @@ let form_pets = document.getElementById("form-pets");
 form_pets.addEventListener("submit", () => {
     const inputs = form_pets.querySelectorAll("input");
     const pets_ul = document.getElementById("pets-list");
+    let pet_info = document.getElementById("pet-info");
 
-    pets.push(
-        new Pet(
-            inputs[0].value,
-            inputs[1].value,
-            inputs[2].value,
-            inputs[3].value
-        )
-    );
+    if (inputs[0].value != "") {
+        pets.push(
+            new Pet(
+                inputs[0].value,
+                inputs[1].value,
+                inputs[2].value,
+                inputs[3].value
+            )
+        );
 
-    inputs[0].value = "";
-    inputs[1].value = "";
-    inputs[2].value = "";
-    inputs[3].value = "";
+        let newPet = document.createElement("li");
+        newPet.classList.add("bg-secondary", "ps-2", "text-light");
+        newPet.innerText = inputs[0].value;
+        pets_ul.appendChild(newPet);
+        newPet.addEventListener("click", function () {
+            document.getElementById("list-pet-name").innerText =
+                pets[pets.length - 1].petName;
+            document.getElementById("list-pet-owner").innerText =
+                pets[pets.length - 1].ownerName;
+            document.getElementById("list-pet-species").innerText =
+                pets[pets.length - 1].species;
+            document.getElementById("list-pet-breed").innerText =
+                pets[pets.length - 1].breed;
+            // console.log(pets[pets.length - 1]);
+        });
+
+        inputs[0].value = "";
+        inputs[1].value = "";
+        inputs[2].value = "";
+        inputs[3].value = "";
+
+        pet_info.classList.remove("d-none");
+        setTimeout(() => pet_info.classList.add("d-none"), 3000);
+    }
 });

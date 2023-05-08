@@ -6,6 +6,7 @@ section form input:focus {
     box-shadow: 0px 0px 12px 2px rgba(220,53,69,0.8) !important;
 }
 
-#pets-list li a:hover {
-    background-color: #343a40;
+#pets-list li:hover {
+    background-color: #343a40 !important;
+    cursor: pointer;
 }

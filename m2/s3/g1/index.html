@@ -63,19 +63,27 @@
                             <input type="text" class="form-control mb-3" id="speciesInput"
                                 placeholder="Pet's species here..">
                             <label for="breedInput" class="form-label">Breed</label>
-                            <input type="email" class="form-control mb-4" id="breedInput"
+                            <input type="text" class="form-control mb-4" id="breedInput"
                                 placeholder="Pet's breed here..">
-                            <button type="submit" class="btn btn-danger px-4">Save Pet</button>
+                            <div class="d-flex align-items-center">
+                                <button type="submit" class="btn btn-danger px-4">Save Pet</button>
+                                <p id="pet-info" class="my-0 fs-5 text-success d-none ms-3">Pet added correctly!</p>
+                            </div>
                         </form>
                     </div>
                 </div>
-                <div class="col-5 d-flex justify-content-center">
+                <div class="col-5 d-flex flex-column align-items-center">
                     <button type="button" class="btn btn-danger px-5 dropdown-toggle" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Show saved Pets
                     </button>
                     <ul class="bg-secondary dropdown-menu" id="pets-list">
-                        <li class="bg-secondary text-center">Action</li>
+                    </ul>
+                    <ul class="list-group mt-4 w-75 text-center">
+                        <li id="list-pet-name" class="list-group-item bg-secondary text-light">Pet name</li>
+                        <li id="list-pet-owner" class="list-group-item bg-secondary text-light">Pet Owner</li>
+                        <li id="list-pet-species" class="list-group-item bg-secondary text-light">Pet Species</li>
+                        <li id="list-pet-breed" class="list-group-item bg-secondary text-light">Pet breed</li>
                     </ul>
                 </div>
             </div>
