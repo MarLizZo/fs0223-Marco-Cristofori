@@ -75,7 +75,7 @@
                 <div class="col-5 d-flex flex-column align-items-center">
                     <button type="button" class="btn btn-danger px-5 dropdown-toggle" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        Show saved Pets
+                        Show Pet Details
                     </button>
                     <ul class="bg-secondary dropdown-menu" id="pets-list">
                     </ul>
@@ -85,6 +85,24 @@
                         <li id="list-pet-species" class="list-group-item bg-secondary text-light">Pet Species</li>
                         <li id="list-pet-breed" class="list-group-item bg-secondary text-light">Pet breed</li>
                     </ul>
+                </div>
+                <div class="col-12 mt-4 d-flex justify-content-evenly">
+                    <button type="button" class="btn btn-danger px-5 dropdown-toggle" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Show saved Pets
+                    </button>
+                    <ul class="bg-secondary dropdown-menu" id="pets-list-compare-one">
+                    </ul>
+                    <p>Select two pets to check if they have the same owner</p>
+                    <button type="button" class="btn btn-danger px-5 dropdown-toggle" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Show saved Pets
+                    </button>
+                    <ul class="bg-secondary dropdown-menu" id="pets-list-compare-two">
+                    </ul>
+                </div>
+                <div class="col-12 d-flex justify-content-center mt-2">
+                    <p id="result-compare-pets">...</p>
                 </div>
             </div>
         </section>

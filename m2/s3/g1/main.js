@@ -70,11 +70,19 @@ form_users.addEventListener("submit", (el) => {
 });
 
 let pets = [];
+let pet_one_to_compare = null;
+let pet_two_to_compare = null;
 let form_pets = document.getElementById("form-pets");
 
 form_pets.addEventListener("submit", () => {
     const inputs = form_pets.querySelectorAll("input");
     const pets_ul = document.getElementById("pets-list");
+    const pets_ul_compare_one = document.getElementById(
+        "pets-list-compare-one"
+    );
+    const pets_ul_compare_two = document.getElementById(
+        "pets-list-compare-two"
+    );
     let pet_info = document.getElementById("pet-info");
 
     if (inputs[0].value != "") {
@@ -90,17 +98,55 @@ form_pets.addEventListener("submit", () => {
         let newPet = document.createElement("li");
         newPet.classList.add("bg-secondary", "ps-2", "text-light");
         newPet.innerText = inputs[0].value;
+        newPet.setAttribute("value", pets.length - 1);
+
+        let newPetCompare = document.createElement("li");
+        newPetCompare.classList.add("bg-secondary", "ps-2", "text-light");
+        newPetCompare.innerText = inputs[0].value;
+        newPetCompare.setAttribute("value", pets.length - 1);
+
+        let newPetCompare_2 = document.createElement("li");
+        newPetCompare_2.classList.add("bg-secondary", "ps-2", "text-light");
+        newPetCompare_2.innerText = inputs[0].value;
+        newPetCompare_2.setAttribute("value", pets.length - 1);
+
         pets_ul.appendChild(newPet);
+        pets_ul_compare_one.appendChild(newPetCompare);
+        pets_ul_compare_two.appendChild(newPetCompare_2);
+
         newPet.addEventListener("click", function () {
             document.getElementById("list-pet-name").innerText =
-                pets[pets.length - 1].petName;
+                pets[Number(this.getAttribute("value"))].petName;
             document.getElementById("list-pet-owner").innerText =
-                pets[pets.length - 1].ownerName;
+                pets[Number(this.getAttribute("value"))].ownerName;
             document.getElementById("list-pet-species").innerText =
-                pets[pets.length - 1].species;
+                pets[Number(this.getAttribute("value"))].species;
             document.getElementById("list-pet-breed").innerText =
-                pets[pets.length - 1].breed;
+                pets[Number(this.getAttribute("value"))].breed;
             // console.log(pets[pets.length - 1]);
+        });
+
+        newPetCompare.addEventListener("click", function () {
+            pet_one_to_compare =
+                pets[Number(this.getAttribute("value"))].ownerName;
+            let res = document.getElementById("result-compare-pets");
+            if (pet_two_to_compare != null) {
+                res.innerText = Pet.compareOwner(
+                    pet_one_to_compare,
+                    pet_two_to_compare
+                );
+            }
+        });
+        newPetCompare_2.addEventListener("click", function () {
+            pet_two_to_compare =
+                pets[Number(this.getAttribute("value"))].ownerName;
+            let res = document.getElementById("result-compare-pets");
+            if (pet_one_to_compare != null) {
+                res.innerText = Pet.compareOwner(
+                    pet_one_to_compare,
+                    pet_two_to_compare
+                );
+            }
         });
 
         inputs[0].value = "";

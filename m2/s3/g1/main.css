@@ -10,3 +10,13 @@ section form input:focus {
     background-color: #343a40 !important;
     cursor: pointer;
 }
+
+#pets-list-compare-one li:hover {
+    background-color: #343a40 !important;
+    cursor: pointer;
+}
+
+#pets-list-compare-two li:hover {
+    background-color: #343a40 !important;
+    cursor: pointer;
+}
