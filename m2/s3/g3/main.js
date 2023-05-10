@@ -13,16 +13,16 @@ const discardFunc = function (element) {
 const delSingleElCart = function (element) {
     if (localStorage.getItem("booksInCart")) {
         let parsed = JSON.parse(localStorage.getItem("booksInCart"));
-        console.log(parsed);
-
         const index = parsed.findIndex(
             (book) => element.getAttribute("value") == book.asin
         );
-
         parsed.splice(index, 1);
         cartBooks.splice(index, 1);
-        console.log(parsed);
-        localStorage.setItem("booksInCart", JSON.stringify(parsed));
+        if (parsed.length == 0) {
+            localStorage.removeItem("booksInCart");
+        } else {
+            localStorage.setItem("booksInCart", JSON.stringify(parsed));
+        }
     }
     element.parentElement.remove();
     document.getElementById("cart-counter").innerText = cartBooks.length;
