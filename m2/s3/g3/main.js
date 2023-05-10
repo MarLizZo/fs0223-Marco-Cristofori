@@ -3,18 +3,57 @@ let booksArray = [];
 const windowWidth = window.screen.width;
 let btnAddIdCounter = 0;
 let btnDisIdCounter = 0;
+let btnDelSingleElCart = 0;
 let cartBooks = [];
 
 const discardFunc = function (element) {
-    element.classList.add("d-none");
+    element.remove();
+};
+
+const delSingleElCart = function (element) {
+    if (localStorage.getItem("booksInCart")) {
+        let parsed = JSON.parse(localStorage.getItem("booksInCart"));
+        console.log(parsed);
+
+        const index = parsed.findIndex(
+            (book) => element.getAttribute("value") == book.asin
+        );
+
+        parsed.splice(index, 1);
+        cartBooks.splice(index, 1);
+        console.log(parsed);
+        localStorage.setItem("booksInCart", JSON.stringify(parsed));
+    }
+    element.parentElement.remove();
+    document.getElementById("cart-counter").innerText = cartBooks.length;
+};
+
+const createLis = function () {
+    let myUl = document.getElementById("list-cart");
+    myUl.innerHTML = "";
+    cartBooks.forEach((el) => {
+        let newLi = document.createElement("li");
+        newLi.classList.add("my-2", "d-flex", "justify-content-center");
+        newLi.innerHTML = `<span class="text-info fw-bold m-0">Book:&nbsp;</span><span class="m-0">${el.title}</span> <span class="m-0">&nbsp;||&nbsp;</span><span class="m-0 text-info fw-bold">&nbsp;Price:&nbsp;</span> <span class="m-0">${el.price}$</span>
+            <button value="${el.asin}" id="btn-del-s-cart-${btnDelSingleElCart}" class="btn btn-danger px-4 py-1 border-1 ms-3 custom-btn">Delete</button>`;
+        myUl.appendChild(newLi);
+
+        let delBtn = document.getElementById(
+            `btn-del-s-cart-${btnDelSingleElCart}`
+        );
+        delBtn.addEventListener("click", function () {
+            delSingleElCart(this);
+        });
+        btnDelSingleElCart++;
+    });
 };
 
 const addToCart = function (element) {
     cartBooks.push(booksArray[Number(element.getAttribute("value"))]);
-    console.log(booksArray[Number(element.getAttribute("value"))]);
     document.getElementById("cart-counter").innerText = cartBooks.length;
-
     localStorage.setItem("booksInCart", JSON.stringify(cartBooks));
+
+    createLis();
 };
 
 const buildCards = function () {
@@ -46,9 +85,7 @@ const buildCards = function () {
         });
 
         actualDisBtn.addEventListener("click", function () {
-            let p_1 = this.parentElement;
-            let p_2 = p_1.parentElement;
-            discardFunc(p_2.parentElement);
+            discardFunc(this.closest(".col"));
         });
 
         btnAddIdCounter++;
@@ -79,17 +116,8 @@ window.onload = function () {
         savedArr.forEach((el) => {
             cartBooks.push(el);
         });
+        createLis();
     }
-
-    document.getElementById("btn-cart").addEventListener("click", function () {
-        cartBooks.forEach((el) => {
-            myUl = document.getElementById("list-cart");
-            let newLi = document.createElement("li");
-            newLi.classList.add("my-1");
-            newLi.innerHTML = `<span class="text-info fw-bold m-0">Book: </span><span class="m-0">${el.title}</span> <span class="m-0">||</span> <span class="m-0 text-info fw-bold"> Price:</span> <span class="m-0">${el.price}$</span>`;
-            myUl.appendChild(newLi);
-        });
-    });
 
     document.getElementById("del-cart").addEventListener("click", function () {
         cartBooks = [];

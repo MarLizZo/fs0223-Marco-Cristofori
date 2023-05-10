@@ -24,3 +24,7 @@ img {
 img:hover {
     transform: scale(1.1);
 }
+
+button.custom-btn {
+    width: auto;
+}
