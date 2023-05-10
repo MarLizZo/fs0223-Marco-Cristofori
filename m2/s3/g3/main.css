@@ -1,0 +1,26 @@
+header {
+    height: 60px;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+button {
+    width: 85%;
+}
+
+#btn-cart {
+    width: max-content;
+}
+
+main {
+    margin-top: 60px;
+}
+
+img {
+    transition: all 0.7s;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
