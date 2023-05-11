@@ -11,16 +11,32 @@ const setupEventCard = function (el, id) {
 };
 
 const buildCards = function () {
+    let myBtns = [];
+    btnsArr.forEach((el, i) => {
+        if (i == 0) {
+            myBtns.push(el);
+        } else {
+            if (i % 2 == 0) {
+                myBtns.push(el);
+            }
+        }
+    });
     photoArr.forEach((el, index) => {
         let newImg = document.createElement("img");
         newImg.classList.add("card-img-top");
         newImg.src = el.src.small;
         setupEventCard(newImg, el.id);
+
         let imgArr = document.querySelectorAll("main .card .card-img-top");
+
         imgArr[index].parentElement.replaceChild(newImg, imgArr[index]);
         document.querySelectorAll("small.text-muted")[index].innerText = el.id;
         document.querySelectorAll(".card-title")[index].innerText = el.alt;
         setupEventCard(document.querySelectorAll(".card-title")[index], el.id);
+
+        btnsArr[index].addEventListener("click", function () {
+            setupModal(el.alt, el.src.medium);
+        });
     });
 };
 
@@ -52,6 +68,26 @@ const getImages = function (param) {
         });
 };
 
+const setupModal = function (title, img) {
+    let modal = document.getElementById("my-modal");
+    modal.innerHTML = `
+    <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5 text-light" id="my-modal">${title}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-center">
+                <img src="${img}" class="w-100">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+    `;
+};
+
 window.onload = function () {
     loadOne.addEventListener("click", () => getImages("space"));
     loadTwo.addEventListener("click", () => getImages("waterfall"));
@@ -61,6 +97,8 @@ window.onload = function () {
                 "btn-outline-secondary",
                 "btn-outline-primary"
             );
+            el.setAttribute("data-bs-toggle", "modal");
+            el.setAttribute("data-bs-target", "#my-modal");
         } else {
             if (index % 2 != 0) {
                 el.innerText = "Hide";
@@ -76,7 +114,8 @@ window.onload = function () {
                     "btn-outline-secondary",
                     "btn-outline-primary"
                 );
-                //modal
+                el.setAttribute("data-bs-toggle", "modal");
+                el.setAttribute("data-bs-target", "#my-modal");
             }
         }
     });
