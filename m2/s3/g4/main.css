@@ -13,6 +13,10 @@
     margin-right: 10px;
   }
 
+  .card-title, .card-img-top {
+    cursor: pointer;
+  }
+
   @media (min-width: 768px) {
     .jumbotron {
       padding-top: 6rem;
