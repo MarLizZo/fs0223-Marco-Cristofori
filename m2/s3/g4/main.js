@@ -34,7 +34,7 @@ const buildCards = function () {
         document.querySelectorAll(".card-title")[index].innerText = el.alt;
         setupEventCard(document.querySelectorAll(".card-title")[index], el.id);
 
-        btnsArr[index].addEventListener("click", function () {
+        myBtns[index].addEventListener("click", function () {
             setupModal(el.alt, el.src.medium);
         });
     });
