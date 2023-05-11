@@ -1,5 +1,6 @@
 const buildCol = function (photo) {
     let myCol = document.querySelector(".col-10");
+    document.querySelector("header").style.backgroundColor = photo.avg_color;
     myCol.innerHTML = `
         <img src="${photo.src.medium}" class="w-100">
         <div class="mt-3">
