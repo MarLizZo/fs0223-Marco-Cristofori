@@ -1,16 +1,21 @@
 $color-warning: rgb(255, 193, 7);
 $bg-secondary: #6c757d;
 
+html,
+body {
+    height: 100%;
+}
+
 main {
     margin-top: 90px;
 
     .row .col-12 {
         img {
-            width: 250px;
+            width: 220px;
             height: auto;
 
             @media screen and (max-width: 768px) {
-                width: 180px;
+                width: 160px;
             }
         }
 

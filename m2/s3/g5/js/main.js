@@ -15,18 +15,18 @@ const buildCols = function () {
     row.innerHTML = "";
     productsArr.forEach((el) => {
         row.innerHTML += `
-        <div class="col-12 d-flex flex-column flex-sm-row align-items-center ">
-                <img src="${el.imageUrl}" class="rounded-2">
-                <div class="d-flex flex-column mt-3 mt-sm-0 ms-sm-3">
-                    <div>
-                        <h5>${el.name}</h5>
+        <div class="col-12 d-flex flex-column flex-sm-row align-items-center justify-content-sm-between border-bottom border-2 border-black">
+                <div class="d-flex align-items-center">
+                    <img src="${el.imageUrl}" class="rounded-2">
+                    <div class="d-flex flex-column ms-3">
+                        <h6 class="mb-1">${el.name}</h6>
                         <p class="mb-2">Brand: ${el.brand}</p>
                         <p>Price: ${el.price}$</p>
                     </div>
-                    <div class="d-flex">
-                        <button class="btn btn-outline-warning py-1 me-3">View Product Details</button>
-                        <a href="./admin.html?id=${el._id}"><button class="btn btn-outline-warning py-1">Edit Product</button></a>
-                    </div>
+                </div>
+                <div class="d-flex flex-column justify-content-center align-items-center mt-3 mt-sm-0">
+                    <button class="btn btn-outline-warning py-1 mb-3 w-100">View Product Details</button>
+                    <a class="w-100" href="./admin.html?id=${el._id}"><button class="btn btn-outline-warning py-1 w-100">Edit Product</button></a>
                 </div>
             </div>
         `;
