@@ -15,6 +15,13 @@ class Product {
     }
 }
 
+const resetFields = function () {
+    inputsArr = form.querySelectorAll("input");
+    inputsArr.forEach((element) => {
+        element.value = "";
+    });
+};
+
 const deleteProduct = function (id) {
     fetch(endpoint + id, {
         method: "DELETE",
@@ -108,14 +115,53 @@ const setupDelBtn = function () {
     let btn = document.getElementById("del-btn");
     if (id) {
         btn.addEventListener("click", function () {
-            deleteProduct(id);
+            let modal = document.querySelector(".modal .modal-dialog");
+            modal.innerHTML = `
+        <div class="modal-content bg-dark text-light">
+            <div class="modal-header">
+                <h5 class="modal-title text-danger">Warning</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <p>Are you sure you want to delete this product?</p>
+                <p>This operation cannot be undone!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                <button type="button" onclick="deleteProduct('${id}');" data-bs-dismiss="modal" class="btn btn-danger">Yes, delete</button>
+            </div>
+        </div>
+        `;
         });
     } else {
         btn.classList.add("d-none");
     }
 };
 
+const setupResetBtn = function () {
+    let btn = document.getElementById("reset-btn");
+    btn.addEventListener("click", () => {
+        let modal = document.querySelector(".modal .modal-dialog");
+        modal.innerHTML = `
+        <div class="modal-content bg-dark text-light">
+            <div class="modal-header">
+                <h5 class="modal-title">Warning</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <p>Are you sure you want to reset all the fields?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                <button type="button" onclick="resetFields()" data-bs-dismiss="modal" class="btn btn-warning">Yes, reset</button>
+            </div>
+        </div>
+        `;
+    });
+};
+
 window.onload = function () {
     setupForm();
     setupDelBtn();
+    setupResetBtn();
 };

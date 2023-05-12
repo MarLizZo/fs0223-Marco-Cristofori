@@ -38,6 +38,9 @@
     <div class="container">
         <main>
             <div id="alert-msg"></div>
+            <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog"></div>
+            </div>
             <form id="myForm">
                 <div class="mb-3">
                     <label for="nameInput" class="form-label">Product Name</label>
@@ -67,7 +70,10 @@
                 </div>
                 <div class="d-flex">
                     <button type="submit" class="btn btn-outline-warning px-4 me-3">Insert new Product</button>
-                    <button id="del-btn" type="button" class="btn btn-outline-danger py-1">Delete Product</button>
+                    <button id="reset-btn" type="button" data-bs-toggle="modal" data-bs-target="#myModal"
+                        class="btn btn-outline-warning px-4 me-3">Reset Fields</button>
+                    <button id="del-btn" type="button" data-bs-toggle="modal" data-bs-target="#myModal"
+                        class="btn btn-outline-danger py-1">Delete Product</button>
                 </div>
 
             </form>
