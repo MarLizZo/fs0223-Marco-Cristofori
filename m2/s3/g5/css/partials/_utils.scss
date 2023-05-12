@@ -1,0 +1,23 @@
+$color-warning: rgb(255, 193, 7);
+$bg-secondary: #6c757d;
+
+main {
+    margin-top: 90px;
+}
+
+body {
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba($color-warning, 0.7);
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $bg-secondary;
+        border-radius: 10px;
+    }
+}

@@ -1,0 +1,30 @@
+main {
+  margin-top: 90px;
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+body::-webkit-scrollbar-thumb {
+  background: rgba(255, 193, 7, 0.7);
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: #6c757d;
+  border-radius: 10px;
+}
+
+header img {
+  width: 45px;
+  animation: rotateLogo 4s linear 1s infinite;
+}
+
+@keyframes rotateLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=main.css.map */
