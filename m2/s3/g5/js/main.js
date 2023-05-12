@@ -25,7 +25,7 @@ const buildCols = function () {
                     </div>
                 </div>
                 <div class="d-flex flex-column justify-content-center align-items-center mt-3 mt-sm-0">
-                    <button class="btn btn-outline-warning py-1 mb-3 w-100">View Product Details</button>
+                <a class="w-100" href="./details.html?id=${el._id}"><button class="btn btn-outline-warning py-1 mb-3 w-100">View Product Details</button></a>
                     <a class="w-100" href="./admin.html?id=${el._id}"><button class="btn btn-outline-warning py-1 w-100">Edit Product</button></a>
                 </div>
             </div>

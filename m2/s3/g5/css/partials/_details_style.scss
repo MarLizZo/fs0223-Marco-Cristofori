@@ -1,0 +1,9 @@
+main .row .col-10 {
+    img {
+        width: 400px;
+        transition: all 1s;
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
