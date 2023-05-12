@@ -15,8 +15,8 @@ const buildCols = function () {
     row.innerHTML = "";
     productsArr.forEach((el) => {
         row.innerHTML += `
-        <div class="col-12 d-flex flex-column flex-sm-row align-items-center justify-content-sm-between border-bottom border-2 border-black">
-                <div class="d-flex align-items-center">
+        <div class="col-12 d-flex flex-column flex-md-row align-items-center justify-content-md-between pb-4 pb-md-0 border-bottom border-2 border-black">
+                <div class="d-flex align-items-center mb-3 mb-md-0">
                     <img src="${el.imageUrl}" class="rounded-2">
                     <div class="d-flex flex-column ms-3">
                         <h6 class="mb-1">${el.name}</h6>
@@ -31,6 +31,7 @@ const buildCols = function () {
             </div>
         `;
     });
+    document.querySelector(".spinner-border").classList.add("d-none");
 };
 
 const getAllProducts = function () {

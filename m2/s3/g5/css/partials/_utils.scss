@@ -9,6 +9,17 @@ body {
 main {
     margin-top: 90px;
 
+    .custom-bg {
+        background-color: #343a40;
+    }
+
+    div.row.g-3 img {
+        transition: all 1s;
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
     .row .col-12 {
         img {
             width: 220px;

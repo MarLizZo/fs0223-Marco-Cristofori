@@ -17,11 +17,6 @@
                 <a class="navbar-brand ms-2" href="./index.html">
                     <img src="logo.png">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item ms-lg-2">
@@ -31,17 +26,28 @@
                             <a class="nav-link" href="./admin.html">Admin Panel</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
                 </div>
+                <div class="spinner-border text-warning ms-auto me-5" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </div>
         </nav>
     </header>
     <main class="container-fluid flex-grow-1">
+        <div class="container d-flex flex-column align-items-center mb-4 pt-4 pb-5 custom-bg rounded-4">
+            <div class="d-flex flex-column align-items-center">
+                <h1 class="text-warning">Liz Shop</h1>
+                <h5>Where you will shop from now on</h5>
+            </div>
+            <div class="w-75 rounded-4 bg-warning mt-3" style="height: 5px;"></div>
+        </div>
         <h2 class="border-bottom border-2 border-warning pb-2">Available Products</h2>
-        <div class="mt-2 row g-4 w-100 m-0" id="prod-row">
+        <div class="mt-2 row g-3 w-100 m-0" id="prod-row">
             <div class="col-12 d-flex flex-column flex-sm-row align-items-center justify-content-sm-between">
                 <div class="d-flex align-items-center">
                     <img src="http://placekitten.com/300/200" class="rounded-2">
