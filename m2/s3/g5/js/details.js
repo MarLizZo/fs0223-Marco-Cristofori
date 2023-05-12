@@ -22,8 +22,25 @@ const showAlert = function (flag) {
 };
 
 const addToCart = function (prod) {
-    localStorage.setItem("prod_id", prod);
-    showAlert(1);
+    if (localStorage.getItem("your_cart")) {
+        let jsoned = JSON.parse(localStorage.getItem("your_cart"));
+        if (
+            jsoned.findIndex((el) => {
+                return el.id == prod._id;
+            }) != -1
+        ) {
+            console.log("Product already in cart");
+        } else {
+            jsoned.push({ id: prod._id, price: prod.price });
+            localStorage.setItem("your_cart", JSON.stringify(jsoned));
+            showAlert(1);
+        }
+    } else {
+        let newArr = [];
+        newArr.push({ id: prod._id, price: prod.price });
+        localStorage.setItem("your_cart", JSON.stringify(newArr));
+        showAlert(1);
+    }
 };
 
 const showErrorAlert = function (code) {
@@ -72,9 +89,13 @@ const getProductInfo = function () {
                 <p class="mb-0">Price: ${data.price}$</p>
                 <div class="d-flex mt-4 w-100 justify-content-around">
                     <button class="btn btn-outline-warning px-4 mx-2" onclick="showAlert(0)">Shop Now</button>
-                    <button class="btn btn-outline-warning px-4 mx-2" onclick="addToCart('${data._id}')">Add to Cart</button>
+                    <button class="btn btn-outline-warning px-4 mx-2" id="cart-btn">Add to Cart</button>
                 </div>
             `;
+            let btn = document.getElementById("cart-btn");
+            btn.addEventListener("click", () => {
+                addToCart(data);
+            });
         })
         .catch((err) => {
             showErrorAlert(err.message);
