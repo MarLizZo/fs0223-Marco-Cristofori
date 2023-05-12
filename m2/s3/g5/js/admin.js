@@ -15,6 +15,30 @@ class Product {
     }
 }
 
+const goToHome = function () {
+    location.assign("./index.html");
+};
+
+const showSuccessModal = function () {
+    let modal = document.querySelector(".modal .modal-dialog");
+    modal.innerHTML = `
+        <div class="modal-content bg-dark text-light">
+            <div class="modal-header">
+                <h5 class="modal-title text-warning">Success!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <p>Product saved correctly!</p>
+                <p>Click the button to go back to the Homepage and see if is displaying correctly!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" onclick="goToHome()">Homepage</button>
+            </div>
+        </div>
+    `;
+    document.getElementById("err-trigger").click();
+};
+
 const resetFields = function () {
     inputsArr = form.querySelectorAll("input");
     inputsArr.forEach((element) => {
@@ -40,6 +64,29 @@ const deleteProduct = function (id) {
         .catch((err) => console.log(err));
 };
 
+const showErrorAlert = function (code) {
+    const alert = document.getElementById("alert-msg");
+    const appendAlert = function () {
+        const wrapper = document.createElement("div");
+        wrapper.innerHTML = [
+            `<div class="alert alert-danger alert-dismissible" role="alert">`,
+            code == 404
+                ? `<div>Error 404 -- Page not found. Check the API endpoint</div>`
+                : code == 401
+                ? `<div>Error 401 -- Authorization error. Check your API Key.</div>`
+                : code == 400
+                ? `<div>Errore 400 -- Bad request, please check if all the fields are filled correctly.</div>`
+                : code == 500
+                ? `<div>Error 500 -- The server is not responding, please try again later.</div>`
+                : `<div>Error ${code} -- What to do now?</div>`,
+            '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+            "</div>",
+        ].join("");
+        alert.append(wrapper);
+    };
+    appendAlert();
+};
+
 const postNewProduct = function (product, id = null) {
     fetch(id ? endpoint + id : endpoint, {
         method: id ? "PUT" : "POST",
@@ -51,23 +98,12 @@ const postNewProduct = function (product, id = null) {
     })
         .then((res) => {
             if (res.ok) {
-                location.assign("./index.html");
+                showSuccessModal();
             } else {
-                const alert = document.getElementById("alert-msg");
-                const appendAlert = function () {
-                    const wrapper = document.createElement("div");
-                    wrapper.innerHTML = [
-                        `<div class="alert alert-danger alert-dismissible" role="alert">`,
-                        `   <div>Something gone wrong while creating new Product.. Error code: ${res.status}</div>`,
-                        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-                        "</div>",
-                    ].join("");
-                    alert.append(wrapper);
-                };
-                appendAlert();
+                throw new Error(res.status);
             }
         })
-        .catch((err) => console.log("Something gone wrong.. " + err));
+        .catch((err) => showErrorAlert(err.message));
 };
 
 const setupForm = function () {
@@ -117,20 +153,20 @@ const setupDelBtn = function () {
         btn.addEventListener("click", function () {
             let modal = document.querySelector(".modal .modal-dialog");
             modal.innerHTML = `
-        <div class="modal-content bg-dark text-light">
-            <div class="modal-header">
-                <h5 class="modal-title text-danger">Warning</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">Warning</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <p>Are you sure you want to delete this product?</p>
+                    <p>This operation cannot be undone!</p>
                 </div>
-                <div class="modal-body">
-                <p>Are you sure you want to delete this product?</p>
-                <p>This operation cannot be undone!</p>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    <button type="button" onclick="deleteProduct('${id}');" data-bs-dismiss="modal" class="btn btn-danger">Yes, delete</button>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                <button type="button" onclick="deleteProduct('${id}');" data-bs-dismiss="modal" class="btn btn-danger">Yes, delete</button>
-            </div>
-        </div>
         `;
         });
     } else {
