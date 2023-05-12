@@ -41,27 +41,19 @@
     </header>
     <main class="container-fluid">
         <h2 class="border-bottom border-2 border-warning pb-2">Available Products</h2>
-        <div class="mt-2 row row-cols-1 row-cols-lg-2 g-4">
-            <div class="col d-flex justify-content-center">
+        <div class="mt-2 row g-4" id="prod-row">
+            <div class="col-12 d-flex flex-column flex-sm-row align-items-center ">
                 <img src="http://placekitten.com/300/200" class="rounded-2">
-                <div class="d-flex flex-column justify-content-evenly ms-3">
+                <div class="d-flex flex-column mt-3 mt-sm-0 ms-sm-3">
                     <div>
                         <h5>Titolo prodotto</h5>
                         <p class="mb-2">Brand: <span>Brand name</span></p>
                         <p>Price: <span>99$</span></p>
                     </div>
-                    <button class="btn btn-outline-warning py-1">Edit Product</button>
-                </div>
-            </div>
-            <div class="col d-flex justify-content-center">
-                <img src="http://placekitten.com/300/200" class="rounded-2">
-                <div class="d-flex flex-column justify-content-evenly ms-3">
-                    <div>
-                        <h5>Titolo prodotto</h5>
-                        <p class="mb-2">Brand: <span>Brand name</span></p>
-                        <p>Price: <span>99$</span></p>
+                    <div class="d-flex">
+                        <button class="btn btn-outline-warning py-1 me-3">View Product Details</button>
+                        <button class="btn btn-outline-warning py-1">Edit Product</button>
                     </div>
-                    <button class="btn btn-outline-warning py-1">Edit Product</button>
                 </div>
             </div>
         </div>
