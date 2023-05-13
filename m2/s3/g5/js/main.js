@@ -15,7 +15,7 @@ const buildCols = function () {
     row.innerHTML = "";
     productsArr.forEach((el) => {
         row.innerHTML += `
-        <div class="col-12 d-flex flex-column flex-md-row align-items-center justify-content-md-between pb-4 pb-md-0 border-bottom border-2 border-black">
+        <div class="col-12 d-flex flex-column flex-md-row align-items-center justify-content-md-between pb-4 pb-md-3 border-bottom border-2 border-black">
                 <div class="d-flex align-items-center mb-3 mb-md-0">
                     <img src="${el.imageUrl}" class="rounded-2">
                     <div class="d-flex flex-column ms-3">
@@ -34,6 +34,29 @@ const buildCols = function () {
     document.querySelector(".spinner-border").classList.add("d-none");
 };
 
+const showErrorAlert = function (code) {
+    const alert = document.getElementById("alert-msg");
+    const appendAlert = function () {
+        const wrapper = document.createElement("div");
+        wrapper.innerHTML = [
+            `<div class="alert alert-danger alert-dismissible" role="alert">`,
+            code == 404
+                ? `<div>Error 404 -- Page not found. Something gone wrong while loading resources.</div>`
+                : code == 401
+                ? `<div>Error 401 -- Authorization error. Please contact the admin.</div>`
+                : code == 400
+                ? `<div>Errore 400 -- Bad request, please contact the admin.</div>`
+                : code == 500
+                ? `<div>Error 500 -- The server is not responding, please try again later.</div>`
+                : `<div>Error ${code} -- Please contact the admin if this persist!</div>`,
+            '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+            "</div>",
+        ].join("");
+        alert.append(wrapper);
+    };
+    appendAlert();
+};
+
 const getAllProducts = function () {
     fetch(endpoint, {
         headers: {
@@ -44,21 +67,16 @@ const getAllProducts = function () {
             if (res.ok) {
                 return res.json();
             } else {
-                if (res.status == 400) {
-                    throw new Error("Error 400, Bad Request!");
-                } else if (res.status == 401) {
-                    throw new Error("Error 401, Unhauthorized!");
-                } else if (res.status == 404) {
-                    throw new Error("Error 404, Not Found!");
-                }
+                throw new Error(res.status);
             }
         })
         .then((data) => {
-            console.log(data);
             productsArr = data;
+            document.getElementById("prod-counter").innerText =
+                productsArr.length;
             buildCols();
         })
-        .catch((err) => console.log(err));
+        .catch((err) => showErrorAlert(err.message));
 };
 
 window.onload = function () {

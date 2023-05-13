@@ -40,7 +40,7 @@ const showSuccessModal = function () {
 };
 
 const resetFields = function () {
-    inputsArr = form.querySelectorAll("input");
+    let inputsArr = form.querySelectorAll("input");
     inputsArr.forEach((element) => {
         element.value = "";
     });
@@ -107,7 +107,7 @@ const postNewProduct = function (product, id = null) {
 };
 
 const setupForm = function () {
-    inputsArr = form.querySelectorAll("input");
+    let inputsArr = form.querySelectorAll("input");
 
     if (id) {
         let btn = form.querySelector("button");
