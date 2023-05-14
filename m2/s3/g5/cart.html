@@ -17,11 +17,6 @@
                 <a class="navbar-brand ms-2" href="./index.html">
                     <img src="logo.png">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item ms-lg-2">
@@ -35,13 +30,35 @@
                         </li>
                     </ul>
                 </div>
+                <div class="spinner-border text-warning ms-auto me-5" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </div>
         </nav>
     </header>
     <main class="flex-grow-1">
         <div id="alert-msg"></div>
-        <div class="container mt-2">
-
+        <div class="container mt-3">
+            <h2>Products in your cart: <span id="prod-count">0</span></h2>
+            <h5 class="border-bottom border-2 border-warning mb-0 pb-2 mb-2">Your actual Cart total: <span
+                    id="cart-total">0$</span>
+            </h5>
+            <div class="row" id="myRow">
+                <div
+                    class="col-12 mt-3 d-flex border-bottom border-2 border-black justify-content-between align-items-center">
+                    <div class="d-flex flex-column align-items-center">
+                        <img class="mb-2 rounded-2" src="http://placekitten.com/160/110">
+                        <h3>Nome prodotto</h3>
+                        <p>Price here</p>
+                    </div>
+                    <button class="btn btn-outline-warning px-3">Remove from Cart</button>
+                </div>
+            </div>
         </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"

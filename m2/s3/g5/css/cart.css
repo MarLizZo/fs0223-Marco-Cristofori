@@ -57,6 +57,14 @@ header img {
     transform: rotate(360deg);
   }
 }
-.container img {
-  width: 120px;
+.container .row img {
+  transition: all 1s;
+  width: 120px !important;
+}
+.container .row img:hover {
+  transform: scale(1.4);
+}
+.container .row button {
+  height: -moz-max-content;
+  height: max-content;
 }/*# sourceMappingURL=cart.css.map */
