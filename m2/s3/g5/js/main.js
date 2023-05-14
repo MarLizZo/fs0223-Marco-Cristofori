@@ -79,6 +79,31 @@ const getAllProducts = function () {
         .catch((err) => showErrorAlert(err.message));
 };
 
+const setupInfoBtn = function () {
+    let btn = document.getElementById("info-btn");
+    let modal = document.querySelector("#myModal .modal-dialog");
+
+    btn.addEventListener("click", () => {
+        modal.innerHTML = `
+        <div class="modal-content bg-dark text-light">
+            <div class="modal-header">
+                <h5 class="modal-title text-warning">Info per Stefano</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <p>La Homepage è stata fatta diversamente, non volevo praticamente copiare le ultime pagine fatte con i caroselli. Sembra un pò spoglia così, ma di fatti in un e-commerce vero ci sono molti più dettagli per i prodotto oltre a Nome, brand e prezzo. Risulterebbe più completo con più info.</p>
+                <p>Il progetto era stato consegnato venerdi sera. Sabato e domenica non ci sarei dovuto essere a casa.</p>
+                <p>Alla fine ho avuto la domenica libera, perciò ho aggiunto degli extra! Spero siano di gradimento :)</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Ok, Marko è forte</button>
+            </div>
+        </div>
+    `;
+    });
+};
+
 window.onload = function () {
     getAllProducts();
+    setupInfoBtn();
 };
