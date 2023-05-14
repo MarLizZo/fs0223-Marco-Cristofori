@@ -6,6 +6,7 @@ let productsArr = [];
 const goToEditPage = function (id) {
     location.assign(`./admin.html?id=${id}`);
 };
+
 const goToDetailsPage = function (id) {
     location.assign("./details.html?id=" + id);
 };
@@ -91,7 +92,7 @@ const setupInfoBtn = function () {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                <p>La Homepage è stata fatta diversamente, non volevo praticamente copiare le ultime pagine fatte con i caroselli. Sembra un pò spoglia così, ma di fatti in un e-commerce vero ci sono molti più dettagli per i prodotto oltre a Nome, brand e prezzo. Risulterebbe più completo con più info.</p>
+                <p>La Homepage è stata fatta diversamente, non volevo praticamente copiare le ultime pagine fatte con i caroselli. Sembra un pò spoglia così, ma di fatti in un e-commerce vero ci sono molti più dettagli per i prodotto oltre a Nome, brand e prezzo. Risulterebbe più completo con più info. Magari anche una sidebar aiuterebbe a far apparire tutto più compatto e bello. Sono ossessionato dal bel design..</p>
                 <p>Il progetto era stato consegnato venerdi sera. Sabato e domenica non ci sarei dovuto essere a casa.</p>
                 <p>Alla fine ho avuto la domenica libera, perciò ho aggiunto degli extra! Spero siano di gradimento :)</p>
             </div>

@@ -12,7 +12,7 @@ const buildPage = function (prod = null) {
     if (prod) {
         row.innerHTML += `<div
         class="col-12 mt-3 d-flex flex-column flex-lg-row border-bottom border-2 border-black justify-content-between align-items-center">
-        <div class="d-flex flex-column">
+        <div class="d-flex flex-column align-items-center align-items-lg-start">
             <img class="mb-2 rounded-2" src="${prod.imageUrl}">
             <h4>${prod.name}</h4>
             <p>${prod.price}$</p>
