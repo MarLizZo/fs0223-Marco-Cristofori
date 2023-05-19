@@ -1,0 +1,112 @@
+.custom-bg-home {
+    height: 100%;
+    background: #535353;
+    background: -moz-linear-gradient(top, #282828 0%, #000000 60%);
+    background: -webkit-linear-gradient(top, #282828 0%, #000000 60%);
+    background: linear-gradient(to bottom, #282828 0%, #000000 60%);
+}
+
+@media screen and (min-width: 768px) {
+    .custom-bg-home {
+        height: 100%;
+        background: #535353;
+        background: -moz-linear-gradient(top, #282828 0%, #000000 60%);
+        background: -webkit-linear-gradient(top, #282828 0%, #000000 60%);
+        background: linear-gradient(to bottom, #282828 0%, #000000 60%);
+    }
+}
+
+.account-image {
+    width: 30px;
+}
+
+.custom-gradient {
+    background: #000000;
+    background: -moz-linear-gradient(left, #000000 0%, #2c2c2c 100%);
+    background: -webkit-linear-gradient(left, #000000 0%, #2c2c2c 100%);
+    background: linear-gradient(to right, #000000 0%, #2c2c2c 100%);
+}
+
+.pos-rel {
+    position: relative;
+}
+
+.annunci {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #535353 !important;
+}
+
+@media screen and (min-width: 768px) {
+    .custom-cols-w {
+        width: 30%;
+        background-color: #373737 !important;
+    }
+}
+
+.custom-cols-w {
+    width: 30%;
+    background-color: #373737 !important;
+}
+
+.custom-img-card {
+    width: 90%;
+}
+
+.font-09 {
+    font-size: 0.9em;
+}
+
+.card img {
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.card img:hover {
+    transform: scale(1.1);
+}
+
+#row-album-1, #row-album-2, #row-album-3 {
+    height: max-content;
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        background: #1ED760;
+        background: -moz-linear-gradient(top, #1ED760 0%, #000000 50%);
+        background: -webkit-linear-gradient(top, #1ED760 0%, #000000 50%);
+        background: linear-gradient(to bottom, #1ED760 0%, #000000 50%);
+        
+    }
+    section {
+        margin-bottom: 86px;
+    }
+}
+
+#myVid {
+    height: 100vh;
+    z-index: 10000;
+}
+
+
+.like:hover {
+    color: #1ED760;
+}
+
+/* @media only screen and (min-width: 768px) {
+    #tabletContent {
+        display: block;
+    }
+    .sfondo {
+        background-color: red;
+    }
+}
+
+.sfondo {
+    background-color: #000000;
+} */
