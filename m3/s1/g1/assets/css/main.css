@@ -1,0 +1,70 @@
+h1 {
+    background: -webkit-linear-gradient(right, #eee, #485aff);
+    background: -moz-linear-gradient(right, #eee, #485aff);
+    background: -o-linear-gradient(right, #eee, #485aff);
+    background: linear-gradient(to right, #eee, #485aff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: #232526; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right bottom,
+        #414345,
+        #232526
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right bottom,
+        #414345,
+        #232526
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+header {
+    border-bottom: 3px solid black;
+    background: #232526; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        right,
+        #616364,
+        #232526
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        right
+        #616364,
+        #232526
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.setWinner {
+    animation: winner 3s ease-in-out .2s 1;
+}
+
+@keyframes winner {
+    0% {
+        transform: translateY(0) scale(1);
+        color: white;
+    }
+    33% {
+        transform: translateY(-10px) scale(1.4);
+        color: #485aff;
+    }
+    66% {
+        transform: translateY(-10px) scale(1.4);
+        color: #485aff;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        color: white;
+    }
+}
+
+#btn-set:active {
+    background-color: #485aff;
+    border-color: #485aff;
+}
