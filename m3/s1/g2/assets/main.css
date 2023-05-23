@@ -1,0 +1,17 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #202020;
+}
+
+header {
+    height: max-content;
+    background-color: #353535;
+    border-bottom: 2px solid black;
+}
+
+.details {
+    background-color: #353535;
+}
