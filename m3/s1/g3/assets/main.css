@@ -1,0 +1,11 @@
+header {
+    background-color: #303030;
+}
+
+body {
+    background-color: #151515;
+}
+
+.col-6 button {
+    width: max-content;
+}
