@@ -1,12 +1,7 @@
-// import { createEl } from './modules/functions';
-function createEl(_tagName, _classes) {
-    var el = document.createElement(_tagName);
-    _classes ? _classes.forEach(function (cl) { return el.classList.add(cl); }) : 0;
-    return el;
-}
-var myArr = [];
-var Capo = /** @class */ (function () {
-    function Capo(_id, _codprod, _collezione, _capo, _modello, _quantita, _colore, _prezzoivaesclusa, _prezzoivainclusa, _disponibile, _saldo) {
+import { createEl } from "./modules/functions.js";
+let myArr = [];
+class Capo {
+    constructor(_id, _codprod, _collezione, _capo, _modello, _quantita, _colore, _prezzoivaesclusa, _prezzoivainclusa, _disponibile, _saldo) {
         this.id = _id;
         this.codprod = _codprod;
         this.collezione = _collezione;
@@ -21,25 +16,17 @@ var Capo = /** @class */ (function () {
         this.CLogga();
         this.creaCols();
     }
-    Object.defineProperty(Capo.prototype, "mostraPrezzo", {
-        get: function () {
-            return this.prezzoivainclusa;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Capo.prototype, "getsaldocapo", {
-        get: function () {
-            // ritorna il prezzo scontato
-            return (this.prezzoivainclusa * this.saldo) / 100;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Capo.prototype.creaCols = function () {
+    get mostraPrezzo() {
+        return this.prezzoivainclusa;
+    }
+    get getsaldocapo() {
+        // ritorna il prezzo scontato
+        return (this.prezzoivainclusa * this.saldo) / 100;
+    }
+    creaCols() {
         // crea le cols dentro la row
-        var row = document.querySelector(".row");
-        var col = createEl("div", [
+        let row = document.querySelector(".row");
+        let col = createEl("div", [
             "col-4",
             "d-flex",
             "flex-column",
@@ -49,28 +36,24 @@ var Capo = /** @class */ (function () {
             "border-success",
             "pb-3",
         ]);
-        var p_1 = createEl("p", ["m-0", "mb-2"]);
-        p_1.innerText = "Nome Capo: ".concat(this.capo);
-        var p_2 = createEl("p", ["m-0"]);
-        p_2.innerText = "Prezzo: ".concat(this.mostraPrezzo, "$");
-        var p_3 = createEl("p", ["m-0"]);
-        p_3.innerText = "Prezzo scontato: ".concat(this.getsaldocapo, "$");
+        let p_1 = createEl("p", ["m-0", "mb-2"], `Nome Capo: ${this.capo}`);
+        let p_2 = createEl("p", ["m-0"], `Prezzo: ${this.mostraPrezzo}$`);
+        let p_3 = createEl("p", ["m-0"], `Prezzo scontato: ${this.getsaldocapo}$`);
         col.append(p_1, p_2, p_3);
         row === null || row === void 0 ? void 0 : row.appendChild(col);
-    };
-    Capo.prototype.CLogga = function () {
+    }
+    CLogga() {
         // console logga
-        console.log("Il capo > ".concat(this.capo, " < ha un prezzo di ").concat(this.mostraPrezzo, "$ ma con lo sconto del ").concat(this.saldo, "% lo paghi solo ").concat(this.getsaldocapo, "$!"));
-    };
-    return Capo;
-}());
+        console.log(`Il capo > ${this.capo} < ha un prezzo di ${this.mostraPrezzo}$ ma con lo sconto del ${this.saldo}% lo paghi solo ${this.getsaldocapo}$!`);
+    }
+}
 function istanziaClassi(obj) {
-    var myIstance = new Capo(obj.id, obj.codprod, obj.collezione, obj.capo, obj.modello, obj.quantita, obj.colore, obj.prezzoivaesclusa, obj.prezzoivainclusa, obj.disponibile, obj.saldo);
+    let myIstance = new Capo(obj.id, obj.codprod, obj.collezione, obj.capo, obj.modello, obj.quantita, obj.colore, obj.prezzoivaesclusa, obj.prezzoivainclusa, obj.disponibile, obj.saldo);
     myArr.push(myIstance);
 }
 window.onload = function () {
     fetch("assets/Abbigliamento.json")
-        .then(function (res) {
+        .then((res) => {
         if (res.ok) {
             return res.json();
         }
@@ -78,10 +61,11 @@ window.onload = function () {
             throw new Error("Errore nel leggere il JSON");
         }
     })
-        .then(function (res) {
+        .then((res) => {
         console.log(res);
-        res.forEach(function (el) { return istanziaClassi(el); });
+        res.forEach((el) => istanziaClassi(el));
         console.log(myArr);
     })
-        .catch(function (err) { return console.log(err); });
+        .catch((err) => console.log(err));
 };
+//# sourceMappingURL=main.js.map

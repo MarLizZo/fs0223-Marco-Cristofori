@@ -1,10 +1,5 @@
-// import { createEl } from './modules/functions';
+import { createEl } from "./modules/functions.js";
 
-function createEl(_tagName: string, _classes?: string[]): HTMLElement {
-    let el = document.createElement(_tagName);
-    _classes ? _classes.forEach((cl) => el.classList.add(cl)) : 0;
-    return el;
-}
 type DatiCapo = {
     id: number;
     codprod: number;
@@ -84,12 +79,21 @@ class Capo implements DatiCapo {
             "border-success",
             "pb-3",
         ]);
-        let p_1: HTMLElement = createEl("p", ["m-0", "mb-2"]);
-        p_1.innerText = `Nome Capo: ${this.capo}`;
-        let p_2: HTMLElement = createEl("p", ["m-0"]);
-        p_2.innerText = `Prezzo: ${this.mostraPrezzo}$`;
-        let p_3: HTMLElement = createEl("p", ["m-0"]);
-        p_3.innerText = `Prezzo scontato: ${this.getsaldocapo}$`;
+        let p_1: HTMLElement = createEl(
+            "p",
+            ["m-0", "mb-2"],
+            `Nome Capo: ${this.capo}`
+        );
+        let p_2: HTMLElement = createEl(
+            "p",
+            ["m-0"],
+            `Prezzo: ${this.mostraPrezzo}$`
+        );
+        let p_3: HTMLElement = createEl(
+            "p",
+            ["m-0"],
+            `Prezzo scontato: ${this.getsaldocapo}$`
+        );
         col.append(p_1, p_2, p_3);
         row?.appendChild(col);
     }
