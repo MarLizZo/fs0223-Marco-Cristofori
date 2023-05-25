@@ -29,30 +29,18 @@ class Capo implements DatiCapo {
     disponibile: string;
     saldo: number;
 
-    constructor(
-        _id: number,
-        _codprod: number,
-        _collezione: string,
-        _capo: string,
-        _modello: number,
-        _quantita: number,
-        _colore: string,
-        _prezzoivaesclusa: number,
-        _prezzoivainclusa: number,
-        _disponibile: string,
-        _saldo: number
-    ) {
-        this.id = _id;
-        this.codprod = _codprod;
-        this.collezione = _collezione;
-        this.capo = _capo;
-        this.modello = _modello;
-        this.quantita = _quantita;
-        this.colore = _colore;
-        this.prezzoivaesclusa = _prezzoivaesclusa;
-        this.prezzoivainclusa = _prezzoivainclusa;
-        this.disponibile = _disponibile;
-        this.saldo = _saldo;
+    constructor(_obj: DatiCapo) {
+        this.id = _obj.id;
+        this.codprod = _obj.codprod;
+        this.collezione = _obj.collezione;
+        this.capo = _obj.capo;
+        this.modello = _obj.modello;
+        this.quantita = _obj.quantita;
+        this.colore = _obj.colore;
+        this.prezzoivaesclusa = _obj.prezzoivaesclusa;
+        this.prezzoivainclusa = _obj.prezzoivainclusa;
+        this.disponibile = _obj.disponibile;
+        this.saldo = _obj.saldo;
         this.CLogga();
         this.creaCols();
     }
@@ -107,19 +95,7 @@ class Capo implements DatiCapo {
 }
 
 function istanziaClassi(obj: DatiCapo): void {
-    let myIstance = new Capo(
-        obj.id,
-        obj.codprod,
-        obj.collezione,
-        obj.capo,
-        obj.modello,
-        obj.quantita,
-        obj.colore,
-        obj.prezzoivaesclusa,
-        obj.prezzoivainclusa,
-        obj.disponibile,
-        obj.saldo
-    );
+    let myIstance = new Capo(obj);
     myArr.push(myIstance);
 }
 

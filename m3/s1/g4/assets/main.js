@@ -1,18 +1,18 @@
 import { createEl } from "./modules/functions.js";
 let myArr = [];
 class Capo {
-    constructor(_id, _codprod, _collezione, _capo, _modello, _quantita, _colore, _prezzoivaesclusa, _prezzoivainclusa, _disponibile, _saldo) {
-        this.id = _id;
-        this.codprod = _codprod;
-        this.collezione = _collezione;
-        this.capo = _capo;
-        this.modello = _modello;
-        this.quantita = _quantita;
-        this.colore = _colore;
-        this.prezzoivaesclusa = _prezzoivaesclusa;
-        this.prezzoivainclusa = _prezzoivainclusa;
-        this.disponibile = _disponibile;
-        this.saldo = _saldo;
+    constructor(_obj) {
+        this.id = _obj.id;
+        this.codprod = _obj.codprod;
+        this.collezione = _obj.collezione;
+        this.capo = _obj.capo;
+        this.modello = _obj.modello;
+        this.quantita = _obj.quantita;
+        this.colore = _obj.colore;
+        this.prezzoivaesclusa = _obj.prezzoivaesclusa;
+        this.prezzoivainclusa = _obj.prezzoivainclusa;
+        this.disponibile = _obj.disponibile;
+        this.saldo = _obj.saldo;
         this.CLogga();
         this.creaCols();
     }
@@ -48,7 +48,7 @@ class Capo {
     }
 }
 function istanziaClassi(obj) {
-    let myIstance = new Capo(obj.id, obj.codprod, obj.collezione, obj.capo, obj.modello, obj.quantita, obj.colore, obj.prezzoivaesclusa, obj.prezzoivainclusa, obj.disponibile, obj.saldo);
+    let myIstance = new Capo(obj);
     myArr.push(myIstance);
 }
 window.onload = function () {
