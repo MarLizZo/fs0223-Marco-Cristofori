@@ -16,42 +16,22 @@ type DatiCapo = {
 
 let myArr: DatiCapo[] = [];
 
-class Capo implements DatiCapo {
-    id: number;
-    codprod: number;
-    collezione: string;
-    capo: string;
-    modello: number;
-    quantita: number;
-    colore: string;
-    prezzoivaesclusa: number;
-    prezzoivainclusa: number;
-    disponibile: string;
-    saldo: number;
+class Capo {
+    dati: DatiCapo;
 
     constructor(_obj: DatiCapo) {
-        this.id = _obj.id;
-        this.codprod = _obj.codprod;
-        this.collezione = _obj.collezione;
-        this.capo = _obj.capo;
-        this.modello = _obj.modello;
-        this.quantita = _obj.quantita;
-        this.colore = _obj.colore;
-        this.prezzoivaesclusa = _obj.prezzoivaesclusa;
-        this.prezzoivainclusa = _obj.prezzoivainclusa;
-        this.disponibile = _obj.disponibile;
-        this.saldo = _obj.saldo;
+        this.dati = _obj;
         this.CLogga();
         this.creaCols();
     }
 
     get mostraPrezzo(): number {
-        return this.prezzoivainclusa;
+        return this.dati.prezzoivainclusa;
     }
 
     get getsaldocapo(): number {
         // ritorna il prezzo scontato
-        return (this.prezzoivainclusa * this.saldo) / 100;
+        return (this.dati.prezzoivainclusa * this.dati.saldo) / 100;
     }
 
     creaCols(): void {
@@ -70,7 +50,7 @@ class Capo implements DatiCapo {
         let p_1: HTMLElement = createEl(
             "p",
             ["m-0", "mb-2"],
-            `Nome Capo: ${this.capo}`
+            `Nome Capo: ${this.dati.capo}`
         );
         let p_2: HTMLElement = createEl(
             "p",
@@ -89,14 +69,14 @@ class Capo implements DatiCapo {
     CLogga(): void {
         // console logga
         console.log(
-            `Il capo > ${this.capo} < ha un prezzo di ${this.mostraPrezzo}$ ma con lo sconto del ${this.saldo}% lo paghi solo ${this.getsaldocapo}$!`
+            `Il capo > ${this.dati.capo} < ha un prezzo di ${this.mostraPrezzo}$ ma con lo sconto del ${this.dati.saldo}% lo paghi solo ${this.getsaldocapo}$!`
         );
     }
 }
 
 function istanziaClassi(obj: DatiCapo): void {
     let myIstance = new Capo(obj);
-    myArr.push(myIstance);
+    //myArr.push(myIstance);
 }
 
 window.onload = function () {

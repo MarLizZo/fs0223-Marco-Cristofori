@@ -2,26 +2,16 @@ import { createEl } from "./modules/functions.js";
 let myArr = [];
 class Capo {
     constructor(_obj) {
-        this.id = _obj.id;
-        this.codprod = _obj.codprod;
-        this.collezione = _obj.collezione;
-        this.capo = _obj.capo;
-        this.modello = _obj.modello;
-        this.quantita = _obj.quantita;
-        this.colore = _obj.colore;
-        this.prezzoivaesclusa = _obj.prezzoivaesclusa;
-        this.prezzoivainclusa = _obj.prezzoivainclusa;
-        this.disponibile = _obj.disponibile;
-        this.saldo = _obj.saldo;
+        this.dati = _obj;
         this.CLogga();
         this.creaCols();
     }
     get mostraPrezzo() {
-        return this.prezzoivainclusa;
+        return this.dati.prezzoivainclusa;
     }
     get getsaldocapo() {
         // ritorna il prezzo scontato
-        return (this.prezzoivainclusa * this.saldo) / 100;
+        return (this.dati.prezzoivainclusa * this.dati.saldo) / 100;
     }
     creaCols() {
         // crea le cols dentro la row
@@ -36,7 +26,7 @@ class Capo {
             "border-success",
             "pb-3",
         ]);
-        let p_1 = createEl("p", ["m-0", "mb-2"], `Nome Capo: ${this.capo}`);
+        let p_1 = createEl("p", ["m-0", "mb-2"], `Nome Capo: ${this.dati.capo}`);
         let p_2 = createEl("p", ["m-0"], `Prezzo: ${this.mostraPrezzo}$`);
         let p_3 = createEl("p", ["m-0"], `Prezzo scontato: ${this.getsaldocapo}$`);
         col.append(p_1, p_2, p_3);
@@ -44,12 +34,12 @@ class Capo {
     }
     CLogga() {
         // console logga
-        console.log(`Il capo > ${this.capo} < ha un prezzo di ${this.mostraPrezzo}$ ma con lo sconto del ${this.saldo}% lo paghi solo ${this.getsaldocapo}$!`);
+        console.log(`Il capo > ${this.dati.capo} < ha un prezzo di ${this.mostraPrezzo}$ ma con lo sconto del ${this.dati.saldo}% lo paghi solo ${this.getsaldocapo}$!`);
     }
 }
 function istanziaClassi(obj) {
     let myIstance = new Capo(obj);
-    myArr.push(myIstance);
+    //myArr.push(myIstance);
 }
 window.onload = function () {
     fetch("assets/Abbigliamento.json")
