@@ -14,10 +14,10 @@ type DatiCapo = {
     saldo: number;
 };
 
-let myArr: DatiCapo[] = [];
+let myArr: Capo[] = [];
 
 class Capo {
-    dati: DatiCapo;
+    protected dati: DatiCapo;
 
     constructor(_obj: DatiCapo) {
         this.dati = _obj;
@@ -34,7 +34,7 @@ class Capo {
         return (this.dati.prezzoivainclusa * this.dati.saldo) / 100;
     }
 
-    creaCols(): void {
+    protected creaCols(): void {
         // crea le cols dentro la row
         let row: HTMLElement | null = document.querySelector(".row");
         let col: HTMLElement | null = createEl("div", [
@@ -66,7 +66,7 @@ class Capo {
         row?.appendChild(col);
     }
 
-    CLogga(): void {
+    protected CLogga(): void {
         // console logga
         console.log(
             `Il capo > ${this.dati.capo} < ha un prezzo di ${this.mostraPrezzo}$ ma con lo sconto del ${this.dati.saldo}% lo paghi solo ${this.getsaldocapo}$!`
@@ -75,8 +75,8 @@ class Capo {
 }
 
 function istanziaClassi(obj: DatiCapo): void {
-    let myIstance = new Capo(obj);
-    //myArr.push(myIstance);
+    let myIstance: Capo = new Capo(obj);
+    myArr.push(myIstance);
 }
 
 window.onload = function () {

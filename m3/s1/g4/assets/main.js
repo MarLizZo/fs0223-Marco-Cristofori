@@ -39,7 +39,7 @@ class Capo {
 }
 function istanziaClassi(obj) {
     let myIstance = new Capo(obj);
-    //myArr.push(myIstance);
+    myArr.push(myIstance);
 }
 window.onload = function () {
     fetch("assets/Abbigliamento.json")
