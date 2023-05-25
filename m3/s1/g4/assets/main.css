@@ -1,0 +1,11 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #101010;
+}
+
+header {
+    background-color: #252525;
+}
