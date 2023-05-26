@@ -1,3 +1,5 @@
+import { byid, createEl } from "./modules/functions.js";
+
 type Registry = {
     id: number;
     durata: number;
@@ -146,23 +148,6 @@ class Smartphone implements ISmartPhone {
             });
         });
     }
-}
-
-function createEl(
-    name: string,
-    classes?: string[],
-    text?: string,
-    id?: string
-): HTMLElement {
-    let el: HTMLElement = document.createElement(name);
-    classes ? classes.forEach((cl) => el.classList.add(cl)) : 0;
-    text ? (el.textContent = text) : 0;
-    id ? (el.id = id) : 0;
-    return el;
-}
-
-function byid(id: string): HTMLElement | null {
-    return document.getElementById(id);
 }
 
 window.onload = function (): void {
