@@ -1,0 +1,66 @@
+.outer-pupilla {
+  background-color: #ad5efc;
+  width: 70px;
+  height: 60px;
+  border: 2px solid black;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.outer-pupilla-2 {
+  width: 140px;
+  height: 110px;
+  border: 2px solid black;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.outer-pupilla-3 {
+  width: 240px;
+  height: 180px;
+  border: 2px solid black;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.outer-pupilla-4 {
+  width: 400px;
+  height: 250px;
+  border: 2px solid black;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-20deg);
+  position: relative;
+  right: 30px;
+  top: 20px;
+  opacity: 0.5;
+}
+
+.pupilla {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border-radius: 100%;
+}
+
+.inner-color {
+  background-color: #bc79ff;
+  width: 60%;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 90% 0 90% 0;
+  rotate: 10deg;
+  border: 4px solid black;
+}
