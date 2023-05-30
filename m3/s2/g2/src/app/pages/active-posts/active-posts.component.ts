@@ -9,7 +9,6 @@ import { PostsServiceService } from 'src/app/Service/posts-service.service';
 })
 export class ActivePostsComponent {
   activePosts: Post[] = [];
-  private PostService: PostsServiceService = new PostsServiceService();
 
   constructor(private ps: PostsServiceService) {
     ps.getAllPosts().then(() => {
