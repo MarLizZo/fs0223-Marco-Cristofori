@@ -8,8 +8,6 @@ export class PostsServiceService {
   apiUrl: string = '../../assets/db.json';
   allPosts: Post[] = [];
 
-  constructor() {}
-
   getAllPosts(): Promise<Post[]> {
     return fetch(this.apiUrl)
       .then((res) => res.json())
