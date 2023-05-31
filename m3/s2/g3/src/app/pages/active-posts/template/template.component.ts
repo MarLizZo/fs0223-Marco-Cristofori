@@ -12,7 +12,6 @@ export class TemplateComponent {
   @Output() onSwitch = new EventEmitter();
 
   switchPost(id: number) {
-    console.log(id);
     this.onSwitch.emit(id);
   }
 }

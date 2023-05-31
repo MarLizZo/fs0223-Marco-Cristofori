@@ -3,7 +3,7 @@
         [class.bg-secondary]="post.type === 'politic'" [class.bg-warning]="post.type === 'news'"
         [class.bg-danger]="post.type === 'education'">
         <p class="m-0 fs-4">Title: {{ post.title }}</p>
-        <ng-content (click)="switchPost(post.id)"></ng-content>
+        <button class="btn btn-sm btn-dark text-white" (click)="switchPost(post.id)">Switch</button>
     </div>
     <div class="post-body p-1" [class.bg-secondary]="post.type === 'politic'" [class.bg-warning]="post.type === 'news'"
         [class.bg-danger]="post.type === 'education'">

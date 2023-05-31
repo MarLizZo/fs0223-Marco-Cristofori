@@ -15,7 +15,16 @@ export class InactivePostsComponent {
     this.inactivePosts = this.PostService.getPosts(false);
   }
 
-  enablePost(): void {
-    //
+  enablePost(id: number): void {
+    this.inactivePosts[
+      this.inactivePosts.findIndex((p) => p.id === id)
+    ].active = true;
+    this.PostService.allPosts[
+      this.inactivePosts.findIndex((p) => p.id === id)
+    ].active = true;
+    this.inactivePosts.splice(
+      this.inactivePosts.findIndex((p) => p.id === id),
+      1
+    );
   }
 }

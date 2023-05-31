@@ -16,9 +16,14 @@ export class ActivePostsComponent {
   }
 
   disablePost(id: number): void {
-    console.log(id);
-
     this.activePosts[this.activePosts.findIndex((p) => p.id === id)].active =
       false;
+    this.PostService.allPosts[
+      this.activePosts.findIndex((p) => p.id === id)
+    ].active = false;
+    this.activePosts.splice(
+      this.activePosts.findIndex((p) => p.id === id),
+      1
+    );
   }
 }
