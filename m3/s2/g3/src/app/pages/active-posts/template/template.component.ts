@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Post } from 'src/app/Models/post';
+import { PostsServiceService } from 'src/app/Service/post.service';
 
 @Component({
   selector: 'app-template',
@@ -11,7 +12,7 @@ export class TemplateComponent {
 
   @Output() onSwitch = new EventEmitter();
 
-  switchPost(id: number) {
+  switchPost(id: number): void {
     this.onSwitch.emit(id);
   }
 }

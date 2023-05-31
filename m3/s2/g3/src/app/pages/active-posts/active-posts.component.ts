@@ -11,19 +11,13 @@ export class ActivePostsComponent {
   activePosts: Post[] = [];
   private PostService: PostsServiceService = new PostsServiceService();
 
-  constructor() {
+  ngOnInit() {
     this.activePosts = this.PostService.getPosts(true);
   }
 
   disablePost(id: number): void {
-    this.activePosts[this.activePosts.findIndex((p) => p.id === id)].active =
-      false;
-    this.PostService.allPosts[
-      this.activePosts.findIndex((p) => p.id === id)
-    ].active = false;
-    this.activePosts.splice(
-      this.activePosts.findIndex((p) => p.id === id),
-      1
-    );
+    let i = this.PostService.allPosts.findIndex((p) => p.id === id);
+    this.PostService.allPosts[i].active = false;
+    this.activePosts = this.PostService.getPosts(true);
   }
 }

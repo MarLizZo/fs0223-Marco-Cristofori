@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ActivePostsComponent } from './pages/active-posts/active-posts.component';
 import { InactivePostsComponent } from './pages/inactive-posts/inactive-posts.component';
 import { TemplateComponent } from './pages/active-posts/template/template.component';
+import { PostsGenitoreComponent } from './pages/posts-genitore/posts-genitore.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,11 @@ import { TemplateComponent } from './pages/active-posts/template/template.compon
     HomeComponent,
     ActivePostsComponent,
     InactivePostsComponent,
-    TemplateComponent
+    TemplateComponent,
+    PostsGenitoreComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
