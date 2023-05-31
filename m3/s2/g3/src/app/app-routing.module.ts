@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { ActivePostsComponent } from './pages/posts-genitore/active-posts/active-posts.component';
-import { InactivePostsComponent } from './pages/posts-genitore/inactive-posts/inactive-posts.component';
+import { ActivePostsComponent } from './pages/active-posts/active-posts.component';
+import { InactivePostsComponent } from './pages/inactive-posts/inactive-posts.component';
 
 const routes: Routes = [
   {

@@ -4,7 +4,7 @@ import { Post } from '../Models/post';
 @Injectable({
   providedIn: 'root',
 })
-export class PostsServiceService {
+export class PostsService {
   apiUrl: string = 'assets/db.json';
   allPosts: Post[] = [
     {
@@ -118,5 +118,11 @@ export class PostsServiceService {
     return active
       ? this.allPosts.filter((obj) => obj.active)
       : this.allPosts.filter((obj) => !obj.active);
+  }
+
+  updateStatus(post: Post): void {
+    post.active = !post.active;
+    let i = this.allPosts.findIndex((p) => p.id == post.id);
+    this.allPosts.splice(i, 1, post);
   }
 }
