@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './pages/home/home.component';
-import { ActivePostsComponent } from './pages/active-posts/active-posts.component';
-import { InactivePostsComponent } from './pages/inactive-posts/inactive-posts.component';
-import { TemplateComponent } from './pages/active-posts/template/template.component';
+import { ActivePostsComponent } from './pages/posts-genitore/active-posts/active-posts.component';
+import { InactivePostsComponent } from './pages/posts-genitore/inactive-posts/inactive-posts.component';
+import { TemplateComponent } from './pages/posts-genitore/template/template.component';
 import { PostsGenitoreComponent } from './pages/posts-genitore/posts-genitore.component';
 
 @NgModule({
