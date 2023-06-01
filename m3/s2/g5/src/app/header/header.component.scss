@@ -1,0 +1,36 @@
+header {
+  background: var(--bg-sec);
+  background: -moz-linear-gradient(
+    left,
+    var(--bg-sec) 0%,
+    var(--bg-body) 50%,
+    var(--bg-sec) 100%
+  );
+  background: -webkit-linear-gradient(
+    left,
+    var(--bg-sec) 0%,
+    var(--bg-body) 50%,
+    var(--bg-sec) 100%
+  );
+  background: linear-gradient(
+    to right,
+    var(--bg-sec) 0%,
+    var(--bg-body) 50%,
+    var(--bg-sec) 100%
+  );
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--my-red);
+
+  .links-container {
+    display: flex;
+    align-items: center;
+    height: max-content;
+
+    .me-3 {
+      margin-right: 20px;
+    }
+  }
+}
