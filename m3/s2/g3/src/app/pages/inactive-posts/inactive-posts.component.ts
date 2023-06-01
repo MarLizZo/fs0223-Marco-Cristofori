@@ -9,6 +9,7 @@ import { PostsService } from 'src/app/Service/post.service';
 })
 export class InactivePostsComponent {
   inactivePosts: Post[] = [];
+  // private ps = new PostsService();
 
   constructor(private ps: PostsService) {}
 

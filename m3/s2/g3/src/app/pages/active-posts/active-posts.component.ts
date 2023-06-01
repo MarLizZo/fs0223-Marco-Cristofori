@@ -9,8 +9,9 @@ import { PostsService } from 'src/app/Service/post.service';
 })
 export class ActivePostsComponent {
   activePosts: Post[] = [];
+  private ps = new PostsService();
 
-  constructor(private ps: PostsService) {}
+  // constructor(private ps: PostsService) {}
 
   ngOnInit() {
     this.activePosts = this.ps.getPosts(true);
