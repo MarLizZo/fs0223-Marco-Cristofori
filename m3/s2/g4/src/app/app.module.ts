@@ -10,6 +10,7 @@ import { InactivePostsComponent } from './pages/inactive-posts/inactive-posts.co
 import { TemplateComponent } from './pages/template/template.component';
 import { PipeUpperPipe } from './pipe-upper.pipe';
 import { ColorUserDirective } from './color-user.directive';
+import { SinglePostComponent } from './pages/single-post/single-post.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ColorUserDirective } from './color-user.directive';
     TemplateComponent,
     PipeUpperPipe,
     ColorUserDirective,
+    SinglePostComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

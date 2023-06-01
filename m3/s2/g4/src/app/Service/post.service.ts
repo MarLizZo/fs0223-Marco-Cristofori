@@ -135,6 +135,10 @@ export class PostsService {
       : this.allPosts.filter((obj) => !obj.active);
   }
 
+  getSinglePost(id: number): Post {
+    return this.allPosts[this.allPosts.findIndex((val) => val.id == id)];
+  }
+
   updateStatus(post: Post): void {
     post.active = !post.active;
     let i = this.allPosts.findIndex((p) => p.id == post.id);
