@@ -1,8 +1,7 @@
 <div class="container">
-    <p>Test</p>
+    <p [textContent]="task.title">Test</p>
     <div class="btns-container">
-        <button>Test</button>
-        <button>Test</button>
-        <button>Test</button>
+        <button class="green" (click)="mark()"><i class="bi bi-check-all"></i></button>
+        <button class="red" (click)="del()"><i class="bi bi-x-lg"></i></button>
     </div>
 </div>

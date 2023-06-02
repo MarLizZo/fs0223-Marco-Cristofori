@@ -8,7 +8,7 @@ import { TodosService } from 'src/app/Services/todos.service';
   styleUrls: ['./homepage.component.scss'],
 })
 export class HomepageComponent {
-  task: ToDo = { title: 'A', completed: false };
+  task: ToDo = { title: '', completed: false };
   todoArr: ToDo[] = [];
   protected isLoading = true;
 
@@ -28,14 +28,24 @@ export class HomepageComponent {
   }
 
   markCompleted(obj: ToDo) {
-    //
+    obj.completed = true;
+    this.todo.updateTask(obj).then((res) => {
+      console.log(res);
+      this.getTasks();
+    });
   }
 
   delete(obj: ToDo) {
-    //
+    this.todo.deleteTask(obj).then((res) => {
+      console.log(res);
+      this.getTasks();
+    });
   }
 
   createTask() {
-    //
+    this.todo.createNewTask(this.task).then((res) => {
+      console.log(res);
+      this.getTasks();
+    });
   }
 }

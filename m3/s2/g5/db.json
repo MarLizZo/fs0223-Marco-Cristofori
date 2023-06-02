@@ -1,9 +1,14 @@
 {
-    "tasks": [
-        {
-            "id":1,
-            "title":"Avviare JSON Server",
-            "completed":false
-        }
-    ]
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Avviare JSON Server",
+      "completed": false
+    },
+    {
+      "title": "Secondo test",
+      "completed": true,
+      "id": 2
+    }
+  ]
 }

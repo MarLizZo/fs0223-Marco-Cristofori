@@ -7,9 +7,21 @@
   width: 90%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   button {
     cursor: pointer;
     border: none;
+    border-radius: 100%;
+    padding: 5px 8px;
+    margin: 0 10px;
+  }
+
+  .green {
+    background-color: rgb(0, 195, 104);
+  }
+
+  .red {
+    background-color: var(--my-red);
   }
 }

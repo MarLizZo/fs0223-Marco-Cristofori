@@ -7,5 +7,6 @@
             <i class="bi bi-arrow-down-circle"></i>
         </button>
     </form>
-    <app-todo-container class="w-100"></app-todo-container>
+    <app-todo-container *ngFor="let t of todoArr" [task]="t" class="w-100" (onDelete)="delete($event)"
+        (onMark)="markCompleted($event)"></app-todo-container>
 </div>
