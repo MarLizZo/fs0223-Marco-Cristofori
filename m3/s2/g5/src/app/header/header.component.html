@@ -1,7 +1,8 @@
 <header>
-    <h2>Angular To Do List</h2>
     <div class="links-container">
-        <app-button-h class="me-3"></app-button-h>
-        <app-button-h></app-button-h>
+        <h2 class="me-5">Angular To Do List</h2>
+        <app-button-h class="me-3" [txt]="'Homepage'" [toHome]="true" [active]="isHome()"></app-button-h>
+        <app-button-h [txt]="'Completed Tasks'" [toHome]="false" [active]="!isHome()"></app-button-h>
     </div>
+    <h2>Progetto settimanale</h2>
 </header>

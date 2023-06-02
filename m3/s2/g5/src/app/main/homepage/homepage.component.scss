@@ -1,0 +1,53 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+.main-container {
+  margin-top: 40px;
+  padding: 0 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 35px;
+      width: 10%;
+      padding: 0 15px;
+      font-size: 1.1em;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      background-color: var(--bg-tert);
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    input {
+      width: 50%;
+      height: 35px;
+      color: white;
+      background-color: var(--bg-tert);
+      border: 1px solid var(--my-red) !important;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      padding: 0 10px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  app-todo-container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonHComponent {
   @Input() txt!: string;
-  @Input() toHome!: boolean;
+  @Input() toHome: boolean = true;
+  @Input() active: boolean = true;
 }

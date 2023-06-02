@@ -8,6 +8,9 @@ import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { ButtonHComponent } from './components/button-h/button-h.component';
 import { TodoContainerComponent } from './components/todo-container/todo-container.component';
+import { HomepageComponent } from './main/homepage/homepage.component';
+import { CompletedTasksComponent } from './main/completed-tasks/completed-tasks.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,13 +19,12 @@ import { TodoContainerComponent } from './components/todo-container/todo-contain
     FooterComponent,
     MainComponent,
     ButtonHComponent,
-    TodoContainerComponent
+    TodoContainerComponent,
+    HomepageComponent,
+    CompletedTasksComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

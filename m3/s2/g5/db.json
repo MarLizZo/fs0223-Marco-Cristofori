@@ -1,3 +1,9 @@
-[
-    
-]
+{
+    "tasks": [
+        {
+            "id":1,
+            "title":"Avviare JSON Server",
+            "completed":false
+        }
+    ]
+}

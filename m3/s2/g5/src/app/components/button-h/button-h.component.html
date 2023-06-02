@@ -1,1 +1,2 @@
-<a><button>Link</button></a>
+<a [routerLink]="toHome ? ['/'] : ['/completed']"><button [class.active]="active"
+        [innerText]="txt ? txt : 'Link'"></button></a>
