@@ -1,7 +1,8 @@
 <div class="container">
     <p [textContent]="task.title">Test</p>
     <div class="btns-container">
-        <button class="green" (click)="mark()"><i class="bi bi-check-all"></i></button>
+        <button *ngIf="showMark" class="green" (click)="mark()"><i class="bi bi-check-all"></i></button>
+        <button *ngIf="!showMark" class="yellow" (click)="unMark()"><i class="bi bi-arrow-90deg-left"></i></button>
         <button class="red" (click)="del()"><i class="bi bi-x-lg"></i></button>
     </div>
 </div>

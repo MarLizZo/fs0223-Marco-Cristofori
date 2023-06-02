@@ -9,7 +9,7 @@ import { TodosService } from 'src/app/Services/todos.service';
 })
 export class CompletedTasksComponent {
   todoArr: ToDo[] = [];
-  protected isLoading = true;
+  isLoading = true;
 
   constructor(private todo: TodosService) {}
 
@@ -27,10 +27,17 @@ export class CompletedTasksComponent {
   }
 
   markNotCompleted(obj: ToDo) {
-    //
+    obj.completed = false;
+    this.todo.updateTask(obj).then((res) => {
+      console.log(res);
+      this.getTasks();
+    });
   }
 
   delete(obj: ToDo) {
-    //
+    this.todo.deleteTask(obj).then((res) => {
+      console.log(res);
+      this.getTasks();
+    });
   }
 }

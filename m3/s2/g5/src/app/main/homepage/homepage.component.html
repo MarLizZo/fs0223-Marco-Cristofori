@@ -3,10 +3,10 @@
         <input [(ngModel)]="task.title" type="text" placeholder="Inserisci nuovo task" name="title">
 
         <button (click)="createTask()">
-            <p>Crea Task</p>
+            <p>Create Task</p>
             <i class="bi bi-arrow-down-circle"></i>
         </button>
     </form>
-    <app-todo-container *ngFor="let t of todoArr" [task]="t" class="w-100" (onDelete)="delete($event)"
+    <app-todo-container *ngFor="let t of todoArr" [showMark]="true" [task]="t" class="w-100" (onDelete)="delete($event)"
         (onMark)="markCompleted($event)"></app-todo-container>
 </div>

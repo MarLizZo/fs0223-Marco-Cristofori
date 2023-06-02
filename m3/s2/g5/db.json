@@ -9,6 +9,11 @@
       "title": "Secondo test",
       "completed": true,
       "id": 2
+    },
+    {
+      "title": "Terzo test",
+      "completed": false,
+      "id": 3
     }
   ]
 }

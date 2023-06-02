@@ -1,1 +1,4 @@
-<p>completed-tasks works!</p>
+<div class="main-container">
+    <app-todo-container *ngFor="let t of todoArr" [showMark]="false" [task]="t" class="w-100"
+        (onDelete)="delete($event)" (onUnMark)="markNotCompleted($event)"></app-todo-container>
+</div>

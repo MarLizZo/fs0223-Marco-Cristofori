@@ -10,7 +10,7 @@ import { TodosService } from 'src/app/Services/todos.service';
 export class HomepageComponent {
   task: ToDo = { title: '', completed: false };
   todoArr: ToDo[] = [];
-  protected isLoading = true;
+  isLoading = true;
 
   constructor(private todo: TodosService) {}
 

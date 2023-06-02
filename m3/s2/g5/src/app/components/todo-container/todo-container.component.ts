@@ -8,9 +8,11 @@ import { ToDo } from 'src/app/Models/todo';
 })
 export class TodoContainerComponent {
   @Input() task!: ToDo;
+  @Input() showMark!: boolean;
 
   @Output() onDelete = new EventEmitter();
   @Output() onMark = new EventEmitter();
+  @Output() onUnMark = new EventEmitter();
 
   del(): void {
     this.onDelete.emit(this.task);
@@ -18,5 +20,9 @@ export class TodoContainerComponent {
 
   mark(): void {
     this.onMark.emit(this.task);
+  }
+
+  unMark(): void {
+    this.onUnMark.emit(this.task);
   }
 }
