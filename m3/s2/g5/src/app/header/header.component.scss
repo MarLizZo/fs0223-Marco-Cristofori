@@ -24,6 +24,26 @@ header {
   align-items: center;
   border-bottom: 2px solid var(--my-red);
 
+  img {
+    width: 50px;
+    cursor: pointer;
+    animation: rotate 4s linear 0s infinite;
+
+    @media screen and (max-width: 768px) {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+
   .links-container {
     display: flex;
     align-items: center;

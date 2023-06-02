@@ -1,8 +1,8 @@
 <header>
     <div class="links-container">
-        <h2 class="me-5">Angular To Do App</h2>
+        <img [routerLink]="['/']" src="assets/logo.png" class="me-3">
         <app-button-h class="me-3" [txt]="'Homepage'" [toHome]="true" [active]="isHome()"></app-button-h>
         <app-button-h [txt]="'Completed Tasks'" [toHome]="false" [active]="!isHome()"></app-button-h>
     </div>
-    <h2 class="resp-none">Progetto settimanale</h2>
+    <h2 class="resp-none">Progetto Settimanale Angular</h2>
 </header>

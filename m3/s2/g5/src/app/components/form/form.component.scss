@@ -26,6 +26,12 @@ form {
     border: none;
     color: white;
     cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: scale(1.1);
+      color: var(--my-red);
+    }
 
     i {
       margin-left: 15px;
