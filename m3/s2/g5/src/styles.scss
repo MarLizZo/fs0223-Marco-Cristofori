@@ -18,6 +18,23 @@ body {
   display: block;
 }
 
+body {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--my-red);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--bg-sec);
+    border-radius: 10px;
+  }
+}
+
 app-root {
   display: flex;
   flex-direction: column;

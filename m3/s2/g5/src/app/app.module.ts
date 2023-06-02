@@ -11,6 +11,7 @@ import { TodoContainerComponent } from './components/todo-container/todo-contain
 import { HomepageComponent } from './main/homepage/homepage.component';
 import { CompletedTasksComponent } from './main/completed-tasks/completed-tasks.component';
 import { FormsModule } from '@angular/forms';
+import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FormsModule } from '@angular/forms';
     TodoContainerComponent,
     HomepageComponent,
     CompletedTasksComponent,
+    FormComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

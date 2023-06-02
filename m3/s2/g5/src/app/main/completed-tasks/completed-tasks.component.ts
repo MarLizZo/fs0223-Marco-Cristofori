@@ -28,15 +28,15 @@ export class CompletedTasksComponent {
 
   markNotCompleted(obj: ToDo) {
     obj.completed = false;
+    this.isLoading = true;
     this.todo.updateTask(obj).then((res) => {
-      console.log(res);
       this.getTasks();
     });
   }
 
   delete(obj: ToDo) {
+    this.isLoading = true;
     this.todo.deleteTask(obj).then((res) => {
-      console.log(res);
       this.getTasks();
     });
   }

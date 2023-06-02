@@ -3,17 +3,27 @@
     {
       "id": 1,
       "title": "Avviare JSON Server",
-      "completed": false
+      "completed": true
     },
     {
-      "title": "Secondo test",
+      "title": "Creazione Loading animation",
       "completed": true,
       "id": 2
     },
     {
-      "title": "Terzo test",
-      "completed": false,
+      "title": "Sistemare CSS nelle due pagine",
+      "completed": true,
       "id": 3
+    },
+    {
+      "title": "Aggiungere messaggio per l'assenza di tasks",
+      "completed": true,
+      "id": 4
+    },
+    {
+      "title": "Creazione componente form per evitare duplicati",
+      "completed": true,
+      "id": 5
     }
   ]
 }

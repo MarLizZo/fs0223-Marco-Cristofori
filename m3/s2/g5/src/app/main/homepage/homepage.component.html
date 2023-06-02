@@ -1,12 +1,25 @@
-<div class="main-container">
-    <form>
-        <input [(ngModel)]="task.title" type="text" placeholder="Inserisci nuovo task" name="title">
+<div *ngIf="isLoading" class="main-container center">
+    <h2>..Loading Tasks..</h2>
+    <div class="sharingan">
+        <div class="inner-ring">
+            <div class="tomoe"></div>
+            <div class="tomoe"></div>
+            <div class="tomoe"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+</div>
 
-        <button (click)="createTask()">
-            <p>Create Task</p>
-            <i class="bi bi-arrow-down-circle"></i>
-        </button>
-    </form>
+<div *ngIf="!isLoading && todoArr.length != 0" class="main-container">
+    <app-form (onCreate)="createTask($event)"></app-form>
     <app-todo-container *ngFor="let t of todoArr" [showMark]="true" [task]="t" class="w-100" (onDelete)="delete($event)"
         (onMark)="markCompleted($event)"></app-todo-container>
+</div>
+
+<div *ngIf="!isLoading && todoArr.length == 0" class="main-container">
+    <app-form (onCreate)="createTask($event)"></app-form>
+    <h2>Mmmhh.. 2 possibilità..</h2>
+    <h4 class="mt">Non hai ancora usato questa splendida App..</h4>
+    <h4>Oppure hai completato tutti i task..</h4>
+    <h2 class="mt">Attenzione.. si potrebbe risvegliare il mio Rinnegan se non usi questa App..</h2>
 </div>

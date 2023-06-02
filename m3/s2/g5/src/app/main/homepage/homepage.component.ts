@@ -23,28 +23,30 @@ export class HomepageComponent {
       setTimeout(() => {
         this.todoArr = res;
         this.isLoading = false;
+        this.isLoading = false;
       }, 3000);
     });
   }
 
   markCompleted(obj: ToDo) {
     obj.completed = true;
+    this.isLoading = true;
     this.todo.updateTask(obj).then((res) => {
-      console.log(res);
       this.getTasks();
     });
   }
 
   delete(obj: ToDo) {
+    this.isLoading = true;
     this.todo.deleteTask(obj).then((res) => {
-      console.log(res);
       this.getTasks();
     });
   }
 
-  createTask() {
-    this.todo.createNewTask(this.task).then((res) => {
-      console.log(res);
+  createTask(t: ToDo) {
+    this.isLoading = true;
+    this.todo.createNewTask(t).then((res) => {
+      this.task.title = '';
       this.getTasks();
     });
   }

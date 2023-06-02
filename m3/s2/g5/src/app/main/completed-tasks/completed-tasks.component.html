@@ -1,4 +1,21 @@
-<div class="main-container">
+<div *ngIf="isLoading" class="main-container loading">
+    <h2>..Loading Tasks..</h2>
+    <div class="sharingan">
+        <div class="inner-ring">
+            <div class="tomoe"></div>
+            <div class="tomoe"></div>
+            <div class="tomoe"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!isLoading && todoArr.length != 0" class="main-container">
     <app-todo-container *ngFor="let t of todoArr" [showMark]="false" [task]="t" class="w-100"
         (onDelete)="delete($event)" (onUnMark)="markNotCompleted($event)"></app-todo-container>
+</div>
+
+<div *ngIf="!isLoading && todoArr.length == 0" class="main-container">
+    <h2>Non ci sono tasks completati.</h2>
+    <h4 class="mt">Stiamo battendo la fiacca?</h4>
 </div>
