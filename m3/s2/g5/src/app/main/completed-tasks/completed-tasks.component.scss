@@ -7,6 +7,11 @@
   align-items: center;
   height: 100%;
 
+  h2,
+  h4 {
+    cursor: default;
+  }
+
   app-todo-container {
     margin: 10px 0;
     display: flex;

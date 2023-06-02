@@ -10,7 +10,8 @@ import { TodosService } from 'src/app/Services/todos.service';
 export class HomepageComponent {
   task: ToDo = { title: '', completed: false };
   todoArr: ToDo[] = [];
-  isLoading = true;
+  isLoading: boolean = true;
+  isRinnegan: boolean = false;
 
   constructor(private todo: TodosService) {}
 
@@ -44,10 +45,15 @@ export class HomepageComponent {
   }
 
   createTask(t: ToDo) {
-    this.isLoading = true;
-    this.todo.createNewTask(t).then((res) => {
-      this.task.title = '';
-      this.getTasks();
-    });
+    if (t.title !== '') {
+      this.isLoading = true;
+      this.todo.createNewTask(t).then((res) => {
+        this.task.title = '';
+        this.getTasks();
+      });
+    } else {
+      this.isRinnegan = true;
+      setTimeout(() => (this.isRinnegan = false), 5000);
+    }
   }
 }
