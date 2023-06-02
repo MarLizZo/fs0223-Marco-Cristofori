@@ -24,6 +24,11 @@ footer {
   align-items: center;
   border-top: 2px solid var(--my-red);
 
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+  }
+
   :last-child {
     font-size: 1.5em;
     font-weight: bold;

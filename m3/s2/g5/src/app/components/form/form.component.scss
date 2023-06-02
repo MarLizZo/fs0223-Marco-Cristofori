@@ -1,36 +1,52 @@
 form {
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 40px 0;
 
+  @media screen and (min-width: 768px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+
   button {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     height: 35px;
-    width: 15%;
+    width: max-content;
     padding: 0 15px;
     font-size: 1.1em;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-radius: 15px;
     background-color: var(--bg-tert);
     border: 1px solid var(--my-red) !important;
     border: none;
     color: white;
     cursor: pointer;
+
+    i {
+      margin-left: 15px;
+    }
   }
 
   input {
     width: 50%;
+    margin-right: 20px;
     height: 35px;
     color: white;
     background-color: var(--bg-tert);
     border: 1px solid var(--my-red) !important;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-radius: 10px;
     padding: 0 10px;
+
+    @media screen and (max-width: 768px) {
+      width: 90%;
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
 
     &:focus {
       outline: none;

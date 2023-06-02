@@ -24,6 +24,16 @@
       "title": "Creazione componente form per evitare duplicati",
       "completed": true,
       "id": 5
+    },
+    {
+      "title": "Media-queries per il responsive",
+      "completed": true,
+      "id": 6
+    },
+    {
+      "title": "CSS Improvements",
+      "completed": false,
+      "id": 7
     }
   ]
 }

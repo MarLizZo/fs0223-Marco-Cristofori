@@ -9,12 +9,23 @@
   justify-content: space-between;
   align-items: center;
 
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 30px;
+    text-align: center;
+  }
+
   button {
     cursor: pointer;
     border: none;
     border-radius: 100%;
     padding: 5px 8px;
     margin: 0 10px;
+
+    @media screen and (max-width: 768px) {
+      margin-top: 10px;
+    }
   }
 
   .green {
