@@ -221,10 +221,12 @@
     background: #e41414;
     opacity: 0;
   }
+
   50% {
     background: #f03a3a;
     box-shadow: 0 0 10px 10px #f03a3a70;
   }
+
   100% {
     box-shadow: none;
     background: #e41414;
@@ -236,10 +238,12 @@
   0% {
     opacity: 0.4;
   }
+
   50% {
     opacity: 1;
     box-shadow: 0px 0px 56px 10px rgba(0, 0, 0, 0.8);
   }
+
   100% {
     opacity: 0.4;
     box-shadow: 0px 0px 26px 10px rgba(0, 0, 0, 0.8);
