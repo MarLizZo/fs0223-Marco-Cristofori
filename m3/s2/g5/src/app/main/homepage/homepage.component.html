@@ -5,7 +5,7 @@
 
 <div *ngIf="!isLoading && todoArr.length != 0" class="main-container">
     <app-form (onCreate)="createTask($event)"></app-form>
-    <app-rinnegan *ngIf="!isRinnegan"></app-rinnegan>
+    <app-rinnegan *ngIf="isRinnegan"></app-rinnegan>
     <app-todo-container *ngFor="let t of todoArr" [showMark]="true" [task]="t" class="w-100" (onDelete)="delete($event)"
         (onMark)="markCompleted($event)"></app-todo-container>
 </div>
