@@ -5,18 +5,16 @@
 
 <div *ngIf="!isLoading && todoArr.length != 0" class="main-container">
     <app-form (onCreate)="createTask($event)"></app-form>
+    <app-rinnegan *ngIf="!isRinnegan"></app-rinnegan>
     <app-todo-container *ngFor="let t of todoArr" [showMark]="true" [task]="t" class="w-100" (onDelete)="delete($event)"
         (onMark)="markCompleted($event)"></app-todo-container>
-    <app-rinnegan *ngIf="isRinnegan">
-    </app-rinnegan>
 </div>
 
 <div *ngIf="!isLoading && todoArr.length == 0" class="main-container">
     <app-form (onCreate)="createTask($event)"></app-form>
+    <app-rinnegan *ngIf="isRinnegan"></app-rinnegan>
     <h2>Mmmhh.. 2 possibilità..</h2>
     <h4 class="mt">Non hai ancora usato questa splendida App..</h4>
     <h4>Oppure hai completato tutti i task..</h4>
     <h2 class="mt">Attenzione.. si potrebbe risvegliare il mio Rinnegan se non usi questa App..</h2>
-    <app-rinnegan *ngIf="isRinnegan">
-    </app-rinnegan>
 </div>
