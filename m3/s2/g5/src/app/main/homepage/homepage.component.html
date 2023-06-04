@@ -1,36 +1,14 @@
 <div *ngIf="isLoading" class="main-container center">
     <h2>.. Loading Tasks ..</h2>
-    <div class="sharingan">
-        <div class="inner-ring">
-            <div class="tomoe"></div>
-            <div class="tomoe"></div>
-            <div class="tomoe"></div>
-            <div class="circle"></div>
-        </div>
-    </div>
+    <app-sharingan></app-sharingan>
 </div>
 
 <div *ngIf="!isLoading && todoArr.length != 0" class="main-container">
     <app-form (onCreate)="createTask($event)"></app-form>
     <app-todo-container *ngFor="let t of todoArr" [showMark]="true" [task]="t" class="w-100" (onDelete)="delete($event)"
         (onMark)="markCompleted($event)"></app-todo-container>
-    <div *ngIf="isRinnegan" class="rinnegan">
-        <div class="circle-one">
-            <div class="circle-two">
-                <div class="circle-three">
-                    <div class="circle-four">
-                        <div class="circle-five">
-                            <div class="circle-six">
-                                <div class="circle-seven">
-                                    <div class="pupilla"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <app-rinnegan *ngIf="isRinnegan">
+    </app-rinnegan>
 </div>
 
 <div *ngIf="!isLoading && todoArr.length == 0" class="main-container">
@@ -39,21 +17,6 @@
     <h4 class="mt">Non hai ancora usato questa splendida App..</h4>
     <h4>Oppure hai completato tutti i task..</h4>
     <h2 class="mt">Attenzione.. si potrebbe risvegliare il mio Rinnegan se non usi questa App..</h2>
-    <div *ngIf="isRinnegan" class="rinnegan">
-        <div class="circle-one">
-            <div class="circle-two">
-                <div class="circle-three">
-                    <div class="circle-four">
-                        <div class="circle-five">
-                            <div class="circle-six">
-                                <div class="circle-seven">
-                                    <div class="pupilla"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <app-rinnegan *ngIf="isRinnegan">
+    </app-rinnegan>
 </div>

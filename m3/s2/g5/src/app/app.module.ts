@@ -12,6 +12,8 @@ import { HomepageComponent } from './main/homepage/homepage.component';
 import { CompletedTasksComponent } from './main/completed-tasks/completed-tasks.component';
 import { FormsModule } from '@angular/forms';
 import { FormComponent } from './components/form/form.component';
+import { RinneganComponent } from './components/rinnegan/rinnegan.component';
+import { SharinganComponent } from './components/sharingan/sharingan.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { FormComponent } from './components/form/form.component';
     HomepageComponent,
     CompletedTasksComponent,
     FormComponent,
+    RinneganComponent,
+    SharinganComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
