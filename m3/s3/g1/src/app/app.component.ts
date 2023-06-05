@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Photo } from './Models/photo';
 import { PhotosvcService } from './photosvc.service';
-import { Subscription, filter, map } from 'rxjs';
+import { Observable, Subscription, filter, map } from 'rxjs';
 
 @Component({
   selector: 'app-root',

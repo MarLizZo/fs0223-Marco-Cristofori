@@ -6,12 +6,10 @@
             <div *ngFor="let photo of photoArr"
                 class="col d-flex flex-column border border-1 border-white py-3 justify-content-between">
                 <img [src]="photo.thumbnailUrl">
-                <div class="d-flex flex-column">
-                    <h4 class="m-0 my-3">{{ photo.title }}</h4>
-                    <div class="d-flex justify-content-between">
-                        <button class="btn btn sm btn-success" (click)="like(photo, $event)">Like Photo</button>
-                        <button class="btn btn sm btn-danger" (click)="del(photo)">Delete Photo</button>
-                    </div>
+                <h4 class="m-0 my-3">{{ photo.title }}</h4>
+                <div class="d-flex justify-content-between">
+                    <button class="btn btn sm btn-success" (click)="like(photo, $event)">Like Photo</button>
+                    <button class="btn btn sm btn-danger" (click)="del(photo)">Delete Photo</button>
                 </div>
             </div>
         </div>
