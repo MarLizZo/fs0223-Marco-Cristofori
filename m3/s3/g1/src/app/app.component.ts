@@ -30,16 +30,20 @@ export class AppComponent {
     this.sub.unsubscribe();
   }
 
-  like(photo: Photo, event: any) {
+  like(photo: Photo, event: Event) {
+    console.log(event);
+
     if (!this.likedPhotoArr.find((v) => v === photo)) {
       this.likedPhotoArr.push(photo);
-      event.target.innerText = 'Remove Like';
+      if (event.target) {
+        (event.target as HTMLButtonElement).innerText = 'Remove Like';
+      }
     } else {
       this.likedPhotoArr.splice(
         this.likedPhotoArr.findIndex((v) => v.id == photo.id),
         1
       );
-      event.target.innerText = 'Like Photo';
+      (event.target as HTMLButtonElement).innerText = 'Like Photo';
     }
   }
 
