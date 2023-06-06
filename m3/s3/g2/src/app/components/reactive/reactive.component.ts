@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormArray,
   FormBuilder,
@@ -13,7 +13,7 @@ import { HeroReactive } from 'src/app/Models/hero-reactive';
   templateUrl: './reactive.component.html',
   styleUrls: ['./reactive.component.scss'],
 })
-export class ReactiveComponent {
+export class ReactiveComponent implements OnInit {
   superhero!: HeroReactive;
   form!: FormGroup;
 
@@ -25,23 +25,24 @@ export class ReactiveComponent {
         name: this.fb.control(null, [Validators.required]),
         alterego: this.fb.control(null, [Validators.required]),
       }),
-      // powers: this.fb.array([]),
+      powers: this.fb.array([]),
       enemy: this.fb.control(null),
       planet: this.fb.control(null, [Validators.required, Validators.min(5)]),
       // weaknesses: this.fb.array([]),
     });
-    this.form.statusChanges.subscribe((s) => console.log(s));
   }
 
   addField(name: string) {
-    (this.form.get(name) as FormArray).push(new FormControl(null));
+    (this.form.get(name) as FormArray).push(
+      new FormControl(null, [Validators.required])
+    );
   }
 
   getFields(name: string) {
     return (this.form.get(name) as FormArray).controls;
   }
 
-  isValid(name: string, subGroup?: string) {
+  isInvalid(name: string, subGroup?: string) {
     return subGroup
       ? this.form.get(`${subGroup}.${name}`)?.invalid
       : this.form.get(name)?.invalid;
@@ -51,5 +52,9 @@ export class ReactiveComponent {
     return subGroup
       ? this.form.get(`${subGroup}.${name}`)?.touched
       : this.form.get(name)?.touched;
+  }
+
+  submit() {
+    this.form.reset();
   }
 }

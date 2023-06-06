@@ -3,24 +3,31 @@
     <div class="d-flex flex-column align-items-center mt-4">
         <form class="w-75" [formGroup]="form">
             <div formGroupName="identify" class="mb-4">
-                <span *ngIf="isValid('name', 'identify') && isTouched('name', 'identify')" class="m-0 text-danger">Nome
+                <span *ngIf="isInvalid('name', 'identify') && isTouched('name', 'identify')"
+                    class="m-0 text-danger">Nome
                     obbligatorio</span>
                 <input type="text" formControlName="name" placeholder="Super Hero Name"
                     class="form-control mb-3 bg-secondary text-bg-secondary border-1 border-warning">
 
-                <span *ngIf="isValid('alterego', 'identify') && isTouched('alterego', 'identify')"
+                <span *ngIf="isInvalid('alterego', 'identify') && isTouched('alterego', 'identify')"
                     class="m-0 text-danger">Alterego obbligatorio</span>
                 <input type="text" formControlName="alterego" placeholder="Super Hero Alterego"
                     class="form-control bg-secondary text-bg-secondary border-1 border-warning">
             </div>
 
-            <!-- <span *ngIf="power.invalid && power.touched" class="m-0 text-danger">Potere obbligatorio</span> -->
-
+            <button class="btn btn-outline-warning mb-3" (click)="addField('powers')">Aggiungi Potere</button>
+            <div *ngFor="let power of getFields('powers'), let i = index">
+                <span *ngIf="isInvalid('power' + i) && isTouched('power' + i)" class="m-0 text-danger">Potere
+                    obbligatorio</span>
+                <input type="text" [formControlName]="'power' + i"
+                    class="form-control mb-3 bg-secondary text-bg-secondary border-1 border-warning"
+                    placeholder="Power">
+            </div>
 
             <input type="text" formControlName="enemy" placeholder="Enemy"
                 class="form-control mb-3 bg-secondary text-bg-secondary border-1 border-warning">
 
-            <span *ngIf="isValid('planet') && isTouched('planet')" class="m-0 text-danger">Pianeta obbligatorio,
+            <span *ngIf="isInvalid('planet') && isTouched('planet')" class="m-0 text-danger">Pianeta obbligatorio,
                 lunghezza min
                 5</span>
             <input type="text" formControlName="planet" placeholder="Planet"
@@ -30,7 +37,7 @@
             <!-- <input type="text" #weakness="ngModel" ngModel name="weakness" placeholder="Weakness"
                 class="form-control mb-4 bg-secondary text-bg-secondary border-1 border-warning"> -->
 
-            <button [disabled]="form.invalid" class="btn btn-warning">Create Super Hero</button>
+            <button [disabled]="form.invalid" (click)="submit()" class="btn btn-warning">Create Super Hero</button>
         </form>
     </div>
 </div>
