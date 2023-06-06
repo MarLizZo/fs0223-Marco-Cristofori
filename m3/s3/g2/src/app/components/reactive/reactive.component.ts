@@ -28,7 +28,7 @@ export class ReactiveComponent implements OnInit {
       powers: this.fb.array([]),
       enemy: this.fb.control(null),
       planet: this.fb.control(null, [Validators.required, Validators.min(5)]),
-      // weaknesses: this.fb.array([]),
+      weaknesses: this.fb.array([]),
     });
   }
 
@@ -52,12 +52,12 @@ export class ReactiveComponent implements OnInit {
       : this.form.get(name)?.invalid;
   }
 
-  isPowerInvalid(i: number) {
-    return this.getFields('powers')[i].invalid;
+  isArrInvalid(name: string, i: number) {
+    return this.getFields(name)[i].invalid;
   }
 
-  isPowerTouched(i: number) {
-    return this.getFields('powers')[i].touched;
+  isArrTouched(name: string, i: number) {
+    return this.getFields(name)[i].touched;
   }
 
   isTouched(name: string, subGroup?: string) {

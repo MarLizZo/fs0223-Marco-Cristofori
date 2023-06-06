@@ -1,24 +1,23 @@
-<div class="container mt-2 text-center">
+<div class="container my-2 text-center">
     <h2 class="mt-4">Reactive Form</h2>
     <div class="d-flex flex-column align-items-center mt-4">
         <form class="w-75" [formGroup]="form">
             <div formGroupName="identify" class="mb-4">
                 <span *ngIf="isInvalid('name', 'identify') && isTouched('name', 'identify')"
-                    class="m-0 text-danger">Nome
-                    obbligatorio</span>
+                    class="m-0 text-danger">Campo obbligatorio</span>
                 <input type="text" formControlName="name" placeholder="Super Hero Name"
                     class="form-control mb-3 bg-secondary text-bg-secondary border-1 border-warning">
 
                 <span *ngIf="isInvalid('alterego', 'identify') && isTouched('alterego', 'identify')"
-                    class="m-0 text-danger">Alterego obbligatorio</span>
+                    class="m-0 text-danger">Campo obbligatorio</span>
                 <input type="text" formControlName="alterego" placeholder="Super Hero Alterego"
                     class="form-control bg-secondary text-bg-secondary border-1 border-warning">
             </div>
 
-            <div formArrayName="powers">
+            <div formArrayName="powers" class="mb-4 border-bottom border-2 border-black">
                 <button class="btn btn-outline-warning mb-3" (click)="addField('powers')">Aggiungi Potere</button>
                 <div *ngFor="let p of getFields('powers'), let i = index">
-                    <span *ngIf="isPowerInvalid(i) && isPowerTouched(i)" class="m-0 text-danger">Potere
+                    <span *ngIf="isArrInvalid('powers', i) && isArrTouched('powers', i)" class="m-0 text-danger">Campo
                         obbligatorio</span>
                     <input type="text" [formControlName]="i"
                         class="form-control mb-3 bg-secondary text-bg-secondary border-1 border-warning"
@@ -29,17 +28,26 @@
             <input type="text" formControlName="enemy" placeholder="Enemy"
                 class="form-control mb-3 bg-secondary text-bg-secondary border-1 border-warning">
 
-            <span *ngIf="isInvalid('planet') && isTouched('planet')" class="m-0 text-danger">Pianeta obbligatorio,
+            <span *ngIf="isInvalid('planet') && isTouched('planet')" class="m-0 text-danger">Campo obbligatorio,
                 lunghezza min
                 5</span>
             <input type="text" formControlName="planet" placeholder="Planet"
                 class="form-control mb-3 bg-secondary text-bg-secondary border-1 border-warning">
 
+            <div formArrayName="weaknesses" class="border-bottom border-2 border-black mb-4">
+                <button class="btn btn-outline-warning mb-3" (click)="addField('weaknesses')">Aggiungi
+                    Debolezza</button>
+                <div *ngFor="let p of getFields('weaknesses'), let i = index">
+                    <span *ngIf="isArrInvalid('weaknesses', i) && isArrTouched('weaknesses', i)"
+                        class="m-0 text-danger">Campo
+                        obbligatorio</span>
+                    <input type="text" [formControlName]="i"
+                        class="form-control mb-3 bg-secondary text-bg-secondary border-1 border-warning"
+                        placeholder="Weakness">
+                </div>
+            </div>
 
-            <!-- <input type="text" #weakness="ngModel" ngModel name="weakness" placeholder="Weakness"
-                class="form-control mb-4 bg-secondary text-bg-secondary border-1 border-warning"> -->
-
-            <button [disabled]="form.invalid" (click)="submit()" class="btn btn-warning">Create Super Hero</button>
+            <button [disabled]="form.invalid" (click)="submit()" class="btn btn-warning mb-2">Create Super Hero</button>
         </form>
     </div>
 </div>
