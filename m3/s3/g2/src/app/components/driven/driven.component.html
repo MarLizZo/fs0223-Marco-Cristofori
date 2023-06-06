@@ -1,0 +1,41 @@
+<div class="container mt-2 text-center">
+    <h2 class="mt-4">Template Driven Form</h2>
+    <div class="d-flex flex-column align-items-center mt-4">
+        <form class="w-75" #f="ngForm">
+            <div ngModelGroup="identify" class="mb-4">
+                <span *ngIf="name.invalid && name.touched" class="m-0 text-danger">Nome obbligatorio</span>
+                <input type="text" #name="ngModel" ngModel name="name" placeholder="Super Hero Name" required
+                    class="form-control mb-3 bg-secondary text-bg-secondary border-1 border-warning">
+
+                <span *ngIf="alterego.invalid && alterego.touched" class="m-0 text-danger">Alterego obbligatorio</span>
+                <input type="text" #alterego="ngModel" ngModel name="alterego" placeholder="Super Hero Alterego"
+                    required class="form-control bg-secondary text-bg-secondary border-1 border-warning">
+            </div>
+
+            <span *ngIf="power.invalid && power.touched" class="m-0 text-danger">Potere obbligatorio</span>
+            <select name="power" class="form-select bg-secondary mb-3 text-bg-secondary border-1 border-warning" ngModel
+                #power="ngModel" required>
+                <option selected value="Nessuno">Nessuno</option>
+                <option value="Fuoco">Fuoco</option>
+                <option value="Fulmine">Fulmine</option>
+                <option value="Acqua">Acqua</option>
+                <option value="Vento">Vento</option>
+                <option value="Terra">Terra</option>
+            </select>
+
+            <input type="text" #enemy="ngModel" ngModel name="enemy" placeholder="Enemy" maxlength="10"
+                class="form-control mb-3 bg-secondary text-bg-secondary border-1 border-warning">
+
+            <span *ngIf="planet.invalid && planet.touched" class="m-0 text-danger">Pianeta obbligatorio, lunghezza min
+                5</span>
+            <input type="text" #planet="ngModel" ngModel name="planet" placeholder="Planet" minlength="5" required
+                class="form-control mb-3 bg-secondary text-bg-secondary border-1 border-warning">
+
+
+            <input type="text" #weakness="ngModel" ngModel name="weakness" placeholder="Weakness"
+                class="form-control mb-4 bg-secondary text-bg-secondary border-1 border-warning">
+
+            <button [disabled]="f.invalid" (click)="submit(f)" class="btn btn-warning">Create Super Hero</button>
+        </form>
+    </div>
+</div>
