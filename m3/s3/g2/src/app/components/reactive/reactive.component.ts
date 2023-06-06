@@ -67,6 +67,8 @@ export class ReactiveComponent implements OnInit {
   }
 
   submit() {
+    this.superhero = this.form.value;
+    console.log(this.superhero);
     this.form.reset();
   }
 }
