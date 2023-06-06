@@ -42,10 +42,22 @@ export class ReactiveComponent implements OnInit {
     return (this.form.get(name) as FormArray).controls;
   }
 
+  getPowers() {
+    return (this.form.get('powers') as FormArray).controls;
+  }
+
   isInvalid(name: string, subGroup?: string) {
     return subGroup
       ? this.form.get(`${subGroup}.${name}`)?.invalid
       : this.form.get(name)?.invalid;
+  }
+
+  isPowerInvalid(i: number) {
+    return this.getFields('powers')[i].invalid;
+  }
+
+  isPowerTouched(i: number) {
+    return this.getFields('powers')[i].touched;
   }
 
   isTouched(name: string, subGroup?: string) {

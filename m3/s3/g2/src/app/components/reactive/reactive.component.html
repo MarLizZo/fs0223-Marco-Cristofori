@@ -15,13 +15,15 @@
                     class="form-control bg-secondary text-bg-secondary border-1 border-warning">
             </div>
 
-            <button class="btn btn-outline-warning mb-3" (click)="addField('powers')">Aggiungi Potere</button>
-            <div *ngFor="let power of getFields('powers'), let i = index">
-                <span *ngIf="isInvalid('power' + i) && isTouched('power' + i)" class="m-0 text-danger">Potere
-                    obbligatorio</span>
-                <input type="text" [formControlName]="'power' + i"
-                    class="form-control mb-3 bg-secondary text-bg-secondary border-1 border-warning"
-                    placeholder="Power">
+            <div formArrayName="powers">
+                <button class="btn btn-outline-warning mb-3" (click)="addField('powers')">Aggiungi Potere</button>
+                <div *ngFor="let p of getFields('powers'), let i = index">
+                    <span *ngIf="isPowerInvalid(i) && isPowerTouched(i)" class="m-0 text-danger">Potere
+                        obbligatorio</span>
+                    <input type="text" [formControlName]="i"
+                        class="form-control mb-3 bg-secondary text-bg-secondary border-1 border-warning"
+                        placeholder="Power">
+                </div>
             </div>
 
             <input type="text" formControlName="enemy" placeholder="Enemy"
