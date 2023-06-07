@@ -6,7 +6,6 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 // import { InactivePostsComponent } from './pages/inactive-posts/inactive-posts.component';
-// import { TemplateComponent } from './pages/template/template.component';
 // import { SinglePostComponent } from './pages/single-post/single-post.component';
 // import { TemplateComponent } from './pages/template/template.component';
 import { PipeUpperPipe } from './pipe-upper.pipe';
@@ -18,10 +17,6 @@ import { ColorUserDirective } from './color-user.directive';
     FooterComponent,
     HeaderComponent,
     HomeComponent,
-    // TemplateComponent,
-    // InactivePostsComponent,
-    // TemplateComponent,
-    // SinglePostComponent,
     PipeUpperPipe,
     ColorUserDirective,
   ],
