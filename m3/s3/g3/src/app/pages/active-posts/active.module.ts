@@ -7,5 +7,6 @@ import { TemplateComponent } from '../template/template.component';
 @NgModule({
   declarations: [ActivePostsComponent, TemplateComponent],
   imports: [CommonModule, ActiveRoutingModule],
+  exports: [ActiveRoutingModule],
 })
 export class ActiveModule {}

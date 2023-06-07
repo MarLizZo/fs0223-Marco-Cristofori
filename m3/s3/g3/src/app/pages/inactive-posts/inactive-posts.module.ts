@@ -7,5 +7,6 @@ import { TemplateComponent } from '../template/template.component';
 @NgModule({
   declarations: [InactivePostsComponent, TemplateComponent],
   imports: [CommonModule, InactiveRoutingModule],
+  exports: [InactiveRoutingModule],
 })
 export class InactiveModule {}
