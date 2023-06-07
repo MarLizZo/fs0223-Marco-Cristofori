@@ -2,8 +2,8 @@
     <div class="post-header px-1 border-2 border-bottom d-flex justify-content-between align-items-center"
         [class.bg-secondary]="post.type === 'politic'" [class.bg-warning]="post.type === 'news'"
         [class.bg-danger]="post.type === 'education'">
-        <p class="m-0 fs-4" colorText>{{ post.title }}</p>
-        <p class="m-0 fs-5" colorText>{{ post.author }}</p>
+        <p class="m-0 fs-4" colorText [color]="'white'">{{ post.title | pipeUpper }}</p>
+        <p class="m-0 fs-5" colorText [color]="'blue'">{{ post.author }}</p>
         <button class="btn btn-sm btn-dark text-white" (click)="switchPost(post)">Switch</button>
     </div>
     <div class="post-body p-1" [class.bg-secondary]="post.type === 'politic'" [class.bg-warning]="post.type === 'news'"

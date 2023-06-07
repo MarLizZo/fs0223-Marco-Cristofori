@@ -8,8 +8,9 @@ import { HomeComponent } from './pages/home/home.component';
 // import { InactivePostsComponent } from './pages/inactive-posts/inactive-posts.component';
 // import { SinglePostComponent } from './pages/single-post/single-post.component';
 // import { TemplateComponent } from './pages/template/template.component';
-import { PipeUpperPipe } from './pipe-upper.pipe';
-import { ColorUserDirective } from './color-user.directive';
+// import { PipeUpperPipe } from './pipe-upper.pipe';
+// import { ColorUserDirective } from './color-user.directive';
+// import { TemplateModule } from './pages/template/template.module';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,8 @@ import { ColorUserDirective } from './color-user.directive';
     FooterComponent,
     HeaderComponent,
     HomeComponent,
-    PipeUpperPipe,
-    ColorUserDirective,
+    // PipeUpperPipe,
+    // ColorUserDirective,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
