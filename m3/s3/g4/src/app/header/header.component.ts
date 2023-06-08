@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UsersService } from '../Service/users.service';
 import { IAccessData } from '../Models/iaccess-data';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,7 @@ import { IAccessData } from '../Models/iaccess-data';
 export class HeaderComponent {
   constructor(private userSvc: UsersService) {}
 
-  isUserLogged() {
+  isUserLogged(): boolean {
     let data!: IAccessData;
     if (localStorage.getItem('user')) {
       data = JSON.parse(localStorage.getItem('user')!);
@@ -26,7 +27,7 @@ export class HeaderComponent {
     return data ? data.user.username : '';
   }
 
-  logout() {
+  logout(): void {
     this.userSvc.logout();
   }
 
