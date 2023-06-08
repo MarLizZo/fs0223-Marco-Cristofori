@@ -11,12 +11,23 @@ export class HeaderComponent {
   constructor(private userSvc: UsersService) {}
 
   isUserLogged() {
-    return this.userSvc.isLogged$;
+    let data!: IAccessData;
+    if (localStorage.getItem('user')) {
+      data = JSON.parse(localStorage.getItem('user')!);
+    }
+    return data ? true : false;
   }
 
   getUsername(): string {
-    let data: IAccessData = JSON.parse(localStorage.getItem('user')!);
-    return data.user.username;
+    let data!: IAccessData;
+    if (localStorage.getItem('user')) {
+      data = JSON.parse(localStorage.getItem('user')!);
+    }
+    return data ? data.user.username : '';
+  }
+
+  logout() {
+    this.userSvc.logout();
   }
 
   isHomePage(): boolean {

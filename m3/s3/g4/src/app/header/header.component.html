@@ -29,7 +29,10 @@
                 <a class="nav-link" [class.active]="isRegisterPage()" [routerLink]="['/auth/register']">Registrati</a>
             </li>
             <li class="nav-item" *ngIf="isUserLogged()">
-                <p class="m-0 text-white">Ciao, {{ getUsername() }}</p>
+                <p class="m-0 nav-link text-danger">Ciao, {{ getUsername() }}</p>
+            </li>
+            <li class="nav-item" *ngIf="isUserLogged()">
+                <a class="nav-link pointer" (click)="logout()">Logout</a>
             </li>
         </ul>
     </div>

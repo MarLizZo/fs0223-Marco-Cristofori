@@ -24,9 +24,12 @@ export class UsersService {
   isLogged$ = this.user$.pipe(map((v) => Boolean(v)));
 
   getUserData() {
-    const user: IAccessData = JSON.parse(localStorage.getItem('user')!);
+    let chk = localStorage.getItem('user');
+    let user: IAccessData | null;
 
-    return user
+    chk ? (user = JSON.parse(localStorage.getItem('user')!)) : null;
+
+    return user!
       ? this.isTokenExpired(user.accessToken)
         ? null
         : this.subj.next(user)
@@ -50,6 +53,7 @@ export class UsersService {
           val.accessToken
         ) as Date;
         this.logoutExp(expireDate);
+        this.router.navigate(['']);
       })
     );
   }
