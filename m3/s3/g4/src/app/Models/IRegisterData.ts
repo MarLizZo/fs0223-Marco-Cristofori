@@ -1,4 +1,4 @@
-export class User {
+export class IRegisterData {
   id?: number;
   email: string;
   password: string;

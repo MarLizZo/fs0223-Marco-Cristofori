@@ -16,6 +16,6 @@ export class LoginComponent {
   };
 
   login() {
-    //
+    this.userSvc.login(this.data).subscribe((res) => console.log(res));
   }
 }

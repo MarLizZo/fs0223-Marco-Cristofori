@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { User } from 'src/app/Models/User';
+import { IRegisterData } from 'src/app/Models/IRegisterData';
 import { UsersService } from 'src/app/Service/users.service';
 
 @Component({
@@ -10,13 +10,13 @@ import { UsersService } from 'src/app/Service/users.service';
 export class RegisterComponent {
   constructor(private userSvc: UsersService) {}
 
-  data: User = {
+  data: IRegisterData = {
     email: '',
     password: '',
     username: '',
   };
 
   register() {
-    //
+    this.userSvc.register(this.data).subscribe((res) => console.log(res));
   }
 }
