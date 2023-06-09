@@ -47,6 +47,11 @@ const routes: Routes = [
         (m) => m.AuthErrorModule
       ),
   },
+  {
+    path: 'posts',
+    loadChildren: () =>
+      import('./pages/posts/posts.module').then((m) => m.PostsModule),
+  },
 ];
 
 @NgModule({

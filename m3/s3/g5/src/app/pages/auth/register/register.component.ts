@@ -35,8 +35,8 @@ export class RegisterComponent {
   logSub!: Subscription;
 
   ngOnDestroy() {
-    this.logSub.unsubscribe();
-    this.regSub.unsubscribe();
+    if (this.logSub) this.logSub.unsubscribe();
+    if (this.regSub) this.regSub.unsubscribe();
   }
 
   register() {

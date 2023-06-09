@@ -51,5 +51,43 @@
       "username": "Destroy-2",
       "id": 7
     }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Primo test",
+      "content": "Questo è il primo post.",
+      "owner": {
+        "email": "liz@liz.com",
+        "realname": "Marko",
+        "username": "LizZo",
+        "id": 2,
+        "isadmin": true
+      }
+    },
+    {
+      "title": "Mimosa Diavola",
+      "content": "La diavola è la mia pizza preferita, ma anche la Mimosa non è mica male. Cosa vuoi dalla mia vita",
+      "owner": {
+        "email": "mik@mik.com",
+        "realname": "Michele",
+        "username": "Mik CSS Inline Lover",
+        "id": 3,
+        "isadmin": true
+      },
+      "id": 3
+    },
+    {
+      "title": "nuovo test - mod",
+      "content": "test Modificato!",
+      "owner": {
+        "email": "mik@mik.com",
+        "realname": "Michele",
+        "username": "Mik CSS Inline Lover",
+        "id": 3,
+        "isadmin": true
+      },
+      "id": 4
+    }
   ]
 }

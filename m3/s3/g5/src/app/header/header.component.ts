@@ -48,6 +48,9 @@ export class HeaderComponent {
   isAdminPage(): boolean {
     return location.pathname == '/admin';
   }
+  isPostPage(): boolean {
+    return location.pathname.includes('/posts');
+  }
   isUsersListPage(): boolean {
     return location.pathname == '/userslist';
   }
