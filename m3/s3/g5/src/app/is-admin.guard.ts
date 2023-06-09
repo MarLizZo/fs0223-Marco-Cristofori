@@ -26,8 +26,9 @@ export class IsAdminGuard implements CanActivate, CanActivateChild {
     | UrlTree {
     return this.svc.isAdmin$.pipe(
       map((v) => {
+        if (v) return true;
         this.router.navigate(['401']);
-        return v ? true : false;
+        return false;
       })
     );
   }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { IAccessData } from '../Models/iaccess-data';
-import { BehaviorSubject, map, tap } from 'rxjs';
+import { BehaviorSubject, Observable, map, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { IRegisterData } from '../Models/iregister-data';
@@ -26,28 +26,32 @@ export class AuthService {
     this.getUserData();
   }
 
-  isTokenExpired(tok: string) {
+  getUsers(): Observable<IRegisterData[]> {
+    return this.http.get<IRegisterData[]>(this.apiUrl + '/users');
+  }
+
+  isTokenExpired(tok: string): boolean {
     return this.jwt.isTokenExpired(tok);
   }
 
-  getUserData() {
+  getUserData(): void {
     let chk: string | null = localStorage.getItem('user');
     let user: IAccessData | null = null;
 
     chk ? (user = JSON.parse(localStorage.getItem('user')!)) : null;
 
-    return user
+    user
       ? this.isTokenExpired(user.accessToken)
         ? this.subj.next(null)
         : this.subj.next(user)
       : this.subj.next(null);
   }
 
-  register(data: IRegisterData) {
+  register(data: IRegisterData): Observable<IAccessData> {
     return this.http.post<IAccessData>(this.registerUrl, data);
   }
 
-  login(data: ILoginData) {
+  login(data: ILoginData): Observable<IAccessData> {
     return this.http.post<IAccessData>(this.loginUrl, data).pipe(
       tap((val) => {
         this.subj.next(val);
@@ -60,13 +64,13 @@ export class AuthService {
     );
   }
 
-  logout() {
+  logout(): void {
     this.subj.next(null);
     localStorage.removeItem('user');
     this.router.navigate(['auth/logout']);
   }
 
-  logoutExp(expire: Date) {
+  logoutExp(expire: Date): void {
     const msToLogout = expire.getTime() - new Date().getTime();
     this.autoLogTimer = setTimeout(() => {
       this.logout();

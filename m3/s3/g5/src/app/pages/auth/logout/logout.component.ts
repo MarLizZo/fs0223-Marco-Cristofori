@@ -8,11 +8,16 @@ import { AuthService } from 'src/app/Services/auth.service';
   styleUrls: ['./logout.component.scss'],
 })
 export class LogoutComponent {
+  userName: string | undefined;
+  timer: any;
+
   constructor(private router: Router, private svc: AuthService) {
     this.redirect();
   }
 
-  userName: string | undefined;
+  ngOnDestroy() {
+    clearTimeout(this.timer);
+  }
 
   redirect() {
     this.svc.user$
@@ -21,7 +26,7 @@ export class LogoutComponent {
       })
       .unsubscribe();
     this.svc.logout();
-    setTimeout(() => {
+    this.timer = setTimeout(() => {
       this.router.navigate(['']);
     }, 5000);
   }
