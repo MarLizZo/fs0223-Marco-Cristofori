@@ -20,6 +20,11 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'auth/logout',
+    loadChildren: () =>
+      import('./pages/auth/logout/logout.module').then((m) => m.LogoutModule),
+  },
+  {
     path: 'admin',
     loadChildren: () =>
       import('./pages/admin/admin.module').then((m) => m.AdminModule),

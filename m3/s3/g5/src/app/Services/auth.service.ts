@@ -11,19 +11,19 @@ import { ILoginData } from '../Models/ilogin-data';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient, private router: Router) {
-    //get user
-  }
-
   jwt: JwtHelperService = new JwtHelperService();
   autoLogTimer: any;
   apiUrl: string = 'http://localhost:3000';
   loginUrl: string = this.apiUrl + '/login';
   registerUrl: string = this.apiUrl + '/register';
 
-  private subj = new BehaviorSubject<null | IAccessData>(null);
+  private subj = new BehaviorSubject<IAccessData | null>(null);
   user$ = this.subj.asObservable();
-  isLogged$ = this.user$.pipe(map((v) => !!v)); // si, il doppio esclamativo fa più figo :)
+  isLogged$ = this.user$.pipe(map((v) => !!v)); //si, il doppio esclamativo fa più figo :)
+
+  constructor(private http: HttpClient, private router: Router) {
+    this.getUserData();
+  }
 
   isTokenExpired(tok: string) {
     return this.jwt.isTokenExpired(tok);
@@ -31,15 +31,15 @@ export class AuthService {
 
   getUserData() {
     let chk: string | null = localStorage.getItem('user');
-    let user: IAccessData | null;
+    let user: IAccessData | null = null;
 
     chk ? (user = JSON.parse(localStorage.getItem('user')!)) : null;
 
-    return user!
+    return user
       ? this.isTokenExpired(user.accessToken)
-        ? null
+        ? this.subj.next(null)
         : this.subj.next(user)
-      : null;
+      : this.subj.next(null);
   }
 
   register(data: IRegisterData) {
@@ -55,7 +55,6 @@ export class AuthService {
           val.accessToken
         ) as Date;
         this.logoutExp(expireDate);
-        this.router.navigate(['']);
       })
     );
   }
@@ -63,7 +62,7 @@ export class AuthService {
   logout() {
     this.subj.next(null);
     localStorage.removeItem('user');
-    this.router.navigate(['']);
+    this.router.navigate(['auth/logout']);
   }
 
   logoutExp(expire: Date) {

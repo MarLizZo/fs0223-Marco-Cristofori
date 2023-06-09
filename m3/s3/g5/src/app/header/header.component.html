@@ -13,29 +13,29 @@
                     <a class="nav-link" [class.active]="isHomePage()" aria-current="page" [routerLink]="['/']">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [class.active]="isAdminPage()" aria-current="page"
+                    <a class="nav-link" *ngIf="isLogged" [class.active]="isAdminPage()" aria-current="page"
                         [routerLink]="['/admin']">Admin
                         Panel</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [class.active]="isUsersListPage()" aria-current="page"
+                    <a class="nav-link" *ngIf="isLogged" [class.active]="isUsersListPage()" aria-current="page"
                         [routerLink]="['/userslist']">Users
                         List</a>
                 </li>
             </ul>
             <ul class="navbar-nav me-3 mb-2 mb-lg-0">
-                <li class="nav-item">
+                <li class="nav-item" *ngIf="!isLogged">
                     <a class="nav-link" [class.active]="isLoginPage()" [routerLink]="['/auth/login']">Login</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" *ngIf="!isLogged">
                     <a class="nav-link" [class.active]="isRegisterPage()"
                         [routerLink]="['/auth/register']">Registrati</a>
                 </li>
-                <li class="nav-item">
-                    <p class="m-0 nav-link text-danger">Ciao, </p>
+                <li *ngIf="isLogged" class="nav-item">
+                    <p class="m-0 me-2 nav-link text-danger">Ciao, {{ userName }}</p>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link pointer">Logout</a>
+                <li *ngIf="isLogged" class="nav-item">
+                    <a class="nav-link" [class.active]="isLogoutPage()" [routerLink]="['/auth/logout']">Logout</a>
                 </li>
             </ul>
         </div>
