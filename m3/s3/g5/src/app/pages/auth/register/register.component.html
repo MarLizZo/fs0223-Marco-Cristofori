@@ -1,1 +1,68 @@
-<p>register works!</p>
+<div class="container py-3">
+    <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header bg-black">
+            <h4 class="modal-title text-danger" id="modal-basic-title">
+                Registration
+            </h4>
+        </div>
+        <div class="modal-body bg-dark text-white">
+            <p>Benvenuto {{ data.username }}! Sarai reindirizzato alla home in 3 secondi..</p>
+        </div>
+        <div class="modal-footer bg-black">
+            <button type="button" class="btn btn-sm btn-outline-danger px-4" (click)="redirectNow()">
+                Close
+            </button>
+        </div>
+    </ng-template>
+
+    <h1 class="text-center">Registrati sul nostro Sito</h1>
+    <form class="row g-3 justify-content-center mt-3" #f="ngForm">
+
+        <div class="col-8">
+            <div class="d-flex justify-content-between">
+                <label for="nameInput" class="form-label">Real Name:</label>
+                <label *ngIf="realname.invalid && realname.touched" for="nameInput" class="form-label err-msg">Campo
+                    Obbligatorio</label>
+            </div>
+            <input #realname="ngModel" type="text" id="nameInput" [(ngModel)]="data.realname" name="name" required
+                class="form-control bg-dark text-white border-danger rounded-4 shadow-none" placeholder="Name">
+        </div>
+
+        <div class="col-8">
+            <div class="d-flex justify-content-between">
+                <label for="usernameInput" class="form-label">Username:</label>
+                <label *ngIf="username.invalid && username.touched" for="nameInput" class="form-label err-msg">Campo
+                    Obbligatorio</label>
+            </div>
+            <input #username="ngModel" type="text" id="usernameInput" [(ngModel)]="data.username" name="username"
+                required class="form-control bg-dark text-white border-danger rounded-4 shadow-none"
+                placeholder="Username">
+        </div>
+
+        <div class="col-8">
+            <div class="d-flex justify-content-between">
+                <label for="emailInput" class="form-label">Email address:</label>
+                <label *ngIf="email.invalid && email.touched" for="nameInput" class="form-label err-msg">Campo
+                    Obbligatorio</label>
+            </div>
+            <input #email="ngModel" type="email" id="emailInput" [(ngModel)]="data.email" name="email" required
+                class="form-control bg-dark text-white border-danger rounded-4 shadow-none" placeholder="E-Mail">
+        </div>
+
+        <div class="col-8">
+            <div class="d-flex justify-content-between">
+                <label for="passInput" class="form-label">Your Password:</label>
+                <label *ngIf="password.invalid && password.touched" for="nameInput" class="form-label err-msg">Campo
+                    Obbligatorio</label>
+            </div>
+            <input #password="ngModel" type="password" id="passInput" [(ngModel)]="data.password" name="password"
+                required class="form-control bg-dark text-white border-danger rounded-4 shadow-none"
+                placeholder="Password">
+        </div>
+
+        <div class="col-8 d-flex justify-content-center">
+            <button [disabled]="f.invalid" class="btn btn-outline-danger px-5 mt-2" (click)="register()">Sign
+                Up</button>
+        </div>
+    </form>
+</div>

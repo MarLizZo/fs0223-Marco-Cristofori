@@ -31,6 +31,13 @@ const routes: Routes = [
         (m) => m.UserslistModule
       ),
   },
+  {
+    path: '401',
+    loadChildren: () =>
+      import('./pages/auth-error/auth-error.module').then(
+        (m) => m.AuthErrorModule
+      ),
+  },
 ];
 
 @NgModule({
