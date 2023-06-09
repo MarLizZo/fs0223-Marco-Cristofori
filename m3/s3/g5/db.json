@@ -22,6 +22,34 @@
       "username": "Mik CSS Inline Lover",
       "id": 3,
       "isadmin": true
+    },
+    {
+      "email": "pizza@pizza.com",
+      "password": "$2a$10$gM77Xz2waZ2GcOLx8/qKKefZ0y0uyrrXunzbLKlze.8ihqxH6hyKO",
+      "realname": "Pizza Mimosa",
+      "username": "Mimosa e Ananas",
+      "id": 4
+    },
+    {
+      "email": "pippo@pippo.com",
+      "password": "$2a$10$NiXtdtWCDqtazkYTSa1kgeEs9fK5P7tZibxNvNMTvClkA2isyHiae",
+      "realname": "Pippo",
+      "username": "Dannato",
+      "id": 5
+    },
+    {
+      "email": "destroy@destroy.com",
+      "password": "$2a$10$Fh7ijURa5fg9yeS9gV81hOSplFMegu2Urbr/5JyGxDPerSOl22r86",
+      "realname": "Test Destroy",
+      "username": "onDestroyTest",
+      "id": 6
+    },
+    {
+      "email": "destroy2@destroy2.com",
+      "password": "$2a$10$jYj8GwGL7luNH7KXbGIT7u2/L4HWRvZIYR3J3QNhK1Rd0MMfkj8uK",
+      "realname": "Altro test destroy",
+      "username": "Destroy-2",
+      "id": 7
     }
   ]
 }

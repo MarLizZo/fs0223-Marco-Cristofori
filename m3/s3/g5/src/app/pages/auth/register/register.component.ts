@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { IRegisterData } from 'src/app/Models/iregister-data';
 import { AuthService } from 'src/app/Services/auth.service';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -30,13 +31,24 @@ export class RegisterComponent {
   @ViewChild('content')
   mymodal!: ElementRef;
 
+  regSub!: Subscription;
+  logSub!: Subscription;
+
+  ngOnDestroy() {
+    this.logSub.unsubscribe();
+    this.regSub.unsubscribe();
+  }
+
   register() {
-    this.svc.register(this.data).subscribe((res) => {
-      console.log(res);
-      this.open(this.mymodal);
-      setTimeout(() => {
-        this.redirectNow();
-      }, 3000);
+    this.regSub = this.svc.register(this.data).subscribe((res) => {
+      this.logSub = this.svc
+        .login({ email: this.data.email, password: this.data.password })
+        .subscribe((v) => {
+          this.open(this.mymodal);
+          setTimeout(() => {
+            this.redirectNow();
+          }, 3000);
+        });
     });
   }
 
