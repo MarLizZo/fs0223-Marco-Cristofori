@@ -1,5 +1,3 @@
-import { IRegisterData } from './iregister-data';
-
 export interface IAccessData {
   accessToken: string;
   user: {
@@ -7,5 +5,6 @@ export interface IAccessData {
     realname: string;
     username: string;
     id: number;
+    isadmin?: boolean;
   };
 }

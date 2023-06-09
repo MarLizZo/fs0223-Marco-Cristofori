@@ -13,7 +13,7 @@
                     <a class="nav-link" [class.active]="isHomePage()" aria-current="page" [routerLink]="['/']">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" *ngIf="isLogged" [class.active]="isAdminPage()" aria-current="page"
+                    <a class="nav-link" *ngIf="isLogged && isAdmin" [class.active]="isAdminPage()" aria-current="page"
                         [routerLink]="['/admin']">Admin
                         Panel</a>
                 </li>

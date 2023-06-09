@@ -10,15 +10,23 @@ import { Subscription } from 'rxjs';
 export class HeaderComponent {
   isMenuCollapsed: boolean = true;
   isLogged: boolean = false;
+  isAdmin: boolean | undefined = false;
   userName: string | undefined;
   loggedSub!: Subscription;
+  adminSub!: Subscription;
 
   constructor(private svc: AuthService) {
     this.checkUserLogged();
+    this.checkIfAdmin();
   }
 
   ngOnDestroy() {
     this.loggedSub.unsubscribe();
+    this.adminSub.unsubscribe();
+  }
+
+  checkIfAdmin() {
+    this.adminSub = this.svc.isAdmin$.subscribe((res) => (this.isAdmin = res));
   }
 
   checkUserLogged() {

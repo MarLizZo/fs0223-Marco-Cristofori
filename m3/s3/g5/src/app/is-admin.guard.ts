@@ -13,8 +13,9 @@ import { AuthService } from './Services/auth.service';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard implements CanActivate, CanActivateChild {
+export class IsAdminGuard implements CanActivate, CanActivateChild {
   constructor(private svc: AuthService, private router: Router) {}
+
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -23,11 +24,10 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    return this.svc.isLogged$.pipe(
+    return this.svc.isAdmin$.pipe(
       map((v) => {
-        if (v) return true;
         this.router.navigate(['401']);
-        return false;
+        return v ? true : false;
       })
     );
   }

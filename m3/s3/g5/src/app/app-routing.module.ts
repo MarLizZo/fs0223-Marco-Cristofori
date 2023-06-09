@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './pages/homepage/homepage.component';
+import { AuthGuard } from './auth.guard';
+import { IsAdminGuard } from './is-admin.guard';
 
 const routes: Routes = [
   {
@@ -28,6 +30,7 @@ const routes: Routes = [
     path: 'admin',
     loadChildren: () =>
       import('./pages/admin/admin.module').then((m) => m.AdminModule),
+    canActivate: [AuthGuard, IsAdminGuard],
   },
   {
     path: 'userslist',
@@ -35,6 +38,7 @@ const routes: Routes = [
       import('./pages/userslist/userslist.module').then(
         (m) => m.UserslistModule
       ),
+    canActivate: [AuthGuard],
   },
   {
     path: '401',

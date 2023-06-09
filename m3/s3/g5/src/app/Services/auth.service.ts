@@ -20,6 +20,7 @@ export class AuthService {
   private subj = new BehaviorSubject<IAccessData | null>(null);
   user$ = this.subj.asObservable();
   isLogged$ = this.user$.pipe(map((v) => !!v)); //si, il doppio esclamativo fa più figo :)
+  isAdmin$ = this.user$.pipe(map((v) => v?.user.isadmin)); //si, il doppio esclamativo fa più figo :)
 
   constructor(private http: HttpClient, private router: Router) {
     this.getUserData();
