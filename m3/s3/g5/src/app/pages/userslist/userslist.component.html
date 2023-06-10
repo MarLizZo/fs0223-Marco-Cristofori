@@ -1,9 +1,20 @@
 <div class="container">
-    <div class="row mt-4">
-        <div *ngFor="let user of usersArr" class="col-4 d-flex flex-column align-items-center">
-            <p class="m-0">N. {{ user.id }}</p>
-            <p class="my-2">Username: {{ user.username }}</p>
-            <p class="m-0">Email: {{ user.email }}</p>
-        </div>
-    </div>
+    <table class="table mt-4">
+        <thead>
+            <tr class="border-0">
+                <th scope="col" class="bg-secondary text-white">#</th>
+                <th scope="col" class="bg-secondary text-white">Real Name</th>
+                <th scope="col" class="bg-secondary text-white">Username</th>
+                <th scope="col" class="bg-secondary text-white">E-Mail</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let user of usersArr">
+            <tr class="border-1 border-bottom border-danger">
+                <th scope="row" class="bg-secondary text-white border-0">{{ user.id }}</th>
+                <td class="bg-secondary text-white border-0">{{ user.realname }}</td>
+                <td class="bg-secondary text-white border-0">{{ user.username }}</td>
+                <td class="bg-secondary text-white border-0">{{ user.email }}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
