@@ -12,9 +12,9 @@
                     <th scope="col" class="bg-secondary text-white">Action</th>
                 </tr>
             </thead>
-            <tbody *ngFor="let user of usersArr">
-                <tr class="border-1 border-bottom border-danger">
-                    <th scope="row" class="bg-secondary text-white border-0">{{ user.id }}</th>
+            <tbody>
+                <tr *ngFor="let user of usersArr; let i = index" class="border-1 border-bottom border-danger">
+                    <th scope="row" class="bg-secondary text-white border-0">{{ i + 1 }}</th>
                     <td class="bg-secondary border-0"
                         [ngClass]="{'text-danger-emphasis fw-bold': user.isadmin, 'text-white': !user.isadmin}">{{
                         user.realname }}</td>

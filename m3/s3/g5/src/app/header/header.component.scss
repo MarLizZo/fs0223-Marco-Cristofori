@@ -1,0 +1,21 @@
+a img {
+  animation: logoAnim 4s linear 0s infinite;
+}
+
+@keyframes logoAnim {
+  0% {
+    transform: rotate(0deg);
+  }
+  33% {
+    transform: scale(1.1) rotate(120deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+  }
+  66% {
+    transform: scale(1.1) rotate(240deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
