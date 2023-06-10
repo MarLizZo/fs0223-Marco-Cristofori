@@ -1,4 +1,7 @@
 *notes.txt
 search.py
 node_modules/
-firebase.exe
+firebase-tools-instant-win.exe
+.firebase/
+.firebaserc
+firebase.json
