@@ -1,8 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { Observable, map, take } from 'rxjs';
-import { IAccessData } from 'src/app/Models/iaccess-data';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ILoginData } from 'src/app/Models/ilogin-data';
 import { AuthService } from 'src/app/Services/auth.service';
 
@@ -15,12 +13,8 @@ export class LoginComponent {
   constructor(
     private svc: AuthService,
     private router: Router,
-    config: NgbModalConfig,
     private modalService: NgbModal
-  ) {
-    config.backdrop = 'static';
-    config.keyboard = false;
-  }
+  ) {}
 
   @ViewChild('content')
   mymodal!: ElementRef;
@@ -30,11 +24,15 @@ export class LoginComponent {
     password: '',
   };
 
-  responseUsername!: string;
+  modalTitle: string = '';
+  modalTitleUser: string = '';
+  modalContent: string = '';
 
   login() {
     this.svc.login(this.data).subscribe((res) => {
-      this.responseUsername = res.user.username;
+      this.modalTitle = `Grazie per esserti collegato, `;
+      this.modalTitleUser = res.user.username;
+      this.modalContent = 'Sarai reindirizzato alla home in 3 secondi..';
       this.open(this.mymodal);
       setTimeout(() => this.redirectNow(), 3000);
     });

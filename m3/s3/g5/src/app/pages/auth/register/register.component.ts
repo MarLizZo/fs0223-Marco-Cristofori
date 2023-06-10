@@ -1,8 +1,8 @@
-import { Component, ElementRef, Input, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { IRegisterData } from 'src/app/Models/iregister-data';
 import { AuthService } from 'src/app/Services/auth.service';
-import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -21,15 +21,15 @@ export class RegisterComponent {
   constructor(
     private svc: AuthService,
     private router: Router,
-    config: NgbModalConfig,
     private modalService: NgbModal
-  ) {
-    config.backdrop = 'static';
-    config.keyboard = false;
-  }
+  ) {}
 
   @ViewChild('content')
   mymodal!: ElementRef;
+
+  modalTitle: string = '';
+  modalTitleUser: string = '';
+  modalContent: string = '';
 
   regSub!: Subscription;
   logSub!: Subscription;
@@ -44,6 +44,9 @@ export class RegisterComponent {
       this.logSub = this.svc
         .login({ email: this.data.email, password: this.data.password })
         .subscribe((v) => {
+          this.modalTitle = 'Benvenuto, ';
+          this.modalTitleUser = v.user.username;
+          this.modalContent = 'Sarai reindirizzato alla home in 3 secondi..';
           this.open(this.mymodal);
           setTimeout(() => {
             this.redirectNow();

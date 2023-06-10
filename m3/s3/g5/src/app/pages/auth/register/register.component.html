@@ -1,18 +1,7 @@
 <div class="container py-3">
     <ng-template #content let-c="close" let-d="dismiss">
-        <div class="modal-header bg-black">
-            <h4 class="modal-title text-danger" id="modal-basic-title">
-                Registration
-            </h4>
-        </div>
-        <div class="modal-body bg-dark text-white">
-            <p>Benvenuto {{ data.username }}! Sarai reindirizzato alla home in 3 secondi..</p>
-        </div>
-        <div class="modal-footer bg-black">
-            <button type="button" class="btn btn-sm btn-outline-danger px-4" (click)="redirectNow()">
-                Close
-            </button>
-        </div>
+        <app-modal [title]="modalTitle" [userName]="modalTitleUser" [content]="modalContent"
+            (onClose)="redirectNow()"></app-modal>
     </ng-template>
 
     <h1 class="text-center">Registrati sul nostro Sito</h1>
