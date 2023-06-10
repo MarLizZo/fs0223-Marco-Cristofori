@@ -11,11 +11,17 @@ import { AuthService } from 'src/app/Services/auth.service';
 export class UserslistComponent {
   usersArr: IRegisterData[] = [];
   arrSub!: Subscription;
+  isPageLoading: boolean = true;
+  isArrLoading: boolean = true;
 
   constructor(private svc: AuthService) {}
 
   ngOnInit() {
-    this.arrSub = this.svc.getUsers().subscribe((res) => (this.usersArr = res));
+    setTimeout(() => (this.isPageLoading = false), 2000);
+    this.arrSub = this.svc.getUsers().subscribe((res) => {
+      this.usersArr = res;
+      this.isArrLoading = false;
+    });
   }
 
   ngOnDestroy() {

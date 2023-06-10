@@ -13,6 +13,8 @@ import { AuthService } from 'src/app/Services/auth.service';
 export class AdminComponent {
   isUsersCollapsed: boolean = true;
   isFormCollapsed: boolean = true;
+  isPageLoading: boolean = true;
+  isArrLoading: boolean = true;
   usersArr: IUser[] = [];
   arrSub!: Subscription;
   delSub!: Subscription;
@@ -33,8 +35,10 @@ export class AdminComponent {
   constructor(private authsvc: AuthService, private modalService: NgbModal) {}
 
   ngOnInit() {
+    setTimeout(() => (this.isPageLoading = false), 2000);
     this.arrSub = this.authsvc.getUsers().subscribe((res) => {
       this.usersArr = res;
+      this.isArrLoading = false;
     });
   }
 

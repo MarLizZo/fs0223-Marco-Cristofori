@@ -15,12 +15,17 @@ export class PostsComponent {
   userSub!: Subscription;
   ownerSub!: Subscription;
   isLogged: boolean = false;
+  isPageLoading: boolean = true;
+  isArrLoading: boolean = true;
+  isUserInfoLoading: boolean = true;
 
   constructor(private postsvc: PostService, private authsvc: AuthService) {}
 
   ngOnInit() {
+    setTimeout(() => (this.isPageLoading = false), 2000);
     this.getSub = this.postsvc.getPosts().subscribe((res) => {
       this.postArr = res;
+      this.isArrLoading = false;
     });
     this.getIfLogged();
   }
@@ -32,9 +37,10 @@ export class PostsComponent {
   }
 
   getIfLogged() {
-    this.userSub = this.authsvc.isLogged$.subscribe(
-      (res) => (this.isLogged = res)
-    );
+    this.userSub = this.authsvc.isLogged$.subscribe((res) => {
+      this.isLogged = res;
+      this.isUserInfoLoading = false;
+    });
   }
 
   getIsOwner(post: IPost): boolean {

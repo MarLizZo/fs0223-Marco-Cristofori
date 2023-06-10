@@ -1,4 +1,4 @@
-<div class="container">
+<div *ngIf="!isPageLoading && !isInfoLoading" class="container">
     <form>
         <form class="row g-3 justify-content-center mt-3" #f="ngForm">
             <div class="col-8">
@@ -23,9 +23,10 @@
                     placeholder="Your message.."></textarea>
             </div>
             <div class="col-8 d-flex justify-content-center">
-                <button [disabled]="f.invalid" class="btn btn-outline-danger px-5 mt-2" (click)="savePost()">Save
+                <button [disabled]="f.invalid" class="btn btn-danger px-5 mt-2" (click)="savePost()">Save
                     Post</button>
             </div>
         </form>
     </form>
 </div>
+<app-loading *ngIf="isInfoLoading || isPageLoading"></app-loading>

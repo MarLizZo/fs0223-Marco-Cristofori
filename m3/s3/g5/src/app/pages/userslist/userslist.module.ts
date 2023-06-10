@@ -3,15 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { UserslistRoutingModule } from './userslist-routing.module';
 import { UserslistComponent } from './userslist.component';
-
+import { LoadingComponent } from 'src/app/components/loading/loading.component';
 
 @NgModule({
-  declarations: [
-    UserslistComponent
-  ],
-  imports: [
-    CommonModule,
-    UserslistRoutingModule
-  ]
+  declarations: [UserslistComponent],
+  imports: [CommonModule, UserslistRoutingModule, LoadingComponent],
 })
-export class UserslistModule { }
+export class UserslistModule {}

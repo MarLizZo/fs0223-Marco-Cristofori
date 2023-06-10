@@ -26,6 +26,8 @@ export class EditComponent {
   paramSub!: Subscription;
   postSub!: Subscription;
   saveSub!: Subscription;
+  isPageLoading: boolean = true;
+  isInfoLoading: boolean = true;
 
   constructor(
     private postsvc: PostService,
@@ -34,9 +36,11 @@ export class EditComponent {
   ) {}
 
   ngOnInit() {
+    setTimeout(() => (this.isPageLoading = false), 2000);
     this.paramSub = this.route.params.subscribe((param: any) => {
       this.postSub = this.postsvc.getSinglePost(param.id).subscribe((res) => {
         this.data = res;
+        this.isInfoLoading = false;
       });
     });
   }

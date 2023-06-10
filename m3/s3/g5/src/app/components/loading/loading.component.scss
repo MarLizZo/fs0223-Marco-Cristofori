@@ -1,0 +1,35 @@
+/* Animation */
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Loading Icon */
+.loading {
+  width: 100px;
+  height: 100px;
+
+  &__ring {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+
+    &:first-child {
+      transform: skew(30deg, 20deg);
+    }
+
+    &:last-child {
+      transform: skew(-30deg, -20deg) scale(-1, 1);
+
+      svg {
+        animation-delay: -0.5s;
+      }
+    }
+
+    svg {
+      animation: rotate 1s linear infinite;
+      fill: rgba(255, 72, 72, 0.519);
+    }
+  }
+}
