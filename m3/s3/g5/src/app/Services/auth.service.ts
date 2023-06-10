@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { IRegisterData } from '../Models/iregister-data';
 import { ILoginData } from '../Models/ilogin-data';
+import { IUser } from '../Models/iuser';
 
 @Injectable({
   providedIn: 'root',
@@ -75,5 +76,9 @@ export class AuthService {
     this.autoLogTimer = setTimeout(() => {
       this.logout();
     }, msToLogout);
+  }
+
+  delete(data: IUser): Observable<{}> {
+    return this.http.delete(this.apiUrl + '/users/' + data.id);
   }
 }

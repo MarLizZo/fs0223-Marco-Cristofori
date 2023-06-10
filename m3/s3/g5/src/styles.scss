@@ -7,3 +7,12 @@ html,
 body {
   height: 100%;
 }
+
+input {
+  &.form-check-input:focus {
+    box-shadow: 0 0 0 0.15rem #dc354657;
+  }
+  &.form-check-input:checked {
+    background-color: #dc3546c2 !important;
+  }
+}
