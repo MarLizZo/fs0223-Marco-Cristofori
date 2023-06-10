@@ -33,10 +33,12 @@ export class RegisterComponent {
 
   regSub!: Subscription;
   logSub!: Subscription;
+  timer: any;
 
   ngOnDestroy() {
     if (this.logSub) this.logSub.unsubscribe();
     if (this.regSub) this.regSub.unsubscribe();
+    clearTimeout(this.timer);
   }
 
   register() {
@@ -48,7 +50,7 @@ export class RegisterComponent {
           this.modalTitleUser = v.user.username;
           this.modalContent = 'Sarai reindirizzato alla home in 3 secondi..';
           this.open(this.mymodal);
-          setTimeout(() => {
+          this.timer = setTimeout(() => {
             this.redirectNow();
           }, 3000);
         });

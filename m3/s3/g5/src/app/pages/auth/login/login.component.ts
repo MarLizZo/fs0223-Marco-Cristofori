@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Subscription } from 'rxjs';
 import { ILoginData } from 'src/app/Models/ilogin-data';
 import { AuthService } from 'src/app/Services/auth.service';
 
@@ -16,6 +17,14 @@ export class LoginComponent {
     private modalService: NgbModal
   ) {}
 
+  logSub!: Subscription;
+  timer: any;
+
+  ngOnDestroy() {
+    if (this.logSub) this.logSub.unsubscribe();
+    clearTimeout(this.timer);
+  }
+
   @ViewChild('content')
   mymodal!: ElementRef;
 
@@ -29,12 +38,12 @@ export class LoginComponent {
   modalContent: string = '';
 
   login() {
-    this.svc.login(this.data).subscribe((res) => {
+    this.logSub = this.svc.login(this.data).subscribe((res) => {
       this.modalTitle = `Grazie per esserti collegato, `;
       this.modalTitleUser = res.user.username;
       this.modalContent = 'Sarai reindirizzato alla home in 3 secondi..';
       this.open(this.mymodal);
-      setTimeout(() => this.redirectNow(), 3000);
+      this.timer = setTimeout(() => this.redirectNow(), 3000);
     });
   }
 
