@@ -1,12 +1,21 @@
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { IAccessData } from '../Models/iaccess-data';
-import { BehaviorSubject, Observable, map, tap } from 'rxjs';
+import {
+  BehaviorSubject,
+  Observable,
+  catchError,
+  map,
+  take,
+  tap,
+  throwError,
+} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { IRegisterData } from '../Models/iregister-data';
 import { ILoginData } from '../Models/ilogin-data';
 import { IUser } from '../Models/iuser';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
@@ -54,6 +63,7 @@ export class AuthService {
 
   login(data: ILoginData): Observable<IAccessData> {
     return this.http.post<IAccessData>(this.loginUrl, data).pipe(
+      take(1),
       tap((val) => {
         this.subj.next(val);
         localStorage.setItem('user', JSON.stringify(val));

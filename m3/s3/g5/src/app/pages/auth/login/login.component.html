@@ -4,6 +4,9 @@
             (onClose)="redirectNow()"></app-modal>
     </ng-template>
 
+    <app-alert *ngIf="isError" (onCloseAlert)="isError = false" [messageTitle]="alertTitle"
+        [errorInfo]="alertBody"></app-alert>
+
     <h1 class="text-center">Accedi al sito</h1>
     <form class="row g-3 justify-content-center mt-3" #f="ngForm">
         <div class="col-8">

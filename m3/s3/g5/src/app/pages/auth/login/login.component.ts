@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Subscription } from 'rxjs';
+import { Subscription, catchError, tap, throwError } from 'rxjs';
 import { ILoginData } from 'src/app/Models/ilogin-data';
 import { AuthService } from 'src/app/Services/auth.service';
 
@@ -18,6 +18,9 @@ export class LoginComponent {
   ) {}
 
   logSub!: Subscription;
+  isError: boolean = false;
+  alertTitle: string = 'Login error';
+  alertBody: string = '';
   timer: any;
 
   ngOnDestroy() {
@@ -38,13 +41,23 @@ export class LoginComponent {
   modalContent: string = '';
 
   login() {
-    this.logSub = this.svc.login(this.data).subscribe((res) => {
-      this.modalTitle = `Grazie per esserti collegato, `;
-      this.modalTitleUser = res.user.username;
-      this.modalContent = 'Sarai reindirizzato alla home in 3 secondi..';
-      this.open(this.mymodal);
-      this.timer = setTimeout(() => this.redirectNow(), 3000);
-    });
+    this.logSub = this.svc
+      .login(this.data)
+      .pipe(
+        tap((res) => {
+          this.modalTitle = `Grazie per esserti collegato, `;
+          this.modalTitleUser = res.user.username;
+          this.modalContent = 'Sarai reindirizzato alla home in 3 secondi..';
+          this.open(this.mymodal);
+          this.timer = setTimeout(() => this.redirectNow(), 3000);
+        }),
+        catchError((error) => {
+          this.alertBody = error.error;
+          this.isError = true;
+          throw error;
+        })
+      )
+      .subscribe();
   }
 
   open(content: any) {
