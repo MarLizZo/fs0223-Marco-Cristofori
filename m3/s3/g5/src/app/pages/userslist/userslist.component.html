@@ -1,5 +1,7 @@
-<div *ngIf="!isPageLoading && !isArrLoading" class="container">
-    <table class="table mt-4">
+<div *ngIf="!isPageLoading && !isArrLoading" class="container py-4">
+    <app-alert *ngIf="isError" (onCloseAlert)="isError = false" [messageTitle]="alertTitle"
+        [errorInfo]="alertBody"></app-alert>
+    <table *ngIf="!isError" class="table">
         <thead>
             <tr class="border-0">
                 <th scope="col" class="bg-secondary text-white">#</th>

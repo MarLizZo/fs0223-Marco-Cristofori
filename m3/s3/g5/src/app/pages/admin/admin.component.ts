@@ -34,15 +34,30 @@ export class AdminComponent {
   isError: boolean = false;
   alertTitle: string = '';
   alertBody: string = '';
+  isErrorList: boolean = false;
+  alertTitleList: string = '';
+  alertBodyList: string = '';
 
   constructor(private authsvc: AuthService, private modalService: NgbModal) {}
 
   ngOnInit() {
     setTimeout(() => (this.isPageLoading = false), 2000);
-    this.arrSub = this.authsvc.getUsers().subscribe((res) => {
-      this.usersArr = res;
-      this.isArrLoading = false;
-    });
+    this.arrSub = this.authsvc
+      .getUsers()
+      .pipe(
+        tap((res) => {
+          this.usersArr = res;
+          this.isArrLoading = false;
+        }),
+        catchError((error) => {
+          this.alertTitleList = 'Error loading Posts';
+          this.alertBodyList = 'Server is probably not responding correctly.';
+          this.isArrLoading = false;
+          this.isErrorList = true;
+          throw error;
+        })
+      )
+      .subscribe();
   }
 
   ngOnDestroy() {
