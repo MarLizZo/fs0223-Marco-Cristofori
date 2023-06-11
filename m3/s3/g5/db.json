@@ -66,14 +66,6 @@
       "realname": "Test Catch",
       "username": "Catch Register",
       "id": 10
-    },
-    {
-      "email": "panel@panel.com",
-      "password": "$2a$10$5tKJzwTAZ8YZ.FQ.4jpHBeYp/PUPkxuXCc3TL3iAqIuv4HYXGwUce",
-      "realname": "no",
-      "username": "test panel reg catch",
-      "isadmin": false,
-      "id": 11
     }
   ],
   "posts": [
@@ -124,6 +116,18 @@
         "isadmin": true
       },
       "id": 5
+    },
+    {
+      "title": "Gestione errori",
+      "content": "Ora gli errori sono gestiti, Michele ne sarà felice. E comunque no, non era una zanzara normale, era una zazzinghera",
+      "owner": {
+        "email": "liz@liz.com",
+        "realname": "Marko",
+        "username": "LizZo",
+        "id": 2,
+        "isadmin": true
+      },
+      "id": 6
     }
   ]
 }

@@ -4,3 +4,11 @@ ul {
     list-style-type: decimal;
   }
 }
+
+h1 {
+  background: #eeeeee;
+  background: linear-gradient(to right, #eeeeee 0%, #cf1512 30%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

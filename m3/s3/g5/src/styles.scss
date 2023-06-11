@@ -8,6 +8,21 @@ body {
   height: 100%;
 }
 
+body {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 0, 0, 0.7);
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #303030;
+    border-radius: 10px;
+  }
+}
+
 input {
   &.form-check-input:focus {
     box-shadow: 0 0 0 0.15rem #dc354657;
