@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { IRegisterData } from 'src/app/Models/iregister-data';
 import { AuthService } from 'src/app/Services/auth.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Subscription } from 'rxjs';
+import { Subscription, catchError, tap } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -34,6 +34,9 @@ export class RegisterComponent {
   regSub!: Subscription;
   logSub!: Subscription;
   timer: any;
+  isError: boolean = false;
+  alertTitle: string = '';
+  alertBody: string = '';
 
   ngOnDestroy() {
     if (this.logSub) this.logSub.unsubscribe();
@@ -41,20 +44,53 @@ export class RegisterComponent {
     clearTimeout(this.timer);
   }
 
+  // register() {
+  //   this.regSub = this.svc.register(this.data).subscribe((res) => {
+  //     this.logSub = this.svc
+  //       .login({ email: this.data.email, password: this.data.password })
+  //       .subscribe((v) => {
+  //         this.modalTitle = 'Benvenuto, ';
+  //         this.modalTitleUser = v.user.username;
+  //         this.modalContent = 'Sarai reindirizzato alla home in 3 secondi..';
+  //         this.open(this.mymodal);
+  //         this.timer = setTimeout(() => {
+  //           this.redirectNow();
+  //         }, 3000);
+  //       });
+  //   });
+  // }
+
   register() {
-    this.regSub = this.svc.register(this.data).subscribe((res) => {
-      this.logSub = this.svc
-        .login({ email: this.data.email, password: this.data.password })
-        .subscribe((v) => {
-          this.modalTitle = 'Benvenuto, ';
-          this.modalTitleUser = v.user.username;
-          this.modalContent = 'Sarai reindirizzato alla home in 3 secondi..';
-          this.open(this.mymodal);
-          this.timer = setTimeout(() => {
-            this.redirectNow();
-          }, 3000);
-        });
-    });
+    this.regSub = this.svc
+      .register(this.data)
+      .pipe(
+        tap((res) => {
+          this.logSub = this.svc
+            .login({ email: this.data.email, password: this.data.password })
+            .pipe(
+              tap((v) => {
+                this.modalTitle = `Benvenuto, `;
+                this.modalTitleUser = v.user.username;
+                this.modalContent =
+                  'Sarai reindirizzato alla home in 3 secondi..';
+                this.open(this.mymodal);
+                this.timer = setTimeout(() => this.redirectNow(), 3000);
+              }),
+              catchError((error) => {
+                this.alertBody = error.error;
+                this.isError = true;
+                throw error;
+              })
+            )
+            .subscribe();
+        }),
+        catchError((errorR) => {
+          this.alertBody = errorR.error;
+          this.isError = true;
+          throw errorR;
+        })
+      )
+      .subscribe();
   }
 
   open(content: any) {

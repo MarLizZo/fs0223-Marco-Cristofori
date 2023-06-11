@@ -59,6 +59,13 @@
       "username": "Senza privilegi",
       "isadmin": false,
       "id": 9
+    },
+    {
+      "email": "catch@catch.com",
+      "password": "$2a$10$ix4bIad9eHuKrFy4CU/UQu/0UMo1NB5.uhp9iQBESFYkmx0wvY8OC",
+      "realname": "Test Catch",
+      "username": "Catch Register",
+      "id": 10
     }
   ],
   "posts": [

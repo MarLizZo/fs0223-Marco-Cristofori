@@ -15,7 +15,6 @@ import { Router } from '@angular/router';
 import { IRegisterData } from '../Models/iregister-data';
 import { ILoginData } from '../Models/ilogin-data';
 import { IUser } from '../Models/iuser';
-import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
