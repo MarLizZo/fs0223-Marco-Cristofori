@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Subscription } from 'rxjs';
+import { Subscription, catchError, tap } from 'rxjs';
 import { IRegisterData } from 'src/app/Models/iregister-data';
 import { IUser } from 'src/app/Models/iuser';
 import { AuthService } from 'src/app/Services/auth.service';
@@ -31,6 +31,9 @@ export class AdminComponent {
   modalContent: string = '';
   @ViewChild('content')
   mymodal!: ElementRef;
+  isError: boolean = false;
+  alertTitle: string = '';
+  alertBody: string = '';
 
   constructor(private authsvc: AuthService, private modalService: NgbModal) {}
 
@@ -58,22 +61,33 @@ export class AdminComponent {
   }
 
   createUser(): void {
-    this.regSub = this.authsvc.register(this.data).subscribe((res) => {
-      let customStr = res.user.isadmin
-        ? `Utente ${res.user.username} creato con successo. Privilegi di Admin concessi!`
-        : `Utente ${res.user.username} creato con successo. L'utente NON ha privilegi di Admin.`;
+    this.regSub = this.authsvc
+      .register(this.data)
+      .pipe(
+        tap((res) => {
+          let customStr = res.user.isadmin
+            ? `Utente ${res.user.username} creato con successo. Privilegi di Admin concessi!`
+            : `Utente ${res.user.username} creato con successo. L'utente NON ha privilegi di Admin.`;
 
-      let newUser: IUser = {
-        id: res.user.id,
-        realname: res.user.realname,
-        username: res.user.username,
-        email: res.user.email,
-      };
-      this.modalTitle = 'Info Creazione User';
-      this.modalContent = customStr;
-      this.usersArr.push(newUser);
-      this.open();
-    });
+          let newUser: IUser = {
+            id: res.user.id,
+            realname: res.user.realname,
+            username: res.user.username,
+            email: res.user.email,
+          };
+          this.modalTitle = 'Info Creazione User';
+          this.modalContent = customStr;
+          this.usersArr.push(newUser);
+          this.open();
+        }),
+        catchError((error) => {
+          this.alertTitle = 'Registration Error';
+          this.alertBody = error.error;
+          this.isError = true;
+          throw error;
+        })
+      )
+      .subscribe();
   }
 
   closeModal(): void {

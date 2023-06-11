@@ -44,22 +44,6 @@ export class RegisterComponent {
     clearTimeout(this.timer);
   }
 
-  // register() {
-  //   this.regSub = this.svc.register(this.data).subscribe((res) => {
-  //     this.logSub = this.svc
-  //       .login({ email: this.data.email, password: this.data.password })
-  //       .subscribe((v) => {
-  //         this.modalTitle = 'Benvenuto, ';
-  //         this.modalTitleUser = v.user.username;
-  //         this.modalContent = 'Sarai reindirizzato alla home in 3 secondi..';
-  //         this.open(this.mymodal);
-  //         this.timer = setTimeout(() => {
-  //           this.redirectNow();
-  //         }, 3000);
-  //       });
-  //   });
-  // }
-
   register() {
     this.regSub = this.svc
       .register(this.data)
@@ -76,15 +60,17 @@ export class RegisterComponent {
                 this.open(this.mymodal);
                 this.timer = setTimeout(() => this.redirectNow(), 3000);
               }),
-              catchError((error) => {
-                this.alertBody = error.error;
+              catchError((errorL) => {
+                this.alertTitle = 'Login Error';
+                this.alertBody = errorL.error;
                 this.isError = true;
-                throw error;
+                throw errorL;
               })
             )
             .subscribe();
         }),
         catchError((errorR) => {
+          this.alertTitle = 'Registration Error';
           this.alertBody = errorR.error;
           this.isError = true;
           throw errorR;

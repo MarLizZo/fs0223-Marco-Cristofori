@@ -66,6 +66,14 @@
       "realname": "Test Catch",
       "username": "Catch Register",
       "id": 10
+    },
+    {
+      "email": "panel@panel.com",
+      "password": "$2a$10$5tKJzwTAZ8YZ.FQ.4jpHBeYp/PUPkxuXCc3TL3iAqIuv4HYXGwUce",
+      "realname": "no",
+      "username": "test panel reg catch",
+      "isadmin": false,
+      "id": 11
     }
   ],
   "posts": [

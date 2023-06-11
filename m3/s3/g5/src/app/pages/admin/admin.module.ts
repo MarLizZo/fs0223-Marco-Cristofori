@@ -7,6 +7,7 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { ModalComponent } from 'src/app/components/modal/modal.component';
 import { LoadingComponent } from 'src/app/components/loading/loading.component';
+import { AlertComponent } from 'src/app/components/alert/alert.component';
 
 @NgModule({
   declarations: [AdminComponent],
@@ -17,6 +18,7 @@ import { LoadingComponent } from 'src/app/components/loading/loading.component';
     FormsModule,
     ModalComponent,
     LoadingComponent,
+    AlertComponent,
   ],
 })
 export class AdminModule {}

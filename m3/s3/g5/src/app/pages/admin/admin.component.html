@@ -37,6 +37,9 @@
                 (onClose)="closeModal()"></app-modal>
         </ng-template>
 
+        <app-alert *ngIf="isError" (onCloseAlert)="isError = false" [messageTitle]="alertTitle"
+            [errorInfo]="alertBody"></app-alert>
+
         <form class="row g-3" #f="ngForm">
             <div class="col-8">
                 <div class="d-flex justify-content-between">
