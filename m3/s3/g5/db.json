@@ -66,6 +66,13 @@
       "realname": "Test Catch",
       "username": "Catch Register",
       "id": 10
+    },
+    {
+      "email": "ao@ao.com",
+      "password": "$2a$10$hLJWSflOg8FvtZdsbs6/YOnbOsDm/pOtGYs.XPsxZiDyOtJLRP5Ai",
+      "realname": "Scimmia romana",
+      "username": "Ao-Francè",
+      "id": 11
     }
   ],
   "posts": [
@@ -128,6 +135,17 @@
         "isadmin": true
       },
       "id": 6
+    },
+    {
+      "title": "Ultimo test",
+      "content": "Ultimo giro di test.. Sembra che abbia fatto un buon lavoro. Angular è fighissimo, una volta che l'hai capito..",
+      "owner": {
+        "email": "ao@ao.com",
+        "realname": "Scimmia romana",
+        "username": "Ao-Francè",
+        "id": 11
+      },
+      "id": 7
     }
   ]
 }
