@@ -18,14 +18,14 @@ body {
 }
 
 .pad-indent {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 80px;
+    padding-right: 80px;
 }
 
 @media screen and (max-width:850px) {
     .pad-indent {
-        padding-left: 50px;
-        padding-right: 50px;
+        padding-left: 40px;
+        padding-right: 40px;
     }
 }
 
@@ -33,7 +33,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    font-size: 12px;
+    /* font-size: 12px; */
     padding-top: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid black;
@@ -155,7 +155,7 @@ h1 {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
-    font-size: 0.7em;
+    /* font-size: 0.7em; */
     font-weight: bold;
 }
 
@@ -168,7 +168,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    font-size: 0.6em;
+    font-size: 0.8em;
     font-weight: bold;
 }
 
@@ -255,7 +255,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 0.6em;
+    font-size: 0.8em;
     margin-bottom: 40px;
 }
 
@@ -361,7 +361,7 @@ aside {
 }
 
 .aside-title h4 {
-    font-size: 0.7em;
+    /* font-size: 0.7em; */
     font-weight: bold;
     margin-bottom: 15px;
     margin-top: 10px;
@@ -386,7 +386,7 @@ aside {
 .btns-container button {
     border: 1px solid lightgray;
     background-color: transparent;
-    font-size: 0.7em;
+    /* font-size: 0.7em; */
     padding: 5px 8px;
     margin-bottom: 8px;
     color:grey;
@@ -404,7 +404,7 @@ aside {
 }
 
 .see-more a {
-    font-size: 0.8em;
+    /* font-size: 0.8em; */
     font-weight: bold;
     color: var(--myGreen);
     text-decoration: none;
