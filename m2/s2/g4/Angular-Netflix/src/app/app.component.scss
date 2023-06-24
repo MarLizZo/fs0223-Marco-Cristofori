@@ -1,0 +1,17 @@
+app-header {
+  background: #060606;
+  background: -moz-linear-gradient(top, #060606 30%, #141414 100%);
+  background: -webkit-linear-gradient(top, #060606 30%, #141414 100%);
+  background: linear-gradient(to bottom, #060606 30%, #141414 100%);
+  height: 68px;
+
+  @media screen and (max-width: 992px) {
+    height: 41px;
+    font-size: 0.9em;
+  }
+}
+
+app-footer,
+main {
+  background-color: var(--bg-near-black);
+}
