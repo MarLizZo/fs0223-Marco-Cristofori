@@ -1,1 +1,55 @@
-<p>header works!</p>
+<header class="h-100">
+    <nav class="px-4 h-100">
+        <div class="container-fluid d-flex align-items-center h-100">
+            <a class="navbar-brand">
+                <img src="assets/img/netflix_logo.png" alt="">
+            </a>
+            <ul class="nav ms-3">
+                <li class="nav-item">
+                    <a href="#" class="nav-link link-light px-2">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link link-light px-2">Serie TV</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link link-light px-2">Film</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link link-light px-2">Nuovi e popolari</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link link-light px-2">La mia lista</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link link-light px-2">Sfoglia per lingua</a>
+                </li>
+            </ul>
+            <ul class="nav">
+                <li class="nav-item ms-2" ngbDropdown>
+                    <a class="nav-link link-light fw-bold" tabindex="0" ngbDropdownToggle id="dropDownLinks"
+                        role="button">Sfoglia</a>
+                    <div ngbDropdownMenu aria-labelledby="dropDownLinks"
+                        class="dropdown-menu dropdown-menu-end border-0 border-top rounded-0 border-light">
+                        <a ngbDropdownItem [routerLink]="'/'" (click)="$event.preventDefault()">Home</a>
+                        <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Serie TV</a>
+                        <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Film</a>
+                        <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Nuovi e popolari</a>
+                        <a ngbDropdownItem href="#" (click)="$event.preventDefault()">La mia lista</a>
+                        <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Sfoglia per lingua</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="nav align-items-center ms-auto">
+                <li class="nav-item mx-2">
+                    <i class="bi bi-search"></i>
+                </li>
+                <li class="nav-item mx-2 d-none d-lg-block">
+                    <a href="#" class="nav-link link-light px-2">Bambini</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <i class="bi bi-bell"></i>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

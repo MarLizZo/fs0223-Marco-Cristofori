@@ -1,0 +1,46 @@
+nav {
+  font-size: 0.9em;
+  letter-spacing: 0.1px;
+  @media screen and (max-width: 992px) {
+    font-size: 0.8em;
+  }
+  img {
+    width: 116px;
+    cursor: pointer;
+  }
+  i {
+    font-size: 1.3em;
+    cursor: pointer;
+  }
+  a:hover {
+    color: var(--hover-color) !important;
+  }
+  .dropdown-menu {
+    background-color: #141414ac;
+
+    a {
+      font-size: 0.9em;
+      color: var(--hover-color);
+      &:hover {
+        background-color: #74747415;
+      }
+    }
+  }
+  ul:first-of-type {
+    display: none;
+    @media screen and (min-width: 800px) {
+      display: flex !important;
+    }
+  }
+  ul:nth-of-type(2) {
+    @media screen and (min-width: 800px) {
+      display: none;
+    }
+  }
+  ul:last-child li:nth-child(2) {
+    display: none;
+    @media screen and (min-width: 900px) {
+      display: flex;
+    }
+  }
+}
