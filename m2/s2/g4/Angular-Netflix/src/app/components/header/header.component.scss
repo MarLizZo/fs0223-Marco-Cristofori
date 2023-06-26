@@ -12,11 +12,25 @@ nav {
     font-size: 1.3em;
     cursor: pointer;
   }
-  a:hover {
-    color: var(--hover-color) !important;
+  a {
+    .profile-img {
+      width: 48px;
+    }
+    &:hover {
+      color: var(--hover-color) !important;
+    }
+    div {
+      img {
+        width: 32px;
+      }
+    }
   }
   .dropdown-menu {
-    background-color: #141414ac;
+    background-color: #060606a3;
+
+    .divider {
+      height: 1px;
+    }
 
     a {
       font-size: 0.9em;

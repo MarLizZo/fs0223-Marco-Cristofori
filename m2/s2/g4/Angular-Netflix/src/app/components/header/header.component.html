@@ -6,22 +6,22 @@
             </a>
             <ul class="nav ms-3">
                 <li class="nav-item">
-                    <a href="#" class="nav-link link-light px-2">Home</a>
+                    <a [routerLink]="'/'" class="nav-link link-light px-2">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link link-light px-2">Serie TV</a>
+                    <a [routerLink]="'browse'" class="nav-link link-light px-2">Serie TV</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link link-light px-2">Film</a>
+                    <a [routerLink]="'browse'" class="nav-link link-light px-2">Film</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link link-light px-2">Nuovi e popolari</a>
+                    <a [routerLink]="'latest'" class="nav-link link-light px-2">Nuovi e popolari</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link link-light px-2">La mia lista</a>
+                    <a [routerLink]="'my-list'" class="nav-link link-light px-2">La mia lista</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link link-light px-2">Sfoglia per lingua</a>
+                    <a [routerLink]="'browse'" class="nav-link link-light px-2">Sfoglia per lingua</a>
                 </li>
             </ul>
             <ul class="nav">
@@ -31,11 +31,13 @@
                     <div ngbDropdownMenu aria-labelledby="dropDownLinks"
                         class="dropdown-menu dropdown-menu-end border-0 border-top rounded-0 border-light">
                         <a ngbDropdownItem [routerLink]="'/'" (click)="$event.preventDefault()">Home</a>
-                        <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Serie TV</a>
-                        <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Film</a>
-                        <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Nuovi e popolari</a>
-                        <a ngbDropdownItem href="#" (click)="$event.preventDefault()">La mia lista</a>
-                        <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Sfoglia per lingua</a>
+                        <a ngbDropdownItem [routerLink]="'browse'" (click)="$event.preventDefault()">Serie TV</a>
+                        <a ngbDropdownItem [routerLink]="'browse'" (click)="$event.preventDefault()">Film</a>
+                        <a ngbDropdownItem [routerLink]="'latest'" (click)="$event.preventDefault()">Nuovi e
+                            popolari</a>
+                        <a ngbDropdownItem [routerLink]="'my-list'" (click)="$event.preventDefault()">La mia lista</a>
+                        <a ngbDropdownItem [routerLink]="'browse'" (click)="$event.preventDefault()">Sfoglia per
+                            lingua</a>
                     </div>
                 </li>
             </ul>
@@ -44,10 +46,53 @@
                     <i class="bi bi-search"></i>
                 </li>
                 <li class="nav-item mx-2 d-none d-lg-block">
-                    <a href="#" class="nav-link link-light px-2">Bambini</a>
+                    <a [routerLink]="'kids'" class="nav-link link-light px-2">Bambini</a>
                 </li>
                 <li class="nav-item mx-2">
                     <i class="bi bi-bell"></i>
+                </li>
+                <li class="nav-item mx-2" ngbDropdown>
+                    <a class="nav-link link-light fw-bold" tabindex="0" ngbDropdownToggle id="dropDownAccount"
+                        role="button"><img src="./assets/img/profile-img.png" class="profile-img"></a>
+                    <div ngbDropdownMenu aria-labelledby="dropDownAccount"
+                        class="dropdown-menu dropdown-menu-end border-0 border-top rounded-0 border-light">
+                        <a ngbDropdownItem [routerLink]="'kids'" (click)="$event.preventDefault()" class="mb-2">
+                            <div class="d-flex align-items-center">
+                                <img src="./assets/img/kids_icon.png" class="rounded-2 me-2">
+                                <p class="m-0">Bambini</p>
+                            </div>
+                        </a>
+                        <a ngbDropdownItem [routerLink]="'account'" (click)="$event.preventDefault()">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-pencil me-2"></i>
+                                <p class="m-0">Gestisci i profili</p>
+                            </div>
+                        </a>
+                        <a ngbDropdownItem [routerLink]="'account/transfer'" (click)="$event.preventDefault()">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-people me-2"></i>
+                                <p class="m-0">Trasferisci profilo</p>
+                            </div>
+                        </a>
+                        <a ngbDropdownItem [routerLink]="'account'" (click)="$event.preventDefault()">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-person me-2"></i>
+                                <p class="m-0">Account</p>
+                            </div>
+                        </a>
+                        <a ngbDropdownItem href="https://help.netflix.com/" target="_blank">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-question-circle me-2"></i>
+                                <p class="m-0">Centro assistenza</p>
+                            </div>
+                        </a>
+                        <div class="divider my-3 bg-secondary"></div>
+                        <a ngbDropdownItem [routerLink]="'auth/logout'">
+                            <div class="d-flex justify-content-center">
+                                Esci da Netflix
+                            </div>
+                        </a>
+                    </div>
                 </li>
             </ul>
         </div>
