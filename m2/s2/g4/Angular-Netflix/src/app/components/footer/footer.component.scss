@@ -1,0 +1,25 @@
+footer {
+  border-top: 2px solid black;
+  font-size: 0.8rem;
+  a {
+    color: var(--hover-color) !important;
+
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+
+  p {
+    color: var(--hover-color) !important;
+  }
+
+  i {
+    cursor: pointer;
+    font-size: 1.4rem;
+  }
+
+  .custom-btn {
+    color: var(--hover-color);
+    border-color: var(--hover-color);
+  }
+}
