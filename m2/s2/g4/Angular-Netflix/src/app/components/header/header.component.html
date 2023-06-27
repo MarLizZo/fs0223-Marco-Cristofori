@@ -42,7 +42,7 @@
                 </li>
             </ul>
             <ul class="nav align-items-center ms-auto">
-                <li class="nav-item mx-2">
+                <li class="nav-item mx-2 d-none d-lg-block">
                     <i class="bi bi-search"></i>
                 </li>
                 <li class="nav-item mx-2 d-none d-lg-block">
@@ -74,7 +74,7 @@
                                 <p class="m-0">Trasferisci profilo</p>
                             </div>
                         </a>
-                        <a ngbDropdownItem [routerLink]="'account'" (click)="$event.preventDefault()">
+                        <a ngbDropdownItem [routerLink]="'account/settings'" (click)="$event.preventDefault()">
                             <div class="d-flex align-items-center">
                                 <i class="bi bi-person me-2"></i>
                                 <p class="m-0">Account</p>

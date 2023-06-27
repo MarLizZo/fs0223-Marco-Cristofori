@@ -9,6 +9,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./transfer/transfer.module').then((m) => m.TransferModule),
   },
+  {
+    path: 'settings',
+    loadChildren: () =>
+      import('./settings/settings.module').then((m) => m.SettingsModule),
+  },
 ];
 
 @NgModule({
