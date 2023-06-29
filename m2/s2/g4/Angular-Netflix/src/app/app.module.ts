@@ -7,11 +7,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { CarouselComponent } from './components/elements/carousel/carousel.component';
-import { SingleCardComponent } from './components/elements/single-card/single-card.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, CarouselComponent, SingleCardComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
