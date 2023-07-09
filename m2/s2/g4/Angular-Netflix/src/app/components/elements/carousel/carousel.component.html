@@ -1,1 +1,30 @@
-<p>carousel works!</p>
+<ngb-carousel [showNavigationIndicators]="false" [interval]="0">
+    <ng-template ngbSlide>
+        <div class="row">
+            <div *ngFor="let media of firstHalf" class="col-2">
+                <app-single-card [media]="media" class="w-100"></app-single-card>
+                <!-- <img src="http://placekitten.com/200/150" alt=""> -->
+            </div>
+        </div>
+        <button class="carousel-control-prev" ngbSlidePrev aria-label="Previous">
+            <!-- Pulsante Precedente -->
+        </button>
+        <button class="carousel-control-next" ngbSlideNext aria-label="Next">
+            <!-- Pulsante Successivo -->
+        </button>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="row">
+            <div *ngFor="let media of secondHalf" class="col-2">
+                <app-single-card [media]="media" class="w-100"></app-single-card>
+                <!-- <img src="http://placekitten.com/200/150" alt=""> -->
+            </div>
+        </div>
+        <button class="carousel-control-prev" ngbSlidePrev aria-label="Previous">
+            <!-- Pulsante Precedente -->
+        </button>
+        <button class="carousel-control-next" ngbSlideNext aria-label="Next">
+            <!-- Pulsante Successivo -->
+        </button>
+    </ng-template>
+</ngb-carousel>

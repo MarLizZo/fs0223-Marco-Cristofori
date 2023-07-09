@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IMediaData } from 'src/app/Interfaces/imedia-data';
 
 @Component({
   selector: 'app-single-card',
@@ -6,4 +7,12 @@ import { Component } from '@angular/core';
   templateUrl: './single-card.component.html',
   styleUrls: ['./single-card.component.scss'],
 })
-export class SingleCardComponent {}
+export class SingleCardComponent {
+  constructor() {}
+  path: string = './assets/media/';
+  @Input() media!: IMediaData;
+
+  ngOnInit() {
+    this.path += this.media.name;
+  }
+}
