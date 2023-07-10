@@ -20,6 +20,6 @@ export class CarouselComponent {
 
   ngOnInit() {
     this.firstHalf = this.mediaArr.slice(0, 6);
-    this.secondHalf = this.mediaArr.slice(6, 11);
+    this.secondHalf = this.mediaArr.slice(6, 12);
   }
 }

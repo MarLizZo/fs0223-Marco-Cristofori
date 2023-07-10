@@ -1,7 +1,7 @@
 <ngb-carousel [showNavigationIndicators]="false" [interval]="0">
     <ng-template ngbSlide>
-        <div class="row">
-            <div *ngFor="let media of firstHalf" class="col-2">
+        <div class="row px-5">
+            <div *ngFor="let media of firstHalf" class="col-2 px-1">
                 <app-single-card [media]="media" class="w-100"></app-single-card>
                 <!-- <img src="http://placekitten.com/200/150" alt=""> -->
             </div>
@@ -14,8 +14,8 @@
         </button>
     </ng-template>
     <ng-template ngbSlide>
-        <div class="row">
-            <div *ngFor="let media of secondHalf" class="col-2">
+        <div class="row px-5">
+            <div *ngFor="let media of secondHalf" class="col-2 px-1">
                 <app-single-card [media]="media" class="w-100"></app-single-card>
                 <!-- <img src="http://placekitten.com/200/150" alt=""> -->
             </div>
