@@ -15,11 +15,29 @@ export class CarouselComponent {
   constructor() {}
 
   @Input() mediaArr!: IMediaData[];
-  firstHalf!: IMediaData[];
-  secondHalf!: IMediaData[];
+  mediaArrMobile_one!: IMediaData[];
+  mediaArrMobile_two!: IMediaData[];
+  mediaArrMobile_three!: IMediaData[];
+  mediaArrMobile_four!: IMediaData[];
+
+  mediaArrTablet_one!: IMediaData[];
+  mediaArrTablet_two!: IMediaData[];
+  mediaArrTablet_three!: IMediaData[];
+
+  mediaArrLarge_one!: IMediaData[];
+  mediaArrLarge_two!: IMediaData[];
 
   ngOnInit() {
-    this.firstHalf = this.mediaArr.slice(0, 6);
-    this.secondHalf = this.mediaArr.slice(6, 12);
+    this.mediaArrMobile_one = this.mediaArr.slice(0, 2);
+    this.mediaArrMobile_two = this.mediaArr.slice(3, 5);
+    this.mediaArrMobile_three = this.mediaArr.slice(6, 8);
+    this.mediaArrMobile_four = this.mediaArr.slice(9, 11);
+
+    this.mediaArrTablet_one = this.mediaArr.slice(0, 3);
+    this.mediaArrTablet_two = this.mediaArr.slice(4, 7);
+    this.mediaArrTablet_three = this.mediaArr.slice(8, 11);
+
+    this.mediaArrLarge_one = this.mediaArr.slice(0, 5);
+    this.mediaArrLarge_two = this.mediaArr.slice(6, 11);
   }
 }

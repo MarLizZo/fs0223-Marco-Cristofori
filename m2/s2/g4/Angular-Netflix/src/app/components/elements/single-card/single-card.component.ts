@@ -14,19 +14,5 @@ export class SingleCardComponent {
 
   ngOnInit() {
     this.path += this.media.name;
-    // this.setListener();
-  }
-
-  setListener() {
-    let img: HTMLElement | null = document.querySelector('.main-container img');
-    let div: HTMLElement | null = document.querySelector('.main-container');
-
-    img?.addEventListener('mouseover', () => {
-      div?.classList.add('cont-hover');
-    });
-
-    img?.addEventListener('mouseout', () => {
-      div?.classList.remove('cont-hover');
-    });
   }
 }
