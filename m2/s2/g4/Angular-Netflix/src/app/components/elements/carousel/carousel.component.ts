@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { SingleCardComponent } from '../single-card/single-card.component';
 import { IMediaData } from 'src/app/Interfaces/imedia-data';
 import { CommonModule } from '@angular/common';
@@ -39,5 +39,11 @@ export class CarouselComponent {
 
     this.mediaArrLarge_one = this.mediaArr.slice(0, 6);
     this.mediaArrLarge_two = this.mediaArr.slice(6, 12);
+  }
+
+  @Output() onSignal = new EventEmitter();
+
+  sendSignal(obj: IMediaData) {
+    this.onSignal.emit(obj);
   }
 }

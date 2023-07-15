@@ -3,7 +3,7 @@
     <ng-template ngbSlide>
         <div class="row justify-content-evenly px-5">
             <div *ngFor="let media of mediaArrMobile_one" class="col-4 px-1">
-                <app-single-card [media]="media"></app-single-card>
+                <app-single-card [media]="media" (onChange)="sendSignal($event)"></app-single-card>
             </div>
         </div>
         <button class="carousel-control-prev" ngbSlidePrev aria-label="Previous"></button>
@@ -13,7 +13,7 @@
     <ng-template ngbSlide>
         <div class="row justify-content-evenly px-5">
             <div *ngFor="let media of mediaArrMobile_two" class="col-4 px-1">
-                <app-single-card [media]="media"></app-single-card>
+                <app-single-card [media]="media" (onChange)="sendSignal($event)"></app-single-card>
             </div>
         </div>
         <button class="carousel-control-prev" ngbSlidePrev aria-label="Previous"></button>
@@ -23,7 +23,7 @@
     <ng-template ngbSlide>
         <div class="row justify-content-evenly px-5">
             <div *ngFor="let media of mediaArrMobile_three" class="col-4 px-1">
-                <app-single-card [media]="media"></app-single-card>
+                <app-single-card [media]="media" (onChange)="sendSignal($event)"></app-single-card>
             </div>
         </div>
         <button class="carousel-control-prev" ngbSlidePrev aria-label="Previous"></button>
@@ -33,7 +33,7 @@
     <ng-template ngbSlide>
         <div class="row justify-content-evenly px-5">
             <div *ngFor="let media of mediaArrMobile_four" class="col-4 px-1">
-                <app-single-card [media]="media"></app-single-card>
+                <app-single-card [media]="media" (onChange)="sendSignal($event)"></app-single-card>
             </div>
         </div>
         <button class="carousel-control-prev" ngbSlidePrev aria-label="Previous"></button>
@@ -49,7 +49,7 @@
     <ng-template ngbSlide>
         <div class="row justify-content-evenly px-5">
             <div *ngFor="let media of mediaArrTablet_one" class="col-3 px-1">
-                <app-single-card [media]="media"></app-single-card>
+                <app-single-card [media]="media" (onChange)="sendSignal($event)"></app-single-card>
             </div>
         </div>
         <button class="carousel-control-prev" ngbSlidePrev aria-label="Previous"></button>
@@ -59,7 +59,7 @@
     <ng-template ngbSlide>
         <div class="row justify-content-evenly px-5">
             <div *ngFor="let media of mediaArrTablet_two" class="col-3 px-1">
-                <app-single-card [media]="media"></app-single-card>
+                <app-single-card [media]="media" (onChange)="sendSignal($event)"></app-single-card>
             </div>
         </div>
         <button class="carousel-control-prev" ngbSlidePrev aria-label="Previous"></button>
@@ -69,7 +69,7 @@
     <ng-template ngbSlide>
         <div class="row justify-content-evenly px-5">
             <div *ngFor="let media of mediaArrTablet_three" class="col-3 px-1">
-                <app-single-card [media]="media"></app-single-card>
+                <app-single-card [media]="media" (onChange)="sendSignal($event)"></app-single-card>
             </div>
         </div>
         <button class="carousel-control-prev" ngbSlidePrev aria-label="Previous"></button>
@@ -85,7 +85,7 @@
     <ng-template ngbSlide>
         <div class="row justify-content-evenly px-5">
             <div *ngFor="let media of mediaArrLarge_one" class="col-2 px-1">
-                <app-single-card [media]="media"></app-single-card>
+                <app-single-card [media]="media" (onChange)="sendSignal($event)"></app-single-card>
             </div>
         </div>
         <button class="carousel-control-prev" ngbSlidePrev aria-label="Previous"></button>
@@ -95,7 +95,7 @@
     <ng-template ngbSlide>
         <div class="row justify-content-evenly px-5">
             <div *ngFor="let media of mediaArrLarge_two" class="col-2 px-1">
-                <app-single-card [media]="media"></app-single-card>
+                <app-single-card [media]="media" (onChange)="sendSignal($event)"></app-single-card>
             </div>
         </div>
         <button class="carousel-control-prev" ngbSlidePrev aria-label="Previous"></button>

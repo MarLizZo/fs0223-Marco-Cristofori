@@ -18,7 +18,7 @@
       cursor: pointer;
 
       &:hover {
-        color: rgb(199, 199, 199) !important;
+        color: rgb(199, 199, 199);
       }
     }
   }
@@ -53,5 +53,12 @@
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     opacity: 1;
+  }
+}
+
+.i-green {
+  color: var(--bs-success) !important;
+  &:hover {
+    color: #145e3b !important;
   }
 }
