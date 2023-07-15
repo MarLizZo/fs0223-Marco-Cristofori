@@ -19,7 +19,8 @@
             </p>
         </div>
         <div class="d-flex text-light mt-2">
-            <p *ngFor="let g of media.genres" class="m-0">• {{ g }} •</p>
+            <p *ngFor="let g of media.genres; first as isFirst" class="m-0"><span *ngIf="!isFirst">&nbsp;•</span> {{ g
+                }}</p>
         </div>
     </div>
 </div>
