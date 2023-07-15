@@ -43,6 +43,17 @@ export class MyListComponent {
     localStorage.setItem('media_three', JSON.stringify(this.medias_three));
   }
 
+  ngAfterViewInit() {
+    let container: HTMLElement | null =
+      document.querySelector('.list-container');
+    setTimeout(() => {
+      let colH: number | undefined =
+        document.querySelector('.col')?.clientHeight;
+      container!.style.height = container!.offsetHeight + colH! + 'px';
+      console.log(colH);
+    }, 500);
+  }
+
   setProps(obj: IMediaData) {
     let match_one = this.medias_one.findIndex((el) => el.name === obj.name);
     let match_two = this.medias_two.findIndex((el) => el.name === obj.name);
