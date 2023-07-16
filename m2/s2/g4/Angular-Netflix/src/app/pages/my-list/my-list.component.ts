@@ -11,6 +11,7 @@ export class MyListComponent {
   medias_one: IMediaData[] = [];
   medias_two: IMediaData[] = [];
   medias_three: IMediaData[] = [];
+  changesFlag: boolean = false;
 
   ngOnInit() {
     let media_one: string | null = localStorage.getItem('media_one');
@@ -38,9 +39,11 @@ export class MyListComponent {
   }
 
   ngOnDestroy() {
-    localStorage.setItem('media_one', JSON.stringify(this.medias_one));
-    localStorage.setItem('media_two', JSON.stringify(this.medias_two));
-    localStorage.setItem('media_three', JSON.stringify(this.medias_three));
+    if (this.changesFlag) {
+      localStorage.setItem('media_one', JSON.stringify(this.medias_one));
+      localStorage.setItem('media_two', JSON.stringify(this.medias_two));
+      localStorage.setItem('media_three', JSON.stringify(this.medias_three));
+    }
   }
 
   ngAfterViewInit() {
@@ -73,5 +76,7 @@ export class MyListComponent {
     if (match_three > 0) {
       this.medias_three[match_three] = obj;
     }
+
+    this.changesFlag = true;
   }
 }

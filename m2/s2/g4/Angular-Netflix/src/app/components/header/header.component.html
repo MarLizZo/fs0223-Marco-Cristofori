@@ -48,9 +48,6 @@
                     <i class="bi bi-search"></i>
                 </li>
                 <li class="nav-item mx-2 d-none d-lg-block">
-                    <a [routerLink]="'kids'" class="nav-link link-light px-2">Bambini</a>
-                </li>
-                <li class="nav-item mx-2 d-none d-lg-block">
                     <i class="bi bi-bell"></i>
                 </li>
                 <li class="nav-item mx-2" ngbDropdown>
@@ -58,13 +55,7 @@
                         role="button"><img src="./assets/img/profile-img.png" class="profile-img"></a>
                     <div ngbDropdownMenu aria-labelledby="dropDownAccount"
                         class="dropdown-menu dropdown-menu-end border-0 border-top rounded-0 border-light">
-                        <a ngbDropdownItem [routerLink]="'kids'" (click)="$event.preventDefault()" class="mb-2">
-                            <div class="d-flex align-items-center">
-                                <img src="./assets/img/kids_icon.png" class="rounded-2 me-2">
-                                <p class="m-0">Bambini</p>
-                            </div>
-                        </a>
-                        <a ngbDropdownItem [routerLink]="'account'" (click)="$event.preventDefault()">
+                        <a ngbDropdownItem [routerLink]="'account/settings'" (click)="$event.preventDefault()">
                             <div class="d-flex align-items-center">
                                 <i class="bi bi-pencil me-2"></i>
                                 <p class="m-0">Gestisci i profili</p>

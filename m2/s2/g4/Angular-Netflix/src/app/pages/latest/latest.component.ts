@@ -11,6 +11,7 @@ export class LatestComponent {
   secondArr: IMediaData[] = [];
   thirdArr: IMediaData[] = [];
   fourthArr: IMediaData[] = [];
+  changesFlag: boolean = false;
 
   ngOnInit() {
     let media_one: string | null = localStorage.getItem('media_one');
@@ -288,9 +289,11 @@ export class LatestComponent {
   }
 
   ngOnDestroy() {
-    localStorage.setItem('media_one', JSON.stringify(this.firstArr));
-    localStorage.setItem('media_two', JSON.stringify(this.secondArr));
-    localStorage.setItem('media_three', JSON.stringify(this.thirdArr));
+    if (this.changesFlag) {
+      localStorage.setItem('media_one', JSON.stringify(this.firstArr));
+      localStorage.setItem('media_two', JSON.stringify(this.secondArr));
+      localStorage.setItem('media_three', JSON.stringify(this.thirdArr));
+    }
   }
 
   setMediaState(obj: IMediaData) {
@@ -312,5 +315,6 @@ export class LatestComponent {
       ...this.firstArr.slice(6, 12),
       ...this.secondArr.slice(6, 12),
     ];
+    this.changesFlag = true;
   }
 }
