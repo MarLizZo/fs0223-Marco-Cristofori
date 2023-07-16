@@ -9,10 +9,10 @@
                     <a [routerLink]="'/'" class="nav-link link-light px-2">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a [routerLink]="'browse'" class="nav-link link-light px-2">Serie TV</a>
+                    <a [routerLink]="'browse/genres/tv-series'" class="nav-link link-light px-2">Serie TV</a>
                 </li>
                 <li class="nav-item">
-                    <a [routerLink]="'browse'" class="nav-link link-light px-2">Film</a>
+                    <a [routerLink]="'browse/genres/movies'" class="nav-link link-light px-2">Film</a>
                 </li>
                 <li class="nav-item">
                     <a [routerLink]="'latest'" class="nav-link link-light px-2">Nuovi e popolari</a>
@@ -31,8 +31,10 @@
                     <div ngbDropdownMenu aria-labelledby="dropDownLinks"
                         class="dropdown-menu dropdown-menu-end border-0 border-top rounded-0 border-light">
                         <a ngbDropdownItem [routerLink]="'/'" (click)="$event.preventDefault()">Home</a>
-                        <a ngbDropdownItem [routerLink]="'browse'" (click)="$event.preventDefault()">Serie TV</a>
-                        <a ngbDropdownItem [routerLink]="'browse'" (click)="$event.preventDefault()">Film</a>
+                        <a ngbDropdownItem [routerLink]="'browse/genres/tv-series'"
+                            (click)="$event.preventDefault()">Serie TV</a>
+                        <a ngbDropdownItem [routerLink]="'browse/genres/movies'"
+                            (click)="$event.preventDefault()">Film</a>
                         <a ngbDropdownItem [routerLink]="'latest'" (click)="$event.preventDefault()">Nuovi e
                             popolari</a>
                         <a ngbDropdownItem [routerLink]="'my-list'" (click)="$event.preventDefault()">La mia lista</a>

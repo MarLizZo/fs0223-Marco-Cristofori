@@ -1,6 +1,6 @@
 <div class="px-4 pt-4 pb-5 text-light list-container">
     <h4 class="mb-3">La mia Lista</h4>
-    <div *ngIf="myList.length" class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-5 m-0 g-4">
+    <div *ngIf="myList.length" class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-5 m-0 g-4">
         <div *ngFor="let m of myList" class="col px-1">
             <app-single-card [media]="m" (onChange)="setProps($event)"></app-single-card>
         </div>

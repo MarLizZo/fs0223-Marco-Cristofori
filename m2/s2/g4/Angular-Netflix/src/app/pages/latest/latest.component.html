@@ -1,1 +1,10 @@
-<p>latest works!</p>
+<div class="px-4 pt-4 pb-5 text-light">
+    <h4 class="mb-3">Novità su Netflix</h4>
+    <app-carousel [mediaArr]="thirdArr" (onSignal)="setMediaState($event)"></app-carousel>
+    <h4 class="mt-5 mb-3">In arrivo la prossima settimana</h4>
+    <app-carousel [mediaArr]="firstArr" (onSignal)="setMediaState($event)"></app-carousel>
+    <h4 class="mt-5 mb-3">Da attendere col fiato sospeso</h4>
+    <app-carousel [mediaArr]="secondArr" (onSignal)="setMediaState($event)"></app-carousel>
+    <h4 class="mt-5 mb-3">Top serie TV oggi</h4>
+    <app-carousel [mediaArr]="fourthArr" (onSignal)="setMediaState($event)"></app-carousel>
+</div>
