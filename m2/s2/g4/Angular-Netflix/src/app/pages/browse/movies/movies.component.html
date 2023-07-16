@@ -1,1 +1,33 @@
-<p>movies works!</p>
+<div class="px-4 pt-4 pb-5 text-light">
+    <div class="d-flex align-items-center">
+        <h2 class="me-4">Film</h2>
+        <select
+            class="mb-2 mb-md-0 me-md-4 form-select bg-black rounded-0 text-light shadow-none border border-1 border-light">
+            <option class="bg-custom" selected>Tutti i generi</option>
+            <option class="bg-custom" value="1">Fantascienza</option>
+            <option class="bg-customk" value="2">Azione</option>
+            <option class="bg-customk" value="2">Documentari</option>
+            <option class="bg-customk" value="2">Futuristici</option>
+            <option class="bg-customk" value="2">Drammatici</option>
+            <option class="bg-customk" value="2">Suspence</option>
+            <option class="bg-customk" value="2">Commedie</option>
+            <option class="bg-customk" value="2">Crime</option>
+            <option class="bg-customk" value="2">Horror</option>
+            <option class="bg-customk" value="2">Romantici</option>
+        </select>
+    </div>
+    <div class="medias mt-4">
+        <h4 class="mt-5 mb-3">Film premiati</h4>
+        <app-carousel [mediaArr]="thirdArr" (onSignal)="setMediaState($event)"></app-carousel>
+        <h4 class="mt-5 mb-3">Tratti da libri</h4>
+        <app-carousel [mediaArr]="firstArr" (onSignal)="setMediaState($event)"></app-carousel>
+        <h4 class="mt-5 mb-3">Fantascienza futuristica</h4>
+        <app-carousel [mediaArr]="secondArr" (onSignal)="setMediaState($event)"></app-carousel>
+        <h4 class="mt-5">Film fantasy</h4>
+        <app-carousel [mediaArr]="fourthArr" (onSignal)="setMediaState($event)"></app-carousel>
+        <h4 class="mt-5 mb-3">Film d'avventuraa</h4>
+        <app-carousel [mediaArr]="sixthArr" (onSignal)="setMediaState($event)"></app-carousel>
+        <h4 class="mt-5">Storie vere</h4>
+        <app-carousel [mediaArr]="fifthArr" (onSignal)="setMediaState($event)"></app-carousel>
+    </div>
+</div>

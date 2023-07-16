@@ -1,4 +1,47 @@
 <div class="px-4 pt-4 pb-5 text-light">
-    <h4 class="mb-3">Sfoglia per lingua</h4>
-
+    <h4 class="mb-4">Sfoglia per lingua</h4>
+    <div class="d-flex flex-column align-items-center flex-lg-row">
+        <div class="lang d-flex flex-column flex-md-row align-items-center">
+            <p class="mb-2 mb-md-0 me-md-3">Seleziona le tue preferenze</p>
+            <select
+                class="mb-2 mb-md-0 me-md-4 form-select bg-black rounded-0 text-light shadow-none border border-1 border-light">
+                <option class="bg-custom" selected>Lingua originale</option>
+                <option class="bg-custom" value="1">Doppiaggio</option>
+                <option class="bg-customk" value="2">Sottotitoli</option>
+            </select>
+            <select
+                class="mb-2 mb-md-0 me-md-4 form-select bg-black rounded-0 text-light shadow-none border border-1 border-light">
+                <option class="bg-custom" selected>Inglese</option>
+                <option class="bg-custom" value="1">Italiano</option>
+                <option class="bg-custom" value="2">Spagnolo</option>
+                <option class="bg-custom" value="3">Portoghese</option>
+                <option class="bg-custom" value="4">Tedesco</option>
+                <option class="bg-custom" value="5">Francese</option>
+                <option class="bg-custom" value="6">Giapponese</option>
+                <option class="bg-custom" value="7">Koreano</option>
+                <option class="bg-custom" value="8">Cinese</option>
+                <option class="bg-custom" value="9">Russo</option>
+                <option class="bg-custom" value="10">Greco</option>
+            </select>
+        </div>
+        <div class="order-by d-flex mt-3 mt-lg-0 align-items-center">
+            <p class="m-0 me-3">Ordina per</p>
+            <select class="form-select bg-black rounded-0 text-light shadow-none border border-1 border-light">
+                <option class="bg-custom" selected>Suggerimenti per te</option>
+                <option class="bg-custom" value="1">Anno di uscita</option>
+                <option class="bg-customk" value="2">A-Z</option>
+                <option class="bg-customk" value="3">Z-A</option>
+            </select>
+        </div>
+    </div>
+    <div class="medias mt-5">
+        <h4 class="mt-5 mb-3">Serie TV Premiate</h4>
+        <app-carousel [mediaArr]="thirdArr" (onSignal)="setMediaState($event)"></app-carousel>
+        <h4 class="mt-5 mb-3">Nuove Uscite</h4>
+        <app-carousel [mediaArr]="firstArr" (onSignal)="setMediaState($event)"></app-carousel>
+        <h4 class="mt-5 mb-3">Fantascienza e Alieni</h4>
+        <app-carousel [mediaArr]="secondArr" (onSignal)="setMediaState($event)"></app-carousel>
+        <h4 class="mt-5">I titoli del momento</h4>
+        <app-carousel [mediaArr]="fourthArr" (onSignal)="setMediaState($event)"></app-carousel>
+    </div>
 </div>
